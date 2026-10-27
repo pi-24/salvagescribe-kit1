@@ -1,0 +1,88 @@
+{
+  "attributes": [
+    {
+      "attribute": "part_type",
+      "value": "side-view mirror",
+      "source": "spreadsheet",
+      "source_ref": "spreadsheet",
+      "confidence": 0.98,
+      "note": "Part type from spreadsheet description."
+    },
+    {
+      "attribute": "side",
+      "value": "LH",
+      "source": "photo",
+      "source_ref": "MIR-009_1.jpg",
+      "confidence": 0.85,
+      "note": "Side (LH) visible in front photo."
+    },
+    {
+      "attribute": "manufacturer",
+      "value": "OEM",
+      "source": "photo_label",
+      "source_ref": "MIR-009_4.jpg",
+      "confidence": 0.8,
+      "note": "OEM part number format on label."
+    },
+    {
+      "attribute": "part_number",
+      "value": "87940-60??0",
+      "source": "photo_label",
+      "source_ref": "MIR-009_4.jpg",
+      "confidence": 0.5,
+      "note": "Part-number label partially readable — last digits obscured."
+    },
+    {
+      "attribute": "features",
+      "value": "power, folding, signal, camera",
+      "source": "dismantling_note",
+      "source_ref": "notes.json MIR-009",
+      "confidence": 0.7,
+      "note": "Features observed from dismantling note. Camera housing visible in photo."
+    },
+    {
+      "attribute": "tested",
+      "value": "untested",
+      "source": "dismantling_note",
+      "source_ref": "notes.json MIR-009",
+      "confidence": 0.5,
+      "note": "No electrical test recorded in notes."
+    },
+    {
+      "attribute": "cosmetic_condition",
+      "value": "none",
+      "source": "photo",
+      "source_ref": "MIR-009_1.jpg",
+      "confidence": 0.8,
+      "note": "No visible cosmetic damage in photos."
+    },
+    {
+      "attribute": "structural_damage",
+      "value": "none",
+      "source": "photo",
+      "source_ref": "photos",
+      "confidence": 0.8,
+      "note": "No visible structural damage in photos."
+    },
+    {
+      "attribute": "glass_condition",
+      "value": "clear",
+      "source": "photo",
+      "source_ref": "MIR-009_3.jpg",
+      "confidence": 0.85,
+      "note": "Glass surface appears clear in photos."
+    },
+    {
+      "attribute": "included_components",
+      "value": "cover, glass, harness, camera",
+      "source": "dismantling_note",
+      "source_ref": "notes.json MIR-009",
+      "confidence": 0.7,
+      "note": "Included components per dismantling note."
+    }
+  ],
+  "possible_damage": [],
+  "translated_notes": {
+    "ar_to_en": "Land Cruiser mirror with camera, side not written on tag"
+  }
+}

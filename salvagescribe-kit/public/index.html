@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#1a2238" />
+  <title>SalvageScribe</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header id="topbar">
+    <div class="brand">
+      <span class="logo">🔧</span>
+      <span class="title">SalvageScribe</span>
+    </div>
+    <nav id="nav-tabs">
+      <button class="nav-tab active" data-screen="board">Board</button>
+      <button class="nav-tab" data-screen="detail" style="display:none">Detail</button>
+      <button class="nav-tab" data-screen="draft" style="display:none">Draft</button>
+      <button class="nav-tab" data-screen="readiness" style="display:none">Readiness</button>
+    </nav>
+    <button id="lang-toggle" class="lang-toggle" title="Toggle language">
+      <span class="lang-en">العربية</span>
+      <span class="lang-ar" style="display:none">English</span>
+    </button>
+  </header>
+
+  <main id="app">
+    <!-- Board screen -->
+    <section id="screen-board" class="screen active">
+      <div class="board-columns">
+        <div class="board-col" data-class="READY_FOR_REVIEW">
+          <div class="col-header ready">
+            <span class="col-icon">✓</span>
+            <span class="col-title" data-i18n="col_ready">Ready for seller review</span>
+            <span class="col-count" id="count-ready">0</span>
+          </div>
+          <div class="col-cards" id="col-ready"></div>
+        </div>
+        <div class="board-col" data-class="INFO_MISSING">
+          <div class="col-header info">
+            <span class="col-icon">?</span>
+            <span class="col-title" data-i18n="col_info">Information missing</span>
+            <span class="col-count" id="count-info">0</span>
+          </div>
+          <div class="col-cards" id="col-info"></div>
+        </div>
+        <div class="board-col" data-class="SPECIALIST_REVIEW">
+          <div class="col-header specialist">
+            <span class="col-icon">⚠</span>
+            <span class="col-title" data-i18n="col_specialist">Specialist review required</span>
+            <span class="col-count" id="count-specialist">0</span>
+          </div>
+          <div class="col-cards" id="col-specialist"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detail screen -->
+    <section id="screen-detail" class="screen">
+      <div class="detail-layout">
+        <div class="detail-left">
+          <div id="photo-strip" class="photo-strip"></div>
+          <div id="ledger-table" class="ledger-section"></div>
+        </div>
+        <div class="detail-right">
+          <div id="questions-panel" class="questions-section"></div>
+          <div id="assistant-box" class="assistant-section">
+            <h3 data-i18n="ask_assistant">Ask SalvageScribe</h3>
+            <div id="assistant-messages" class="assistant-messages"></div>
+            <div class="assistant-input-row">
+              <input type="text" id="assistant-input" data-i18n-ph="type_message" placeholder="Type your message..." />
+              <button id="assistant-send" data-i18n="send">Send</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="detail-nav">
+        <button class="btn-secondary" onclick="App.goBoard()" data-i18n="back">← Back to board</button>
+        <button class="btn-primary" onclick="App.goDraft()" data-i18n="view_draft">View draft →</button>
+        <button class="btn-secondary" onclick="App.goReadiness()" data-i18n="view_readiness">Readiness checklist →</button>
+      </div>
+    </section>
+
+    <!-- Draft screen -->
+    <section id="screen-draft" class="screen">
+      <div id="draft-content" class="draft-container"></div>
+      <div class="detail-nav">
+        <button class="btn-secondary" onclick="App.goDetail()" data-i18n="back">← Back to detail</button>
+      </div>
+    </section>
+
+    <!-- Readiness screen -->
+    <section id="screen-readiness" class="screen">
+      <div id="readiness-content" class="readiness-container"></div>
+      <div class="detail-nav">
+        <button class="btn-secondary" onclick="App.goDetail()" data-i18n="back">← Back to detail</button>
+      </div>
+    </section>
+  </main>
+
+  <footer id="banner-footer"></footer>
+
+  <script src="/js/i18n.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/board.js"></script>
+  <script src="/js/detail.js"></script>
+  <script src="/js/draft.js"></script>
+  <script src="/js/readiness.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

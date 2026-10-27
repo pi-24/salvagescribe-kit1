@@ -1,0 +1,1948 @@
+{
+  "timestamp": "2026-10-27T10-02-43",
+  "summary": {
+    "classification_accuracy": "20/20 (100%)",
+    "traps_detected": "28/32",
+    "attributes_correct": "214/218 (98%)",
+    "condition_disclosures_present": "0/76"
+  },
+  "parts": [
+    {
+      "part_id": "MIR-001",
+      "classification": {
+        "expected": "READY_FOR_REVIEW",
+        "actual": "READY_FOR_REVIEW",
+        "match": true
+      },
+      "traps": {
+        "expected": [],
+        "detected": [],
+        "missed": []
+      },
+      "attributes": {
+        "correct": 11,
+        "total": 11,
+        "details": [
+          {
+            "attr": "donor_make",
+            "expected": "Toyota",
+            "actual": "Toyota",
+            "correct": true
+          },
+          {
+            "attr": "donor_model",
+            "expected": "Corolla",
+            "actual": "Corolla",
+            "correct": true
+          },
+          {
+            "attr": "donor_year",
+            "expected": 2018,
+            "actual": 2018,
+            "correct": true
+          },
+          {
+            "attr": "side",
+            "expected": "RH",
+            "actual": "RH",
+            "correct": true
+          },
+          {
+            "attr": "part_number",
+            "expected": "87910-02F10",
+            "actual": "87910-02F10",
+            "correct": true
+          },
+          {
+            "attr": "features",
+            "expected": "power, heated",
+            "actual": "power, heated",
+            "correct": true
+          },
+          {
+            "attr": "tested",
+            "expected": "tested_ok",
+            "actual": "tested_ok",
+            "correct": true
+          },
+          {
+            "attr": "cosmetic_condition",
+            "expected": "light scuff on cover",
+            "actual": "light scuff on cover",
+            "correct": true
+          },
+          {
+            "attr": "structural_damage",
+            "expected": "none",
+            "actual": "none",
+            "correct": true
+          },
+          {
+            "attr": "glass_condition",
+            "expected": "clear",
+            "actual": "clear",
+            "correct": true
+          },
+          {
+            "attr": "included_components",
+            "expected": "cover, glass, harness",
+            "actual": "cover, glass, harness",
+            "correct": true
+          }
+        ]
+      },
+      "condition_disclosures": {
+        "present": 0,
+        "required": 4
+      },
+      "failed_rules": []
+    },
+    {
+      "part_id": "MIR-002",
+      "classification": {
+        "expected": "READY_FOR_REVIEW",
+        "actual": "READY_FOR_REVIEW",
+        "match": true
+      },
+      "traps": {
+        "expected": [],
+        "detected": [],
+        "missed": []
+      },
+      "attributes": {
+        "correct": 11,
+        "total": 11,
+        "details": [
+          {
+            "attr": "donor_make",
+            "expected": "Nissan",
+            "actual": "Nissan",
+            "correct": true
+          },
+          {
+            "attr": "donor_model",
+            "expected": "Patrol",
+            "actual": "Patrol",
+            "correct": true
+          },
+          {
+            "attr": "donor_year",
+            "expected": 2016,
+            "actual": 2016,
+            "correct": true
+          },
+          {
+            "attr": "side",
+            "expected": "LH",
+            "actual": "LH",
+            "correct": true
+          },
+          {
+            "attr": "part_number",
+            "expected": "96302-5X9A1",
+            "actual": "96302-5X9A1",
+            "correct": true
+          },
+          {
+            "attr": "features",
+            "expected": "power, folding, signal",
+            "actual": "power, folding, signal",
+            "correct": true
+          },
+          {
+            "attr": "tested",
+            "expected": "tested_ok",
+            "actual": "tested_ok",
+            "correct": true
+          },
+          {
+            "attr": "cosmetic_condition",
+            "expected": "none",
+            "actual": "none",
+            "correct": true
+          },
+          {
+            "attr": "structural_damage",
+            "expected": "none",
+            "actual": "none",
+            "correct": true
+          },
+          {
+            "attr": "glass_condition",
+            "expected": "clear",
+            "actual": "clear",
+            "correct": true
+          },
+          {
+            "attr": "included_components",
+            "expected": "cover, glass, harness, signal lens",
+            "actual": "cover, glass, harness, signal lens",
+            "correct": true
+          }
+        ]
+      },
+      "condition_disclosures": {
+        "present": 0,
+        "required": 4
+      },
+      "failed_rules": []
+    },
+    {
+      "part_id": "MIR-003",
+      "classification": {
+        "expected": "INFO_MISSING",
+        "actual": "INFO_MISSING",
+        "match": true
+      },
+      "traps": {
+        "expected": [
+          "PARTIAL_PN",
+          "UNTESTED"
+        ],
+        "detected": [
+          "PARTIAL_PN",
+          "UNTESTED"
+        ],
+        "missed": []
+      },
+      "attributes": {
+        "correct": 11,
+        "total": 11,
+        "details": [
+          {
+            "attr": "donor_make",
+            "expected": "Hyundai",
+            "actual": "Hyundai",
+            "correct": true
+          },
+          {
+            "attr": "donor_model",
+            "expected": "Elantra",
+            "actual": "Elantra",
+            "correct": true
+          },
+          {
+            "attr": "donor_year",
+            "expected": 2019,
+            "actual": 2019,
+            "correct": true
+          },
+          {
+            "attr": "side",
+            "expected": "RH",
+            "actual": "RH",
+            "correct": true
+          },
+          {
+            "attr": "part_number",
+            "expected": "87620-F2??0",
+            "actual": "87620-F2??0",
+            "correct": true
+          },
+          {
+            "attr": "features",
+            "expected": "power",
+            "actual": "power",
+            "correct": true
+          },
+          {
+            "attr": "tested",
+            "expected": "untested",
+            "actual": "untested",
+            "correct": true
+          },
+          {
+            "attr": "cosmetic_condition",
+            "expected": "none",
+            "actual": "none",
+            "correct": true
+          },
+          {
+            "attr": "structural_damage",
+            "expected": "none",
+            "actual": "none",
+            "correct": true
+          },
+          {
+            "attr": "glass_condition",
+            "expected": "clear",
+            "actual": "clear",
+            "correct": true
+          },
+          {
+            "attr": "included_components",
+            "expected": "cover, glass",
+            "actual": "cover, glass",
+            "correct": true
+          }
+        ]
+      },
+      "condition_disclosures": {
+        "present": 0,
+        "required": 4
+      },
+      "failed_rules": [
+        "L-03",
+        "L-07"
+      ]
+    },
+    {
+      "part_id": "MIR-004",
+      "classification": {
+        "expected": "INFO_MISSING",
+        "actual": "INFO_MISSING",
+        "match": true
+      },
+      "traps": {
+        "expected": [
+          "CONFLICT_YEAR",
+          "PARTIAL_PN",
+          "HIDDEN_DAMAGE",
+          "UNTESTED"
+        ],
+        "detected": [
+          "CONFLICT_YEAR",
+          "PARTIAL_PN",
+          "HIDDEN_DAMAGE",
+          "UNTESTED"
+        ],
+        "missed": []
+      },
+      "attributes": {
+        "correct": 10,
+        "total": 11,
+        "details": [
+          {
+            "attr": "donor_make",
+            "expected": "Toyota",
+            "actual": "Toyota",
+            "correct": true
+          },
+          {
+            "attr": "donor_model",
+            "expected": "Corolla",
+            "actual": "Corolla",
+            "correct": true
+          },
+          {
+            "attr": "donor_year",
+            "expected": 2018,
+            "actual": null,
+            "correct": false
+          },
+          {
+            "attr": "side",
+            "expected": "RH",
+            "actual": "RH",
+            "correct": true
+          },
+          {
+            "attr": "part_number",
+            "expected": "87910-02F??",
+            "actual": "87910-02F??",
+            "correct": true
+          },
+          {
+            "attr": "features",
+            "expected": "power, heated",
+            "actual": "power, heated",
+            "correct": true
+          },
+          {
+            "attr": "tested",
+            "expected": "untested",
+            "actual": "untested",
+            "correct": true
+          },
+          {
+            "attr": "cosmetic_condition",
+            "expected": "none",
+            "actual": "none",
+            "correct": true
+          },
+          {
+            "attr": "structural_damage",
+            "expected": "possible crack in lower mounting tab (visible photo 3)",
+            "actual": "possible crack in lower mounting tab (visible photo 3)",
+            "correct": true
+          },
+          {
+            "attr": "glass_condition",
+            "expected": "clear",
+            "actual": "clear",
+            "correct": true
+          },
+          {
+            "attr": "included_components",
+            "expected": "cover, glass, harness",
+            "actual": "cover, glass, harness",
+            "correct": true
+          }
+        ]
+      },
+      "condition_disclosures": {
+        "present": 0,
+        "required": 4
+      },
+      "failed_rules": [
+        "L-03",
+        "L-04",
+        "L-06",
+        "L-07"
+      ]
+    },
+    {
+      "part_id": "MIR-005",
+      "classification": {
+        "expected": "INFO_MISSING",
+        "actual": "INFO_MISSING",
+        "match": true
+      },
+      "traps": {
+        "expected": [
+          "PARTIAL_PN"
+        ],
+        "detected": [
+          "PARTIAL_PN"
+        ],
+        "missed": []
+      },
+      "attributes": {
+        "correct": 11,
+        "total": 11,
+        "details": [
+          {
+            "attr": "donor_make",
+            "expected": "Honda",
+            "actual": "Honda",
+            "correct": true
+          },
+          {
+            "attr": "donor_model",
+            "expected": "Civic",
+            "actual": "Civic",
+            "correct": true
+          },
+          {
+            "attr": "donor_year",
+            "expected": 2017,
+            "actual": 2017,
+            "correct": true
+          },
+          {
+            "attr": "side",
+            "expected": "LH",
+            "actual": "LH",
+            "correct": true
+          },
+          {
+            "attr": "part_number",
+            "expected": "76250-TBA-??1",
+            "actual": "76250-TBA-??1",
+            "correct": true
+          },
+          {
+            "attr": "features",
+            "expected": "power, signal",
+            "actual": "power, signal",
+            "correct": true
+          },
+          {
+            "attr": "tested",
+            "expected": "tested_ok",
+            "actual": "tested_ok",
+            "correct": true
+          },
+          {
+            "attr": "cosmetic_condition",
+            "expected": "deep scratch on cover",
+            "actual": "deep scratch on cover",
+            "correct": true
+          },
+          {
+            "attr": "structural_damage",
+            "expected": "none",
+            "actual": "none",
+            "correct": true
+          },
+          {
+            "attr": "glass_condition",
+            "expected": "clear",
+            "actual": "clear",
+            "correct": true
+          },
+          {
+            "attr": "included_components",
+            "expected": "cover, glass, harness, signal lens",
+            "actual": "cover, glass, harness, signal lens",
+            "correct": true
+          }
+        ]
+      },
+      "condition_disclosures": {
+        "present": 0,
+        "required": 4
+      },
+      "failed_rules": [
+        "L-03"
+      ]
+    },
+    {
+      "part_id": "MIR-006",
+      "classification": {
+        "expected": "READY_FOR_REVIEW",
+        "actual": "READY_FOR_REVIEW",
+        "match": true
+      },
+      "traps": {
+        "expected": [],
+        "detected": [],
+        "missed": []
+      },
+      "attributes": {
+        "correct": 11,
+        "total": 11,
+        "details": [
+          {
+            "attr": "donor_make",
+            "expected": "Nissan",
+            "actual": "Nissan",
+            "correct": true
+          },
+          {
+            "attr": "donor_model",
+            "expected": "Altima",
+            "actual": "Altima",
+            "correct": true
+          },
+          {
+            "attr": "donor_year",
+            "expected": 2015,
+            "actual": 2015,
+            "correct": true
+          },
+          {
+            "attr": "side",
+            "expected": "RH",
+            "actual": "RH",
+            "correct": true
+          },
+          {
+            "attr": "part_number",
+            "expected": "96301-3TH0A",
+            "actual": "96301-3TH0A",
+            "correct": true
+          },
+          {
+            "attr": "features",
+            "expected": "power",
+            "actual": "power",
+            "correct": true
+          },
+          {
+            "attr": "tested",
+            "expected": "tested_fault",
+            "actual": "tested_fault",
+            "correct": true
+          },
+          {
+            "attr": "cosmetic_condition",
+            "expected": "none",
+            "actual": "none",
+            "correct": true
+          },
+          {
+            "attr": "structural_damage",
+            "expected": "none",
+            "actual": "none",
+            "correct": true
+          },
+          {
+            "attr": "glass_condition",
+            "expected": "clear",
+            "actual": "clear",
+            "correct": true
+          },
+          {
+            "attr": "included_components",
+            "expected": "cover, glass, harness",
+            "actual": "cover, glass, harness",
+            "correct": true
+          }
+        ]
+      },
+      "condition_disclosures": {
+        "present": 0,
+        "required": 4
+      },
+      "failed_rules": []
+    },
+    {
+      "part_id": "MIR-007",
+      "classification": {
+        "expected": "INFO_MISSING",
+        "actual": "INFO_MISSING",
+        "match": true
+      },
+      "traps": {
+        "expected": [
+          "PARTIAL_PN",
+          "HIDDEN_DAMAGE",
+          "UNTESTED",
+          "AR_ONLY"
+        ],
+        "detected": [
+          "PARTIAL_PN",
+          "HIDDEN_DAMAGE",
+          "UNTESTED"
+        ],
+        "missed": [
+          "AR_ONLY"
+        ]
+      },
+      "attributes": {
+        "correct": 11,
+        "total": 11,
+        "details": [
+          {
+            "attr": "donor_make",
+            "expected": "Toyota",
+            "actual": "Toyota",
+            "correct": true
+          },
+          {
+            "attr": "donor_model",
+            "expected": "Camry",
+            "actual": "Camry",
+            "correct": true
+          },
+          {
+            "attr": "donor_year",
+            "expected": 2016,
+            "actual": 2016,
+            "correct": true
+          },
+          {
+            "attr": "side",
+            "expected": "LH",
+            "actual": "LH",
+            "correct": true
+          },
+          {
+            "attr": "part_number",
+            "expected": "87940-06??0",
+            "actual": "87940-06??0",
+            "correct": true
+          },
+          {
+            "attr": "features",
+            "expected": "power, heated",
+            "actual": "power, heated",
+            "correct": true
+          },
+          {
+            "attr": "tested",
+            "expected": "untested",
+            "actual": "untested",
+            "correct": true
+          },
+          {
+            "attr": "cosmetic_condition",
+            "expected": "none",
+            "actual": "none",
+            "correct": true
+          },
+          {
+            "attr": "structural_damage",
+            "expected": "housing hairline crack near base (visible photo 2)",
+            "actual": "housing hairline crack near base (visible photo 2)",
+            "correct": true
+          },
+          {
+            "attr": "glass_condition",
+            "expected": "clear",
+            "actual": "clear",
+            "correct": true
+          },
+          {
+            "attr": "included_components",
+            "expected": "cover, glass",
+            "actual": "cover, glass",
+            "correct": true
+          }
+        ]
+      },
+      "condition_disclosures": {
+        "present": 0,
+        "required": 4
+      },
+      "failed_rules": [
+        "L-03",
+        "L-06",
+        "L-07"
+      ]
+    },
+    {
+      "part_id": "MIR-008",
+      "classification": {
+        "expected": "READY_FOR_REVIEW",
+        "actual": "READY_FOR_REVIEW",
+        "match": true
+      },
+      "traps": {
+        "expected": [],
+        "detected": [],
+        "missed": []
+      },
+      "attributes": {
+        "correct": 11,
+        "total": 11,
+        "details": [
+          {
+            "attr": "donor_make",
+            "expected": "Mitsubishi",
+            "actual": "Mitsubishi",
+            "correct": true
+          },
+          {
+            "attr": "donor_model",
+            "expected": "Pajero",
+            "actual": "Pajero",
+            "correct": true
+          },
+          {
+            "attr": "donor_year",
+            "expected": 2014,
+            "actual": 2014,
+            "correct": true
+          },
+          {
+            "attr": "side",
+            "expected": "RH",
+            "actual": "RH",
+            "correct": true
+          },
+          {
+            "attr": "part_number",
+            "expected": "7632A830",
+            "actual": "7632A830",
+            "correct": true
+          },
+          {
+            "attr": "features",
+            "expected": "power, folding",
+            "actual": "power, folding",
+            "correct": true
+          },
+          {
+            "attr": "tested",
+            "expected": "tested_ok",
+            "actual": "tested_ok",
+            "correct": true
+          },
+          {
+            "attr": "cosmetic_condition",
+            "expected": "faded black plastic",
+            "actual": "faded black plastic",
+            "correct": true
+          },
+          {
+            "attr": "structural_damage",
+            "expected": "none",
+            "actual": "none",
+            "correct": true
+          },
+          {
+            "attr": "glass_condition",
+            "expected": "clear",
+            "actual": "clear",
+            "correct": true
+          },
+          {
+            "attr": "included_components",
+            "expected": "cover, glass, harness",
+            "actual": "cover, glass, harness",
+            "correct": true
+          }
+        ]
+      },
+      "condition_disclosures": {
+        "present": 0,
+        "required": 4
+      },
+      "failed_rules": []
+    },
+    {
+      "part_id": "MIR-009",
+      "classification": {
+        "expected": "INFO_MISSING",
+        "actual": "INFO_MISSING",
+        "match": true
+      },
+      "traps": {
+        "expected": [
+          "PARTIAL_PN",
+          "UNTESTED",
+          "MISSING_SIDE"
+        ],
+        "detected": [
+          "PARTIAL_PN",
+          "UNTESTED"
+        ],
+        "missed": [
+          "MISSING_SIDE"
+        ]
+      },
+      "attributes": {
+        "correct": 10,
+        "total": 11,
+        "details": [
+          {
+            "attr": "donor_make",
+            "expected": "Toyota",
+            "actual": null,
+            "correct": false
+          },
+          {
+            "attr": "donor_model",
+            "expected": "Land Cruiser",
+            "actual": "Land Cruiser",
+            "correct": true
+          },
+          {
+            "attr": "donor_year",
+            "expected": 2019,
+            "actual": 2019,
+            "correct": true
+          },
+          {
+            "attr": "side",
+            "expected": "LH",
+            "actual": "LH",
+            "correct": true
+          },
+          {
+            "attr": "part_number",
+            "expected": "87940-60??0",
+            "actual": "87940-60??0",
+            "correct": true
+          },
+          {
+            "attr": "features",
+            "expected": "power, folding, signal, camera",
+            "actual": "power, folding, signal, camera",
+            "correct": true
+          },
+          {
+            "attr": "tested",
+            "expected": "untested",
+            "actual": "untested",
+            "correct": true
+          },
+          {
+            "attr": "cosmetic_condition",
+            "expected": "none",
+            "actual": "none",
+            "correct": true
+          },
+          {
+            "attr": "structural_damage",
+            "expected": "none",
+            "actual": "none",
+            "correct": true
+          },
+          {
+            "attr": "glass_condition",
+            "expected": "clear",
+            "actual": "clear",
+            "correct": true
+          },
+          {
+            "attr": "included_components",
+            "expected": "cover, glass, harness, camera",
+            "actual": "cover, glass, harness, camera",
+            "correct": true
+          }
+        ]
+      },
+      "condition_disclosures": {
+        "present": 0,
+        "required": 4
+      },
+      "failed_rules": [
+        "L-03",
+        "L-04",
+        "L-07"
+      ]
+    },
+    {
+      "part_id": "MIR-010",
+      "classification": {
+        "expected": "INFO_MISSING",
+        "actual": "INFO_MISSING",
+        "match": true
+      },
+      "traps": {
+        "expected": [
+          "PARTIAL_PN"
+        ],
+        "detected": [
+          "PARTIAL_PN"
+        ],
+        "missed": []
+      },
+      "attributes": {
+        "correct": 11,
+        "total": 11,
+        "details": [
+          {
+            "attr": "donor_make",
+            "expected": "Kia",
+            "actual": "Kia",
+            "correct": true
+          },
+          {
+            "attr": "donor_model",
+            "expected": "Sportage",
+            "actual": "Sportage",
+            "correct": true
+          },
+          {
+            "attr": "donor_year",
+            "expected": 2018,
+            "actual": 2018,
+            "correct": true
+          },
+          {
+            "attr": "side",
+            "expected": "RH",
+            "actual": "RH",
+            "correct": true
+          },
+          {
+            "attr": "part_number",
+            "expected": "87620-F1??0",
+            "actual": "87620-F1??0",
+            "correct": true
+          },
+          {
+            "attr": "features",
+            "expected": "power, heated, signal",
+            "actual": "power, heated, signal",
+            "correct": true
+          },
+          {
+            "attr": "tested",
+            "expected": "tested_ok",
+            "actual": "tested_ok",
+            "correct": true
+          },
+          {
+            "attr": "cosmetic_condition",
+            "expected": "none",
+            "actual": "none",
+            "correct": true
+          },
+          {
+            "attr": "structural_damage",
+            "expected": "none",
+            "actual": "none",
+            "correct": true
+          },
+          {
+            "attr": "glass_condition",
+            "expected": "clear",
+            "actual": "clear",
+            "correct": true
+          },
+          {
+            "attr": "included_components",
+            "expected": "cover, glass, harness, signal lens",
+            "actual": "cover, glass, harness, signal lens",
+            "correct": true
+          }
+        ]
+      },
+      "condition_disclosures": {
+        "present": 0,
+        "required": 4
+      },
+      "failed_rules": [
+        "L-03"
+      ]
+    },
+    {
+      "part_id": "MIR-011",
+      "classification": {
+        "expected": "INFO_MISSING",
+        "actual": "INFO_MISSING",
+        "match": true
+      },
+      "traps": {
+        "expected": [
+          "UNTESTED",
+          "CONFLICT_YEAR"
+        ],
+        "detected": [
+          "UNTESTED",
+          "CONFLICT_YEAR"
+        ],
+        "missed": []
+      },
+      "attributes": {
+        "correct": 10,
+        "total": 11,
+        "details": [
+          {
+            "attr": "donor_make",
+            "expected": "Nissan",
+            "actual": "Nissan",
+            "correct": true
+          },
+          {
+            "attr": "donor_model",
+            "expected": "Sunny",
+            "actual": "Sunny",
+            "correct": true
+          },
+          {
+            "attr": "donor_year",
+            "expected": 2017,
+            "actual": null,
+            "correct": false
+          },
+          {
+            "attr": "side",
+            "expected": "LH",
+            "actual": "LH",
+            "correct": true
+          },
+          {
+            "attr": "part_number",
+            "expected": "96302-3AW0A",
+            "actual": "96302-3AW0A",
+            "correct": true
+          },
+          {
+            "attr": "features",
+            "expected": "manual",
+            "actual": "manual",
+            "correct": true
+          },
+          {
+            "attr": "tested",
+            "expected": "untested",
+            "actual": "untested",
+            "correct": true
+          },
+          {
+            "attr": "cosmetic_condition",
+            "expected": "scuffed cover",
+            "actual": "scuffed cover",
+            "correct": true
+          },
+          {
+            "attr": "structural_damage",
+            "expected": "none",
+            "actual": "none",
+            "correct": true
+          },
+          {
+            "attr": "glass_condition",
+            "expected": "clear",
+            "actual": "clear",
+            "correct": true
+          },
+          {
+            "attr": "included_components",
+            "expected": "cover, glass",
+            "actual": "cover, glass",
+            "correct": true
+          }
+        ]
+      },
+      "condition_disclosures": {
+        "present": 0,
+        "required": 4
+      },
+      "failed_rules": [
+        "L-04",
+        "L-07"
+      ]
+    },
+    {
+      "part_id": "MIR-012",
+      "classification": {
+        "expected": "INFO_MISSING",
+        "actual": "INFO_MISSING",
+        "match": true
+      },
+      "traps": {
+        "expected": [
+          "PARTIAL_PN"
+        ],
+        "detected": [
+          "PARTIAL_PN"
+        ],
+        "missed": []
+      },
+      "attributes": {
+        "correct": 11,
+        "total": 11,
+        "details": [
+          {
+            "attr": "donor_make",
+            "expected": "Toyota",
+            "actual": "Toyota",
+            "correct": true
+          },
+          {
+            "attr": "donor_model",
+            "expected": "Yaris",
+            "actual": "Yaris",
+            "correct": true
+          },
+          {
+            "attr": "donor_year",
+            "expected": 2020,
+            "actual": 2020,
+            "correct": true
+          },
+          {
+            "attr": "side",
+            "expected": "RH",
+            "actual": "RH",
+            "correct": true
+          },
+          {
+            "attr": "part_number",
+            "expected": "87910-0D???",
+            "actual": "87910-0D???",
+            "correct": true
+          },
+          {
+            "attr": "features",
+            "expected": "power, folding, signal",
+            "actual": "power, folding, signal",
+            "correct": true
+          },
+          {
+            "attr": "tested",
+            "expected": "tested_ok",
+            "actual": "tested_ok",
+            "correct": true
+          },
+          {
+            "attr": "cosmetic_condition",
+            "expected": "none",
+            "actual": "none",
+            "correct": true
+          },
+          {
+            "attr": "structural_damage",
+            "expected": "none",
+            "actual": "none",
+            "correct": true
+          },
+          {
+            "attr": "glass_condition",
+            "expected": "clear",
+            "actual": "clear",
+            "correct": true
+          },
+          {
+            "attr": "included_components",
+            "expected": "cover, glass, harness, signal lens",
+            "actual": "cover, glass, harness, signal lens",
+            "correct": true
+          }
+        ]
+      },
+      "condition_disclosures": {
+        "present": 0,
+        "required": 4
+      },
+      "failed_rules": [
+        "L-03"
+      ]
+    },
+    {
+      "part_id": "MIR-013",
+      "classification": {
+        "expected": "INFO_MISSING",
+        "actual": "INFO_MISSING",
+        "match": true
+      },
+      "traps": {
+        "expected": [
+          "PARTIAL_PN",
+          "HIDDEN_DAMAGE",
+          "UNTESTED"
+        ],
+        "detected": [
+          "PARTIAL_PN",
+          "HIDDEN_DAMAGE",
+          "UNTESTED"
+        ],
+        "missed": []
+      },
+      "attributes": {
+        "correct": 11,
+        "total": 11,
+        "details": [
+          {
+            "attr": "donor_make",
+            "expected": "Honda",
+            "actual": "Honda",
+            "correct": true
+          },
+          {
+            "attr": "donor_model",
+            "expected": "Accord",
+            "actual": "Accord",
+            "correct": true
+          },
+          {
+            "attr": "donor_year",
+            "expected": 2018,
+            "actual": 2018,
+            "correct": true
+          },
+          {
+            "attr": "side",
+            "expected": "LH",
+            "actual": "LH",
+            "correct": true
+          },
+          {
+            "attr": "part_number",
+            "expected": "76250-TVA-??1",
+            "actual": "76250-TVA-??1",
+            "correct": true
+          },
+          {
+            "attr": "features",
+            "expected": "power, heated, signal, blind-spot",
+            "actual": "power, heated, signal, blind-spot",
+            "correct": true
+          },
+          {
+            "attr": "tested",
+            "expected": "untested",
+            "actual": "untested",
+            "correct": true
+          },
+          {
+            "attr": "cosmetic_condition",
+            "expected": "none",
+            "actual": "none",
+            "correct": true
+          },
+          {
+            "attr": "structural_damage",
+            "expected": "mounting bracket bent (visible photo 4)",
+            "actual": "mounting bracket bent (visible photo 4)",
+            "correct": true
+          },
+          {
+            "attr": "glass_condition",
+            "expected": "clear",
+            "actual": "clear",
+            "correct": true
+          },
+          {
+            "attr": "included_components",
+            "expected": "cover, glass, harness",
+            "actual": "cover, glass, harness",
+            "correct": true
+          }
+        ]
+      },
+      "condition_disclosures": {
+        "present": 0,
+        "required": 4
+      },
+      "failed_rules": [
+        "L-03",
+        "L-06",
+        "L-07"
+      ]
+    },
+    {
+      "part_id": "MIR-014",
+      "classification": {
+        "expected": "INFO_MISSING",
+        "actual": "INFO_MISSING",
+        "match": true
+      },
+      "traps": {
+        "expected": [
+          "PARTIAL_PN"
+        ],
+        "detected": [
+          "PARTIAL_PN"
+        ],
+        "missed": []
+      },
+      "attributes": {
+        "correct": 11,
+        "total": 11,
+        "details": [
+          {
+            "attr": "donor_make",
+            "expected": "Hyundai",
+            "actual": "Hyundai",
+            "correct": true
+          },
+          {
+            "attr": "donor_model",
+            "expected": "Tucson",
+            "actual": "Tucson",
+            "correct": true
+          },
+          {
+            "attr": "donor_year",
+            "expected": 2017,
+            "actual": 2017,
+            "correct": true
+          },
+          {
+            "attr": "side",
+            "expected": "RH",
+            "actual": "RH",
+            "correct": true
+          },
+          {
+            "attr": "part_number",
+            "expected": "87620-D3??0",
+            "actual": "87620-D3??0",
+            "correct": true
+          },
+          {
+            "attr": "features",
+            "expected": "power, folding, signal",
+            "actual": "power, folding, signal",
+            "correct": true
+          },
+          {
+            "attr": "tested",
+            "expected": "tested_ok",
+            "actual": "tested_ok",
+            "correct": true
+          },
+          {
+            "attr": "cosmetic_condition",
+            "expected": "none",
+            "actual": "none",
+            "correct": true
+          },
+          {
+            "attr": "structural_damage",
+            "expected": "none",
+            "actual": "none",
+            "correct": true
+          },
+          {
+            "attr": "glass_condition",
+            "expected": "small chip at edge of glass",
+            "actual": "small chip at edge of glass",
+            "correct": true
+          },
+          {
+            "attr": "included_components",
+            "expected": "cover, glass, harness, signal lens",
+            "actual": "cover, glass, harness, signal lens",
+            "correct": true
+          }
+        ]
+      },
+      "condition_disclosures": {
+        "present": 0,
+        "required": 4
+      },
+      "failed_rules": [
+        "L-03"
+      ]
+    },
+    {
+      "part_id": "MIR-015",
+      "classification": {
+        "expected": "INFO_MISSING",
+        "actual": "INFO_MISSING",
+        "match": true
+      },
+      "traps": {
+        "expected": [
+          "PARTIAL_PN",
+          "AR_ONLY"
+        ],
+        "detected": [
+          "PARTIAL_PN"
+        ],
+        "missed": [
+          "AR_ONLY"
+        ]
+      },
+      "attributes": {
+        "correct": 11,
+        "total": 11,
+        "details": [
+          {
+            "attr": "donor_make",
+            "expected": "Lexus",
+            "actual": "Lexus",
+            "correct": true
+          },
+          {
+            "attr": "donor_model",
+            "expected": "RX",
+            "actual": "RX",
+            "correct": true
+          },
+          {
+            "attr": "donor_year",
+            "expected": 2016,
+            "actual": 2016,
+            "correct": true
+          },
+          {
+            "attr": "side",
+            "expected": "LH",
+            "actual": "LH",
+            "correct": true
+          },
+          {
+            "attr": "part_number",
+            "expected": "87940-48??0",
+            "actual": "87940-48??0",
+            "correct": true
+          },
+          {
+            "attr": "features",
+            "expected": "power, heated, folding, signal, camera",
+            "actual": "power, heated, folding, signal, camera",
+            "correct": true
+          },
+          {
+            "attr": "tested",
+            "expected": "tested_ok",
+            "actual": "tested_ok",
+            "correct": true
+          },
+          {
+            "attr": "cosmetic_condition",
+            "expected": "none",
+            "actual": "none",
+            "correct": true
+          },
+          {
+            "attr": "structural_damage",
+            "expected": "none",
+            "actual": "none",
+            "correct": true
+          },
+          {
+            "attr": "glass_condition",
+            "expected": "clear",
+            "actual": "clear",
+            "correct": true
+          },
+          {
+            "attr": "included_components",
+            "expected": "cover, glass, harness, camera",
+            "actual": "cover, glass, harness, camera",
+            "correct": true
+          }
+        ]
+      },
+      "condition_disclosures": {
+        "present": 0,
+        "required": 4
+      },
+      "failed_rules": [
+        "L-03"
+      ]
+    },
+    {
+      "part_id": "MIR-016",
+      "classification": {
+        "expected": "INFO_MISSING",
+        "actual": "INFO_MISSING",
+        "match": true
+      },
+      "traps": {
+        "expected": [
+          "PARTIAL_PN",
+          "UNTESTED",
+          "AR_ONLY"
+        ],
+        "detected": [
+          "PARTIAL_PN",
+          "UNTESTED"
+        ],
+        "missed": [
+          "AR_ONLY"
+        ]
+      },
+      "attributes": {
+        "correct": 11,
+        "total": 11,
+        "details": [
+          {
+            "attr": "donor_make",
+            "expected": "Mitsubishi",
+            "actual": "Mitsubishi",
+            "correct": true
+          },
+          {
+            "attr": "donor_model",
+            "expected": "Lancer",
+            "actual": "Lancer",
+            "correct": true
+          },
+          {
+            "attr": "donor_year",
+            "expected": 2015,
+            "actual": 2015,
+            "correct": true
+          },
+          {
+            "attr": "side",
+            "expected": "RH",
+            "actual": "RH",
+            "correct": true
+          },
+          {
+            "attr": "part_number",
+            "expected": "7632A4??",
+            "actual": "7632A4??",
+            "correct": true
+          },
+          {
+            "attr": "features",
+            "expected": "power",
+            "actual": "power",
+            "correct": true
+          },
+          {
+            "attr": "tested",
+            "expected": "untested",
+            "actual": "untested",
+            "correct": true
+          },
+          {
+            "attr": "cosmetic_condition",
+            "expected": "none",
+            "actual": "none",
+            "correct": true
+          },
+          {
+            "attr": "structural_damage",
+            "expected": "none",
+            "actual": "none",
+            "correct": true
+          },
+          {
+            "attr": "glass_condition",
+            "expected": "clear",
+            "actual": "clear",
+            "correct": true
+          },
+          {
+            "attr": "included_components",
+            "expected": "cover, glass, harness",
+            "actual": "cover, glass, harness",
+            "correct": true
+          }
+        ]
+      },
+      "condition_disclosures": {
+        "present": 0,
+        "required": 4
+      },
+      "failed_rules": [
+        "L-03",
+        "L-07"
+      ]
+    },
+    {
+      "part_id": "MIR-017",
+      "classification": {
+        "expected": "INFO_MISSING",
+        "actual": "INFO_MISSING",
+        "match": true
+      },
+      "traps": {
+        "expected": [
+          "CONFLICT_YEAR"
+        ],
+        "detected": [
+          "CONFLICT_YEAR"
+        ],
+        "missed": []
+      },
+      "attributes": {
+        "correct": 10,
+        "total": 11,
+        "details": [
+          {
+            "attr": "donor_make",
+            "expected": "Nissan",
+            "actual": "Nissan",
+            "correct": true
+          },
+          {
+            "attr": "donor_model",
+            "expected": "Patrol",
+            "actual": "Patrol",
+            "correct": true
+          },
+          {
+            "attr": "donor_year",
+            "expected": 2019,
+            "actual": null,
+            "correct": false
+          },
+          {
+            "attr": "side",
+            "expected": "RH",
+            "actual": "RH",
+            "correct": true
+          },
+          {
+            "attr": "part_number",
+            "expected": "96301-6JL0A",
+            "actual": "96301-6JL0A",
+            "correct": true
+          },
+          {
+            "attr": "features",
+            "expected": "power, folding, signal, camera",
+            "actual": "power, folding, signal, camera",
+            "correct": true
+          },
+          {
+            "attr": "tested",
+            "expected": "tested_ok",
+            "actual": "tested_ok",
+            "correct": true
+          },
+          {
+            "attr": "cosmetic_condition",
+            "expected": "none",
+            "actual": "none",
+            "correct": true
+          },
+          {
+            "attr": "structural_damage",
+            "expected": "none",
+            "actual": "none",
+            "correct": true
+          },
+          {
+            "attr": "glass_condition",
+            "expected": "clear",
+            "actual": "clear",
+            "correct": true
+          },
+          {
+            "attr": "included_components",
+            "expected": "cover, glass, harness, camera",
+            "actual": "cover, glass, harness, camera",
+            "correct": true
+          }
+        ]
+      },
+      "condition_disclosures": {
+        "present": 0,
+        "required": 4
+      },
+      "failed_rules": [
+        "L-04"
+      ]
+    },
+    {
+      "part_id": "MIR-018",
+      "classification": {
+        "expected": "INFO_MISSING",
+        "actual": "INFO_MISSING",
+        "match": true
+      },
+      "traps": {
+        "expected": [
+          "MISSING_PN",
+          "UNTESTED"
+        ],
+        "detected": [
+          "MISSING_PN",
+          "UNTESTED"
+        ],
+        "missed": []
+      },
+      "attributes": {
+        "correct": 10,
+        "total": 10,
+        "details": [
+          {
+            "attr": "donor_make",
+            "expected": "Toyota",
+            "actual": "Toyota",
+            "correct": true
+          },
+          {
+            "attr": "donor_model",
+            "expected": "Hilux",
+            "actual": "Hilux",
+            "correct": true
+          },
+          {
+            "attr": "donor_year",
+            "expected": 2017,
+            "actual": 2017,
+            "correct": true
+          },
+          {
+            "attr": "side",
+            "expected": "LH",
+            "actual": "LH",
+            "correct": true
+          },
+          {
+            "attr": "features",
+            "expected": "manual",
+            "actual": "manual",
+            "correct": true
+          },
+          {
+            "attr": "tested",
+            "expected": "untested",
+            "actual": "untested",
+            "correct": true
+          },
+          {
+            "attr": "cosmetic_condition",
+            "expected": "faded",
+            "actual": "faded",
+            "correct": true
+          },
+          {
+            "attr": "structural_damage",
+            "expected": "none",
+            "actual": "none",
+            "correct": true
+          },
+          {
+            "attr": "glass_condition",
+            "expected": "clear",
+            "actual": "clear",
+            "correct": true
+          },
+          {
+            "attr": "included_components",
+            "expected": "cover, glass",
+            "actual": "cover, glass",
+            "correct": true
+          }
+        ]
+      },
+      "condition_disclosures": {
+        "present": 0,
+        "required": 4
+      },
+      "failed_rules": [
+        "L-03",
+        "L-07"
+      ]
+    },
+    {
+      "part_id": "MIR-019",
+      "classification": {
+        "expected": "INFO_MISSING",
+        "actual": "INFO_MISSING",
+        "match": true
+      },
+      "traps": {
+        "expected": [
+          "PARTIAL_PN"
+        ],
+        "detected": [
+          "PARTIAL_PN"
+        ],
+        "missed": []
+      },
+      "attributes": {
+        "correct": 11,
+        "total": 11,
+        "details": [
+          {
+            "attr": "donor_make",
+            "expected": "Kia",
+            "actual": "Kia",
+            "correct": true
+          },
+          {
+            "attr": "donor_model",
+            "expected": "Cerato",
+            "actual": "Cerato",
+            "correct": true
+          },
+          {
+            "attr": "donor_year",
+            "expected": 2018,
+            "actual": 2018,
+            "correct": true
+          },
+          {
+            "attr": "side",
+            "expected": "LH",
+            "actual": "LH",
+            "correct": true
+          },
+          {
+            "attr": "part_number",
+            "expected": "87610-M6??0",
+            "actual": "87610-M6??0",
+            "correct": true
+          },
+          {
+            "attr": "features",
+            "expected": "power, heated",
+            "actual": "power, heated",
+            "correct": true
+          },
+          {
+            "attr": "tested",
+            "expected": "tested_ok",
+            "actual": "tested_ok",
+            "correct": true
+          },
+          {
+            "attr": "cosmetic_condition",
+            "expected": "none",
+            "actual": "none",
+            "correct": true
+          },
+          {
+            "attr": "structural_damage",
+            "expected": "none",
+            "actual": "none",
+            "correct": true
+          },
+          {
+            "attr": "glass_condition",
+            "expected": "clear",
+            "actual": "clear",
+            "correct": true
+          },
+          {
+            "attr": "included_components",
+            "expected": "cover, glass, harness",
+            "actual": "cover, glass, harness",
+            "correct": true
+          }
+        ]
+      },
+      "condition_disclosures": {
+        "present": 0,
+        "required": 4
+      },
+      "failed_rules": [
+        "L-03"
+      ]
+    },
+    {
+      "part_id": "AIR-020",
+      "classification": {
+        "expected": "SPECIALIST_REVIEW",
+        "actual": "SPECIALIST_REVIEW",
+        "match": true
+      },
+      "traps": {
+        "expected": [
+          "EXCLUDED"
+        ],
+        "detected": [
+          "EXCLUDED"
+        ],
+        "missed": []
+      },
+      "attributes": {
+        "correct": 10,
+        "total": 10,
+        "details": [
+          {
+            "attr": "donor_make",
+            "expected": "Toyota",
+            "actual": "Toyota",
+            "correct": true
+          },
+          {
+            "attr": "donor_model",
+            "expected": "Corolla",
+            "actual": "Corolla",
+            "correct": true
+          },
+          {
+            "attr": "donor_year",
+            "expected": 2018,
+            "actual": 2018,
+            "correct": true
+          },
+          {
+            "attr": "part_number",
+            "expected": "73970-02???",
+            "actual": "73970-02???",
+            "correct": true
+          },
+          {
+            "attr": "features",
+            "expected": "driver airbag",
+            "actual": "driver airbag",
+            "correct": true
+          },
+          {
+            "attr": "tested",
+            "expected": "untested",
+            "actual": "untested",
+            "correct": true
+          },
+          {
+            "attr": "cosmetic_condition",
+            "expected": "none",
+            "actual": "none",
+            "correct": true
+          },
+          {
+            "attr": "structural_damage",
+            "expected": "none",
+            "actual": "none",
+            "correct": true
+          },
+          {
+            "attr": "glass_condition",
+            "expected": "n/a",
+            "actual": "n/a",
+            "correct": true
+          },
+          {
+            "attr": "included_components",
+            "expected": "module",
+            "actual": "module",
+            "correct": true
+          }
+        ]
+      },
+      "condition_disclosures": {
+        "present": 0,
+        "required": 0
+      },
+      "failed_rules": [
+        "X-01",
+        "L-02",
+        "L-03",
+        "L-07",
+        "L-09"
+      ]
+    }
+  ]
+}

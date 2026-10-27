@@ -1,0 +1,88 @@
+{
+  "attributes": [
+    {
+      "attribute": "part_type",
+      "value": "airbag",
+      "source": "spreadsheet",
+      "source_ref": "spreadsheet",
+      "confidence": 0.98,
+      "note": "Part type from spreadsheet description."
+    },
+    {
+      "attribute": "side",
+      "value": null,
+      "source": "photo",
+      "source_ref": "AIR-020_1.jpg",
+      "confidence": 0.3,
+      "note": "Side not evident from photos or notes."
+    },
+    {
+      "attribute": "manufacturer",
+      "value": "OEM",
+      "source": "photo_label",
+      "source_ref": "AIR-020_2.jpg",
+      "confidence": 0.8,
+      "note": "OEM part number format on label."
+    },
+    {
+      "attribute": "part_number",
+      "value": "73970-02???",
+      "source": "photo_label",
+      "source_ref": "AIR-020_2.jpg",
+      "confidence": 0.5,
+      "note": "Part-number label partially readable — last digits obscured."
+    },
+    {
+      "attribute": "features",
+      "value": "driver airbag",
+      "source": "dismantling_note",
+      "source_ref": "notes.json AIR-020",
+      "confidence": 0.7,
+      "note": "Features observed from dismantling note."
+    },
+    {
+      "attribute": "tested",
+      "value": "untested",
+      "source": "dismantling_note",
+      "source_ref": "notes.json AIR-020",
+      "confidence": 0.5,
+      "note": "No electrical test recorded in notes."
+    },
+    {
+      "attribute": "cosmetic_condition",
+      "value": "none",
+      "source": "photo",
+      "source_ref": "AIR-020_1.jpg",
+      "confidence": 0.8,
+      "note": "No visible cosmetic damage in photos."
+    },
+    {
+      "attribute": "structural_damage",
+      "value": "none",
+      "source": "photo",
+      "source_ref": "photos",
+      "confidence": 0.8,
+      "note": "No visible structural damage in photos."
+    },
+    {
+      "attribute": "glass_condition",
+      "value": "n/a",
+      "source": "photo",
+      "source_ref": "photos",
+      "confidence": 0.85,
+      "note": "Glass not applicable for this part type."
+    },
+    {
+      "attribute": "included_components",
+      "value": "module",
+      "source": "dismantling_note",
+      "source_ref": "notes.json AIR-020",
+      "confidence": 0.7,
+      "note": "Included components per dismantling note."
+    }
+  ],
+  "possible_damage": [],
+  "translated_notes": {
+    "ar_to_en": "Driver airbag module from Corolla 2018"
+  }
+}
