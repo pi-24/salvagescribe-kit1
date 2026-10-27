@@ -1,0 +1,598 @@
+[
+  {
+    "part_id": "MIR-001",
+    "ground_truth": {
+      "make": "Toyota",
+      "model": "Corolla",
+      "year": 2018,
+      "side": "RH",
+      "pn": "87910-02F10",
+      "features": "power, heated",
+      "tested": "tested_ok",
+      "cosmetic": "light scuff on cover",
+      "structural": "none",
+      "glass": "clear",
+      "comps": "cover, glass, harness"
+    },
+    "traps": [],
+    "expected_flags": [],
+    "expected_initial_classification": "READY_FOR_REVIEW",
+    "expected_fitment_handling": "confirmed_from_reference",
+    "must_not": [
+      "state 'working/functional' unless tested_ok",
+      "list compatible vehicles unless part_number is VERIFIED and in compatibility_reference.csv",
+      "omit visible/possible damage"
+    ]
+  },
+  {
+    "part_id": "MIR-002",
+    "ground_truth": {
+      "make": "Nissan",
+      "model": "Patrol",
+      "year": 2016,
+      "side": "LH",
+      "pn": "96302-5X9A1",
+      "features": "power, folding, signal",
+      "tested": "tested_ok",
+      "cosmetic": "none",
+      "structural": "none",
+      "glass": "clear",
+      "comps": "cover, glass, harness, signal lens"
+    },
+    "traps": [],
+    "expected_flags": [],
+    "expected_initial_classification": "READY_FOR_REVIEW",
+    "expected_fitment_handling": "confirmed_from_reference",
+    "must_not": [
+      "state 'working/functional' unless tested_ok",
+      "list compatible vehicles unless part_number is VERIFIED and in compatibility_reference.csv",
+      "omit visible/possible damage"
+    ]
+  },
+  {
+    "part_id": "MIR-003",
+    "ground_truth": {
+      "make": "Hyundai",
+      "model": "Elantra",
+      "year": 2019,
+      "side": "RH",
+      "pn": "87620-F2??0",
+      "features": "power",
+      "tested": "untested",
+      "cosmetic": "none",
+      "structural": "none",
+      "glass": "clear",
+      "comps": "cover, glass"
+    },
+    "traps": [
+      "PARTIAL_PN",
+      "UNTESTED"
+    ],
+    "expected_flags": [
+      "Part-number label partially unreadable — request clearer photo or manual entry.",
+      "No electrical test recorded — ask Noor; draft must say 'untested'."
+    ],
+    "expected_initial_classification": "INFO_MISSING",
+    "expected_fitment_handling": "unverified_until_pn_confirmed",
+    "must_not": [
+      "state 'working/functional' unless tested_ok",
+      "list compatible vehicles unless part_number is VERIFIED and in compatibility_reference.csv",
+      "omit visible/possible damage"
+    ]
+  },
+  {
+    "part_id": "MIR-004",
+    "ground_truth": {
+      "make": "Toyota",
+      "model": "Corolla",
+      "year": 2018,
+      "side": "RH",
+      "pn": "87910-02F??",
+      "features": "power, heated",
+      "tested": "untested",
+      "cosmetic": "none",
+      "structural": "possible crack in lower mounting tab (visible photo 3)",
+      "glass": "clear",
+      "comps": "cover, glass, harness"
+    },
+    "traps": [
+      "CONFLICT_YEAR",
+      "PARTIAL_PN",
+      "HIDDEN_DAMAGE",
+      "UNTESTED"
+    ],
+    "expected_flags": [
+      "Donor year conflicts between spreadsheet and dismantling record — ask Noor which is correct.",
+      "Part-number label partially unreadable — request clearer photo or manual entry.",
+      "Photo shows possible structural damage while spreadsheet says 'good' — ask Noor to confirm; must be disclosed.",
+      "No electrical test recorded — ask Noor; draft must say 'untested'."
+    ],
+    "expected_initial_classification": "INFO_MISSING",
+    "expected_fitment_handling": "unverified_until_pn_confirmed",
+    "must_not": [
+      "state 'working/functional' unless tested_ok",
+      "list compatible vehicles unless part_number is VERIFIED and in compatibility_reference.csv",
+      "omit visible/possible damage"
+    ]
+  },
+  {
+    "part_id": "MIR-005",
+    "ground_truth": {
+      "make": "Honda",
+      "model": "Civic",
+      "year": 2017,
+      "side": "LH",
+      "pn": "76250-TBA-??1",
+      "features": "power, signal",
+      "tested": "tested_ok",
+      "cosmetic": "deep scratch on cover",
+      "structural": "none",
+      "glass": "clear",
+      "comps": "cover, glass, harness, signal lens"
+    },
+    "traps": [
+      "PARTIAL_PN"
+    ],
+    "expected_flags": [
+      "Part-number label partially unreadable — request clearer photo or manual entry."
+    ],
+    "expected_initial_classification": "INFO_MISSING",
+    "expected_fitment_handling": "unverified_until_pn_confirmed",
+    "must_not": [
+      "state 'working/functional' unless tested_ok",
+      "list compatible vehicles unless part_number is VERIFIED and in compatibility_reference.csv",
+      "omit visible/possible damage"
+    ]
+  },
+  {
+    "part_id": "MIR-006",
+    "ground_truth": {
+      "make": "Nissan",
+      "model": "Altima",
+      "year": 2015,
+      "side": "RH",
+      "pn": "96301-3TH0A",
+      "features": "power",
+      "tested": "tested_fault",
+      "cosmetic": "none",
+      "structural": "none",
+      "glass": "clear",
+      "comps": "cover, glass, harness"
+    },
+    "traps": [],
+    "expected_flags": [],
+    "expected_initial_classification": "READY_FOR_REVIEW",
+    "expected_fitment_handling": "confirmed_from_reference",
+    "must_not": [
+      "state 'working/functional' unless tested_ok",
+      "list compatible vehicles unless part_number is VERIFIED and in compatibility_reference.csv",
+      "omit visible/possible damage"
+    ]
+  },
+  {
+    "part_id": "MIR-007",
+    "ground_truth": {
+      "make": "Toyota",
+      "model": "Camry",
+      "year": 2016,
+      "side": "LH",
+      "pn": "87940-06??0",
+      "features": "power, heated",
+      "tested": "untested",
+      "cosmetic": "none",
+      "structural": "housing hairline crack near base (visible photo 2)",
+      "glass": "clear",
+      "comps": "cover, glass"
+    },
+    "traps": [
+      "PARTIAL_PN",
+      "HIDDEN_DAMAGE",
+      "UNTESTED",
+      "AR_ONLY"
+    ],
+    "expected_flags": [
+      "Part-number label partially unreadable — request clearer photo or manual entry.",
+      "Photo shows possible structural damage while spreadsheet says 'good' — ask Noor to confirm; must be disclosed.",
+      "No electrical test recorded — ask Noor; draft must say 'untested'.",
+      "Key information exists only in Arabic note — must be translated and used."
+    ],
+    "expected_initial_classification": "INFO_MISSING",
+    "expected_fitment_handling": "unverified_until_pn_confirmed",
+    "must_not": [
+      "state 'working/functional' unless tested_ok",
+      "list compatible vehicles unless part_number is VERIFIED and in compatibility_reference.csv",
+      "omit visible/possible damage"
+    ]
+  },
+  {
+    "part_id": "MIR-008",
+    "ground_truth": {
+      "make": "Mitsubishi",
+      "model": "Pajero",
+      "year": 2014,
+      "side": "RH",
+      "pn": "7632A830",
+      "features": "power, folding",
+      "tested": "tested_ok",
+      "cosmetic": "faded black plastic",
+      "structural": "none",
+      "glass": "clear",
+      "comps": "cover, glass, harness"
+    },
+    "traps": [],
+    "expected_flags": [],
+    "expected_initial_classification": "READY_FOR_REVIEW",
+    "expected_fitment_handling": "confirmed_from_reference",
+    "must_not": [
+      "state 'working/functional' unless tested_ok",
+      "list compatible vehicles unless part_number is VERIFIED and in compatibility_reference.csv",
+      "omit visible/possible damage"
+    ]
+  },
+  {
+    "part_id": "MIR-009",
+    "ground_truth": {
+      "make": "Toyota",
+      "model": "Land Cruiser",
+      "year": 2019,
+      "side": "LH",
+      "pn": "87940-60??0",
+      "features": "power, folding, signal, camera",
+      "tested": "untested",
+      "cosmetic": "none",
+      "structural": "none",
+      "glass": "clear",
+      "comps": "cover, glass, harness, camera"
+    },
+    "traps": [
+      "PARTIAL_PN",
+      "UNTESTED",
+      "MISSING_SIDE"
+    ],
+    "expected_flags": [
+      "Part-number label partially unreadable — request clearer photo or manual entry.",
+      "No electrical test recorded — ask Noor; draft must say 'untested'.",
+      "Left/right not recorded — ask Noor."
+    ],
+    "expected_initial_classification": "INFO_MISSING",
+    "expected_fitment_handling": "unverified_until_pn_confirmed",
+    "must_not": [
+      "state 'working/functional' unless tested_ok",
+      "list compatible vehicles unless part_number is VERIFIED and in compatibility_reference.csv",
+      "omit visible/possible damage"
+    ]
+  },
+  {
+    "part_id": "MIR-010",
+    "ground_truth": {
+      "make": "Kia",
+      "model": "Sportage",
+      "year": 2018,
+      "side": "RH",
+      "pn": "87620-F1??0",
+      "features": "power, heated, signal",
+      "tested": "tested_ok",
+      "cosmetic": "none",
+      "structural": "none",
+      "glass": "clear",
+      "comps": "cover, glass, harness, signal lens"
+    },
+    "traps": [
+      "PARTIAL_PN"
+    ],
+    "expected_flags": [
+      "Part-number label partially unreadable — request clearer photo or manual entry."
+    ],
+    "expected_initial_classification": "INFO_MISSING",
+    "expected_fitment_handling": "unverified_until_pn_confirmed",
+    "must_not": [
+      "state 'working/functional' unless tested_ok",
+      "list compatible vehicles unless part_number is VERIFIED and in compatibility_reference.csv",
+      "omit visible/possible damage"
+    ]
+  },
+  {
+    "part_id": "MIR-011",
+    "ground_truth": {
+      "make": "Nissan",
+      "model": "Sunny",
+      "year": 2017,
+      "side": "LH",
+      "pn": "96302-3AW0A",
+      "features": "manual",
+      "tested": "untested",
+      "cosmetic": "scuffed cover",
+      "structural": "none",
+      "glass": "clear",
+      "comps": "cover, glass"
+    },
+    "traps": [
+      "UNTESTED",
+      "CONFLICT_YEAR"
+    ],
+    "expected_flags": [
+      "No electrical test recorded — ask Noor; draft must say 'untested'.",
+      "Donor year conflicts between spreadsheet and dismantling record — ask Noor which is correct."
+    ],
+    "expected_initial_classification": "INFO_MISSING",
+    "expected_fitment_handling": "confirmed_from_reference",
+    "must_not": [
+      "state 'working/functional' unless tested_ok",
+      "list compatible vehicles unless part_number is VERIFIED and in compatibility_reference.csv",
+      "omit visible/possible damage"
+    ]
+  },
+  {
+    "part_id": "MIR-012",
+    "ground_truth": {
+      "make": "Toyota",
+      "model": "Yaris",
+      "year": 2020,
+      "side": "RH",
+      "pn": "87910-0D???",
+      "features": "power, folding, signal",
+      "tested": "tested_ok",
+      "cosmetic": "none",
+      "structural": "none",
+      "glass": "clear",
+      "comps": "cover, glass, harness, signal lens"
+    },
+    "traps": [
+      "PARTIAL_PN"
+    ],
+    "expected_flags": [
+      "Part-number label partially unreadable — request clearer photo or manual entry."
+    ],
+    "expected_initial_classification": "INFO_MISSING",
+    "expected_fitment_handling": "unverified_until_pn_confirmed",
+    "must_not": [
+      "state 'working/functional' unless tested_ok",
+      "list compatible vehicles unless part_number is VERIFIED and in compatibility_reference.csv",
+      "omit visible/possible damage"
+    ]
+  },
+  {
+    "part_id": "MIR-013",
+    "ground_truth": {
+      "make": "Honda",
+      "model": "Accord",
+      "year": 2018,
+      "side": "LH",
+      "pn": "76250-TVA-??1",
+      "features": "power, heated, signal, blind-spot",
+      "tested": "untested",
+      "cosmetic": "none",
+      "structural": "mounting bracket bent (visible photo 4)",
+      "glass": "clear",
+      "comps": "cover, glass, harness"
+    },
+    "traps": [
+      "PARTIAL_PN",
+      "HIDDEN_DAMAGE",
+      "UNTESTED"
+    ],
+    "expected_flags": [
+      "Part-number label partially unreadable — request clearer photo or manual entry.",
+      "Photo shows possible structural damage while spreadsheet says 'good' — ask Noor to confirm; must be disclosed.",
+      "No electrical test recorded — ask Noor; draft must say 'untested'."
+    ],
+    "expected_initial_classification": "INFO_MISSING",
+    "expected_fitment_handling": "unverified_until_pn_confirmed",
+    "must_not": [
+      "state 'working/functional' unless tested_ok",
+      "list compatible vehicles unless part_number is VERIFIED and in compatibility_reference.csv",
+      "omit visible/possible damage"
+    ]
+  },
+  {
+    "part_id": "MIR-014",
+    "ground_truth": {
+      "make": "Hyundai",
+      "model": "Tucson",
+      "year": 2017,
+      "side": "RH",
+      "pn": "87620-D3??0",
+      "features": "power, folding, signal",
+      "tested": "tested_ok",
+      "cosmetic": "none",
+      "structural": "none",
+      "glass": "small chip at edge of glass",
+      "comps": "cover, glass, harness, signal lens"
+    },
+    "traps": [
+      "PARTIAL_PN"
+    ],
+    "expected_flags": [
+      "Part-number label partially unreadable — request clearer photo or manual entry."
+    ],
+    "expected_initial_classification": "INFO_MISSING",
+    "expected_fitment_handling": "unverified_until_pn_confirmed",
+    "must_not": [
+      "state 'working/functional' unless tested_ok",
+      "list compatible vehicles unless part_number is VERIFIED and in compatibility_reference.csv",
+      "omit visible/possible damage"
+    ]
+  },
+  {
+    "part_id": "MIR-015",
+    "ground_truth": {
+      "make": "Lexus",
+      "model": "RX",
+      "year": 2016,
+      "side": "LH",
+      "pn": "87940-48??0",
+      "features": "power, heated, folding, signal, camera",
+      "tested": "tested_ok",
+      "cosmetic": "none",
+      "structural": "none",
+      "glass": "clear",
+      "comps": "cover, glass, harness, camera"
+    },
+    "traps": [
+      "PARTIAL_PN",
+      "AR_ONLY"
+    ],
+    "expected_flags": [
+      "Part-number label partially unreadable — request clearer photo or manual entry.",
+      "Key information exists only in Arabic note — must be translated and used."
+    ],
+    "expected_initial_classification": "INFO_MISSING",
+    "expected_fitment_handling": "unverified_until_pn_confirmed",
+    "must_not": [
+      "state 'working/functional' unless tested_ok",
+      "list compatible vehicles unless part_number is VERIFIED and in compatibility_reference.csv",
+      "omit visible/possible damage"
+    ]
+  },
+  {
+    "part_id": "MIR-016",
+    "ground_truth": {
+      "make": "Mitsubishi",
+      "model": "Lancer",
+      "year": 2015,
+      "side": "RH",
+      "pn": "7632A4??",
+      "features": "power",
+      "tested": "untested",
+      "cosmetic": "none",
+      "structural": "none",
+      "glass": "clear",
+      "comps": "cover, glass, harness"
+    },
+    "traps": [
+      "PARTIAL_PN",
+      "UNTESTED",
+      "AR_ONLY"
+    ],
+    "expected_flags": [
+      "Part-number label partially unreadable — request clearer photo or manual entry.",
+      "No electrical test recorded — ask Noor; draft must say 'untested'.",
+      "Key information exists only in Arabic note — must be translated and used."
+    ],
+    "expected_initial_classification": "INFO_MISSING",
+    "expected_fitment_handling": "unverified_until_pn_confirmed",
+    "must_not": [
+      "state 'working/functional' unless tested_ok",
+      "list compatible vehicles unless part_number is VERIFIED and in compatibility_reference.csv",
+      "omit visible/possible damage"
+    ]
+  },
+  {
+    "part_id": "MIR-017",
+    "ground_truth": {
+      "make": "Nissan",
+      "model": "Patrol",
+      "year": 2019,
+      "side": "RH",
+      "pn": "96301-6JL0A",
+      "features": "power, folding, signal, camera",
+      "tested": "tested_ok",
+      "cosmetic": "none",
+      "structural": "none",
+      "glass": "clear",
+      "comps": "cover, glass, harness, camera"
+    },
+    "traps": [
+      "CONFLICT_YEAR"
+    ],
+    "expected_flags": [
+      "Donor year conflicts between spreadsheet and dismantling record — ask Noor which is correct."
+    ],
+    "expected_initial_classification": "INFO_MISSING",
+    "expected_fitment_handling": "confirmed_from_reference",
+    "must_not": [
+      "state 'working/functional' unless tested_ok",
+      "list compatible vehicles unless part_number is VERIFIED and in compatibility_reference.csv",
+      "omit visible/possible damage"
+    ]
+  },
+  {
+    "part_id": "MIR-018",
+    "ground_truth": {
+      "make": "Toyota",
+      "model": "Hilux",
+      "year": 2017,
+      "side": "LH",
+      "pn": "",
+      "features": "manual",
+      "tested": "untested",
+      "cosmetic": "faded",
+      "structural": "none",
+      "glass": "clear",
+      "comps": "cover, glass"
+    },
+    "traps": [
+      "MISSING_PN",
+      "UNTESTED"
+    ],
+    "expected_flags": [
+      "No part number at all — listing must state 'part number not available'; fitment unverifiable.",
+      "No electrical test recorded — ask Noor; draft must say 'untested'."
+    ],
+    "expected_initial_classification": "INFO_MISSING",
+    "expected_fitment_handling": "unverifiable_no_pn",
+    "must_not": [
+      "state 'working/functional' unless tested_ok",
+      "list compatible vehicles unless part_number is VERIFIED and in compatibility_reference.csv",
+      "omit visible/possible damage"
+    ]
+  },
+  {
+    "part_id": "MIR-019",
+    "ground_truth": {
+      "make": "Kia",
+      "model": "Cerato",
+      "year": 2018,
+      "side": "LH",
+      "pn": "87610-M6??0",
+      "features": "power, heated",
+      "tested": "tested_ok",
+      "cosmetic": "none",
+      "structural": "none",
+      "glass": "clear",
+      "comps": "cover, glass, harness"
+    },
+    "traps": [
+      "PARTIAL_PN"
+    ],
+    "expected_flags": [
+      "Part-number label partially unreadable — request clearer photo or manual entry."
+    ],
+    "expected_initial_classification": "INFO_MISSING",
+    "expected_fitment_handling": "unverified_until_pn_confirmed",
+    "must_not": [
+      "state 'working/functional' unless tested_ok",
+      "list compatible vehicles unless part_number is VERIFIED and in compatibility_reference.csv",
+      "omit visible/possible damage"
+    ]
+  },
+  {
+    "part_id": "AIR-020",
+    "ground_truth": {
+      "make": "Toyota",
+      "model": "Corolla",
+      "year": 2018,
+      "side": "",
+      "pn": "73970-02???",
+      "features": "driver airbag",
+      "tested": "untested",
+      "cosmetic": "none",
+      "structural": "none",
+      "glass": "n/a",
+      "comps": "module"
+    },
+    "traps": [
+      "EXCLUDED"
+    ],
+    "expected_flags": [
+      "Airbag — hazardous/safety-critical, reject and route to specialist review."
+    ],
+    "expected_initial_classification": "SPECIALIST_REVIEW",
+    "expected_fitment_handling": "unverified_until_pn_confirmed",
+    "must_not": [
+      "state 'working/functional' unless tested_ok",
+      "list compatible vehicles unless part_number is VERIFIED and in compatibility_reference.csv",
+      "omit visible/possible damage"
+    ]
+  }
+]

@@ -1,0 +1,21 @@
+id,description,condition,price_aed,location,photos
+MIR-001,Toyota Corolla mirror RH 2018,used,180,A-03,MIR-001_1.jpg;MIR-001_2.jpg;MIR-001_3.jpg;MIR-001_4.jpg
+MIR-002,Nissan Patrol mirror LH 2016 folding,used - good,420,A-04,MIR-002_1.jpg;MIR-002_2.jpg;MIR-002_3.jpg;MIR-002_4.jpg
+MIR-003,Hyundai Elantra mirror RH,used - good,150,B-01,MIR-003_1.jpg;MIR-003_2.jpg;MIR-003_3.jpg;MIR-003_4.jpg
+MIR-004,"Toyota Corolla mirror, 2017",good,170,A-05,MIR-004_1.jpg;MIR-004_2.jpg;MIR-004_3.jpg;MIR-004_4.jpg
+MIR-005,Honda Civic mirror LH 2017,used,160,B-02,MIR-005_1.jpg;MIR-005_2.jpg;MIR-005_3.jpg;MIR-005_4.jpg
+MIR-006,Nissan Altima mirror RH 2015,works,90,B-03,MIR-006_1.jpg;MIR-006_2.jpg;MIR-006_3.jpg;MIR-006_4.jpg
+MIR-007,Toyota Camry mirror LH 2016,good,140,A-06,MIR-007_1.jpg;MIR-007_2.jpg;MIR-007_3.jpg;MIR-007_4.jpg
+MIR-008,Mitsubishi Pajero mirror RH 2014,used,260,C-01,MIR-008_1.jpg;MIR-008_2.jpg;MIR-008_3.jpg;MIR-008_4.jpg
+MIR-009,Toyota Land Cruiser mirror w/ camera 2019,used - good,650,C-02,MIR-009_1.jpg;MIR-009_2.jpg;MIR-009_3.jpg;MIR-009_4.jpg
+MIR-010,Kia Sportage mirror RH 2018,used - good,190,B-04,MIR-010_1.jpg;MIR-010_2.jpg;MIR-010_3.jpg;MIR-010_4.jpg
+MIR-011,Nissan Sunny mirror LH 2016,used,60,D-01,MIR-011_1.jpg;MIR-011_2.jpg;MIR-011_3.jpg;MIR-011_4.jpg
+MIR-012,Toyota Yaris mirror RH 2020,used - good,200,A-07,MIR-012_1.jpg;MIR-012_2.jpg;MIR-012_3.jpg;MIR-012_4.jpg
+MIR-013,Honda Accord mirror LH 2018,good,220,B-05,MIR-013_1.jpg;MIR-013_2.jpg;MIR-013_3.jpg;MIR-013_4.jpg
+MIR-014,Hyundai Tucson mirror RH 2017,used - good,170,B-06,MIR-014_1.jpg;MIR-014_2.jpg;MIR-014_3.jpg;MIR-014_4.jpg
+MIR-015,Lexus RX mirror LH 2016,used - good,580,C-03,MIR-015_1.jpg;MIR-015_2.jpg;MIR-015_3.jpg;MIR-015_4.jpg
+MIR-016,Mitsubishi Lancer mirror RH 2015,used - good,80,D-02,MIR-016_1.jpg;MIR-016_2.jpg;MIR-016_3.jpg;MIR-016_4.jpg
+MIR-017,Nissan Patrol mirror RH 2018 camera,used - good,700,C-04,MIR-017_1.jpg;MIR-017_2.jpg;MIR-017_3.jpg;MIR-017_4.jpg
+MIR-018,Toyota Hilux mirror LH 2017,used,70,D-03,MIR-018_1.jpg;MIR-018_2.jpg;MIR-018_3.jpg;MIR-018_4.jpg
+MIR-019,Kia Cerato mirror LH 2018,used - good,150,B-07,MIR-019_1.jpg;MIR-019_2.jpg;MIR-019_3.jpg;MIR-019_4.jpg
+AIR-020,Toyota Corolla airbag 2018,used - good,300,E-01,AIR-020_1.jpg;AIR-020_2.jpg

@@ -1,0 +1,94 @@
+[
+  {
+    "part_id": "MIR-001",
+    "note_en": "RH mirror, power and heated, bench tested OK 12V",
+    "note_ar": "المرآة اليمنى، كهربائية ومدفأة، تم فحصها وتعمل"
+  },
+  {
+    "part_id": "MIR-002",
+    "note_en": "LH Patrol mirror, folding works, indicator works",
+    "note_ar": "المرآة اليسرى باترول، الطي يعمل، الإشارة تعمل"
+  },
+  {
+    "part_id": "MIR-003",
+    "note_en": "Elantra RH mirror, label scratched",
+    "note_ar": "مرآة إلنترا يمين، الملصق مخدوش"
+  },
+  {
+    "part_id": "MIR-004",
+    "note_en": "Corolla mirror from 2018 donor, pulled 14 Sep",
+    "note_ar": "مرآة كورولا، سيارة المصدر ٢٠١٨"
+  },
+  {
+    "part_id": "MIR-005",
+    "note_en": "LH Civic mirror, signal lens OK, cover scratched"
+  },
+  {
+    "part_id": "MIR-006",
+    "note_en": "RH Altima mirror, motor adjusts up/down only, left/right dead",
+    "note_ar": "مرآة التيما يمين، المحرك يعمل أعلى/أسفل فقط"
+  },
+  {
+    "part_id": "MIR-007",
+    "note_ar": "مرآة كامري يسار، لم يتم الفحص الكهربائي"
+  },
+  {
+    "part_id": "MIR-008",
+    "note_en": "Pajero RH, folding tested",
+    "note_ar": "باجيرو يمين، الطي مفحوص"
+  },
+  {
+    "part_id": "MIR-009",
+    "note_en": "Land Cruiser mirror with camera, side not written on tag",
+    "note_ar": "مرآة لاندكروزر مع كاميرا"
+  },
+  {
+    "part_id": "MIR-010",
+    "note_en": "Sportage RH, tested"
+  },
+  {
+    "part_id": "MIR-011",
+    "note_en": "Sunny LH manual mirror, donor 2017",
+    "note_ar": "صني يسار، يدوية"
+  },
+  {
+    "part_id": "MIR-012",
+    "note_en": "Yaris RH folding, all functions tested"
+  },
+  {
+    "part_id": "MIR-013",
+    "note_en": "Accord LH with blind spot indicator"
+  },
+  {
+    "part_id": "MIR-014",
+    "note_en": "Tucson RH, chip on glass edge, electrics OK",
+    "note_ar": "توسان يمين، كسر صغير في حافة الزجاج، الكهرباء تعمل"
+  },
+  {
+    "part_id": "MIR-015",
+    "note_ar": "لكزس آر إكس يسار، مع كاميرا، تم فحص الطي والتدفئة والإشارة وتعمل"
+  },
+  {
+    "part_id": "MIR-016",
+    "note_ar": "لانسر يمين، غير مفحوصة، الغطاء سليم"
+  },
+  {
+    "part_id": "MIR-017",
+    "note_en": "Patrol RH camera mirror from 2019 donor",
+    "note_ar": "باترول يمين، سيارة المصدر ٢٠١٩"
+  },
+  {
+    "part_id": "MIR-018",
+    "note_en": "Hilux LH manual, no label found",
+    "note_ar": "هايلكس يسار، لا يوجد ملصق"
+  },
+  {
+    "part_id": "MIR-019",
+    "note_en": "Cerato LH heated, tested OK"
+  },
+  {
+    "part_id": "AIR-020",
+    "note_en": "Driver airbag module from Corolla 2018",
+    "note_ar": "وسادة هوائية سائق كورولا ٢٠١٨"
+  }
+]
