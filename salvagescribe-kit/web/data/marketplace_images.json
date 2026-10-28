@@ -1,0 +1,62 @@
+[
+  {
+    "id": "salvage-1",
+    "source": "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=800&q=80",
+    "local": "/marketglass/images/salvage-1.jpg",
+    "bytes": 47209
+  },
+  {
+    "id": "salvage-2",
+    "source": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80",
+    "local": "/marketglass/images/salvage-2.jpg",
+    "bytes": 58369
+  },
+  {
+    "id": "salvage-3",
+    "source": "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=800&q=80",
+    "local": "/marketglass/images/salvage-3.jpg",
+    "bytes": 133072
+  },
+  {
+    "id": "salvage-4",
+    "source": "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80",
+    "local": "/marketglass/images/salvage-4.jpg",
+    "bytes": 249051
+  },
+  {
+    "id": "salvage-5",
+    "source": "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80",
+    "local": "/marketglass/images/salvage-5.jpg",
+    "bytes": 90744
+  },
+  {
+    "id": "salvage-6",
+    "source": "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=800&q=80",
+    "local": "/marketglass/images/salvage-6.jpg",
+    "bytes": 61672
+  },
+  {
+    "id": "salvage-7",
+    "source": "https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?auto=format&fit=crop&w=800&q=80",
+    "local": "/marketglass/images/salvage-7.jpg",
+    "bytes": 129512
+  },
+  {
+    "id": "salvage-8",
+    "source": "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80",
+    "local": "/marketglass/images/salvage-8.jpg",
+    "bytes": 90655
+  },
+  {
+    "id": "salvage-9",
+    "source": "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80",
+    "local": "/marketglass/images/salvage-9.jpg",
+    "bytes": 84264
+  },
+  {
+    "id": "salvage-10",
+    "source": "https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=800&q=80",
+    "local": "/marketglass/images/salvage-10.jpg",
+    "bytes": 66431
+  }
+]

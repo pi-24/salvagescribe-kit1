@@ -1,6 +1,23 @@
 "use strict";
 const $ = id => document.getElementById(id);
 const esc = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+// Each supplied listing carries its own exact thumbnail mapping from the catalog.
+const DEFAULT_THUMBNAIL = "/marketglass/images/image-unavailable.svg";
+function thumbnailFor(record) {
+  const ledger = record.ledger;
+  const specified = record.thumbnail || record.img || record.image_url || record.listing?.imageUrl || ledger.thumbnail || ledger.spreadsheet_row?.thumbnail;
+  const photo = ledger.photos?.find(p => p.url);
+  return (typeof specified === "string" && specified) || photo?.url || DEFAULT_THUMBNAIL;
+}
+function bindThumbnailFallbacks(scope) {
+  scope.querySelectorAll("img[data-item-thumbnail]").forEach(img => {
+    img.addEventListener("error", () => {
+      if (img.dataset.fallbackApplied) return;
+      img.dataset.fallbackApplied = "true";
+      img.src = DEFAULT_THUMBNAIL;
+    });
+  });
+}
 const state = { category: "all", search: "", sort: "recent", layout: "box", corridor: false, currentPart: null, lang: "en" };
 let LISTINGS = [], records = [], user = null, preview = true, setupError = "", toastTimer;
 const labels = { READY_FOR_REVIEW: "Ready for seller review", INFO_MISSING: "Information missing", SPECIALIST_REVIEW: "Specialist review" };
@@ -22,7 +39,19 @@ function toast(message) {
 const attr = (r, key) => r?.ledger.ledger[key]?.value;
 const current = () => records.find(r => r.part_id === state.currentPart?.id);
 function syncListings() {
-  LISTINGS = records.map((r, i) => ({ id: r.part_id, cat: /mirror/i.test(r.ledger.spreadsheet_row?.description) ? "mirrors" : /light/i.test(r.ledger.spreadsheet_row?.description) ? "lights" : "body", title: r.ledger.spreadsheet_row?.description || r.part_id, donor: [attr(r,"donor_make"), attr(r,"donor_model"), attr(r,"donor_year")].filter(Boolean).join(" "), partNum: attr(r,"part_number") || "Not confirmed", priceAed: Number(attr(r,"asking_price") || r.ledger.spreadsheet_row?.price_aed) || null, readiness: r.readiness.class === "READY_FOR_REVIEW" ? "ready" : r.readiness.class === "SPECIALIST_REVIEW" ? "specialist" : "missing", record: r, recent: i }));
+  LISTINGS = records.map((r, i) => {
+    const listing = r.listing || r.ledger.marketplace_listing;
+    return {
+      id: r.part_id, listingId: listing?.id || r.part_id, listing, img: thumbnailFor(r),
+      cat: listing?.category || (/mirror/i.test(r.ledger.spreadsheet_row?.description) ? "mirrors" : /light/i.test(r.ledger.spreadsheet_row?.description) ? "lights" : "body"),
+      title: listing?.title || r.ledger.spreadsheet_row?.description || r.part_id,
+      donor: listing?.donorVehicle || [attr(r,"donor_make"), attr(r,"donor_model"), attr(r,"donor_year")].filter(Boolean).join(" "),
+      partNum: listing?.partNumber || attr(r,"part_number") || "Not confirmed",
+      priceAed: Number(listing?.price ?? attr(r,"asking_price") ?? r.ledger.spreadsheet_row?.price_aed) || null,
+      readiness: listing ? listing.readinessClass === "readiness-ready" ? "ready" : listing.readinessClass === "readiness-conflict" ? "specialist" : "missing" : r.readiness.class === "READY_FOR_REVIEW" ? "ready" : r.readiness.class === "SPECIALIST_REVIEW" ? "specialist" : "missing",
+      record: r, recent: i,
+    };
+  });
   if (state.currentPart) state.currentPart = LISTINGS.find(r => r.id === state.currentPart.id);
   state.currentPart ||= LISTINGS[0];
   const all = document.querySelector('.chip[data-category="all"]');
@@ -37,7 +66,8 @@ function visibleListings() {
 function renderListings() {
   const wrap = $("listingsContainer");
   wrap.className = state.layout === "box" ? "marketplace-box-grid" : "marketplace-list-grid";
-  wrap.innerHTML = visibleListings().map(r => `<article class="glass-card"><div class="card-canvas evidence-placeholder" style="display:grid;place-items:center;padding:24px;background:linear-gradient(135deg,var(--glass-surface-inset),var(--glass-surface-elevated))"><div style="text-align:center"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="5" y="3" width="14" height="13" rx="5"/><path d="M12 16v5m-4 0h8M9 7h6"/></svg><p>${esc(r.id)}</p><small>Photo evidence manifest · ${r.record.ledger.photos.length} references</small></div><div class="card-badges-top"><span class="glass-badge">${esc(labels[r.record.readiness.class])}</span></div></div><div class="card-body"><h2 class="card-title">${esc(r.title)}</h2><p class="card-location">${esc(r.donor || "Donor unconfirmed")} · ${esc(r.id)}</p><p class="card-location">Part number: ${esc(r.partNum)}</p><div class="card-price-row"><strong class="card-price">${r.priceAed ? `AED ${r.priceAed.toLocaleString()}` : "Price not recorded"}</strong></div><div class="card-actions"><button class="btn-primary-liquid" data-open="${esc(r.id)}">Review evidence</button><button class="btn-subtle-liquid" data-chat="${esc(r.id)}">Message</button></div></div></article>`).join("") || '<p role="status">No parts match this filter.</p>';
+  wrap.innerHTML = visibleListings().map(r => `<article class="glass-card" data-listing-id="${esc(r.listingId)}"><div class="card-canvas"><img class="card-img" data-item-thumbnail data-thumbnail-source="${esc(r.listing?.imageUrl || r.img)}" src="${esc(r.img)}" alt="${esc(r.title)} — ${esc(r.id)} thumbnail" loading="lazy" decoding="async" width="640" height="480"/><div class="card-badges-top"><span class="glass-badge">${esc(r.listing?.readinessStatus || labels[r.record.readiness.class])}</span></div></div><div class="card-body"><h2 class="card-title">${esc(r.title)}</h2><p class="card-location">${esc(r.donor || "Donor unconfirmed")} · ${esc(r.listingId)}</p>${r.listing ? `<p class="card-location">${esc(r.listing.location)} · ${esc(r.listing.timeAgo)}</p><p class="card-location">${esc(r.listing.dealRating)} · ${esc(r.listing.photoCount)} photos</p>` : ""}<p class="card-location">Part number: ${esc(r.partNum)}</p><div class="card-price-row"><strong class="card-price">${r.priceAed ? `AED ${r.priceAed.toLocaleString()}` : "Price not recorded"}</strong></div>${r.listing?.seller ? `<p class="card-location">${esc(r.listing.seller.name)} · ${esc(r.listing.seller.rating)} / 5 · ${esc(r.listing.seller.salesCount)} sales</p>` : ""}<div class="card-actions"><button class="btn-primary-liquid" data-open="${esc(r.id)}">Review evidence</button><button class="btn-subtle-liquid" data-chat="${esc(r.id)}">Message</button></div></div></article>`).join("") || '<p role="status">No parts match this filter.</p>';
+  bindThumbnailFallbacks(wrap);
   wrap.querySelectorAll("[data-open]").forEach(b => b.onclick = () => { state.currentPart = LISTINGS.find(r => r.id === b.dataset.open); openSalvageAssistant(); });
   wrap.querySelectorAll("[data-chat]").forEach(b => b.onclick = () => openChatDrawerFor(b.dataset.chat));
 }
@@ -246,7 +276,7 @@ function switchAssistantTab(tab) {
   document.querySelectorAll(".salvage-panel").forEach(p => p.classList.toggle("active", p.id === "panel" + tab.charAt(0).toUpperCase() + tab.slice(1)));
 }
 function openAssistantComplianceTab() { openSalvageAssistant(); switchAssistantTab("compliance"); }
-function loadTestCase(mode) { const r = LISTINGS.find(r => r.id === (mode === "normal" ? "MIR-001" : "MIR-004")); if (!r) return toast("This part is not in your saved inventory."); state.currentPart = r; renderRecord(); switchAssistantTab("stage1"); }
+function loadTestCase(mode) { const r = LISTINGS.find(r => r.id === (mode === "normal" ? "SALVAGE-2" : "SALVAGE-1")); if (!r) return toast("This part is not in your saved inventory."); state.currentPart = r; renderRecord(); switchAssistantTab("stage1"); }
 function setAssistantLanguage(lang) { state.lang = lang; $("btnLangEN").classList.toggle("active", lang === "en"); $("btnLangAR").classList.toggle("active", lang === "ar"); renderRecord(); }
 function renderRecord() {
   const r = current(); if (!r) return;
@@ -258,7 +288,8 @@ function renderRecord() {
   $("tab4StatusBadge").textContent = labels[r.readiness.class];
   $("tabComplianceBadge").textContent = "Internal checklist";
   const sourceMarkup = l.photos.map(p => `<div class="glass-panel" style="padding:14px">${p.url ? `<img src="${esc(p.url)}" alt="${esc(p.shows || p.file)}" style="max-width:100%;max-height:180px"/>` : `<strong>${esc(p.file || p.name || "Photo reference")}</strong>`}<p>${esc(p.shows || "Uploaded evidence")}</p></div>`).join("");
-  $("panelStage1").innerHTML = `<div class="inventory-evidence-grid"><section class="source-evidence-card"><h3 class="card-section-heading">${state.lang === "ar" ? "مصادر الأدلة" : "Source evidence"}</h3><h4>Inventory spreadsheet</h4><pre class="raw-snippet" style="white-space:pre-wrap">${esc(JSON.stringify(l.spreadsheet_row, null, 2))}</pre><h4>Yard notes · English</h4><p>${esc(l.notes.en || "No English note recorded")}</p><h4>ملاحظات الساحة</h4><p dir="rtl" lang="ar">${esc(l.notes.ar || "لا توجد ملاحظات")}</p><h4>Photo evidence</h4><div class="source-photos-grid">${sourceMarkup || "No photos recorded"}</div></section><section class="provenance-ledger-card"><h3 class="card-section-heading">Evidence ledger · ${esc(r.part_id)}</h3><div style="overflow:auto"><table class="provenance-table"><thead><tr><th>Attribute</th><th>Value</th><th>Source</th><th>Status</th></tr></thead><tbody>${Object.entries(l.ledger).map(([key,a]) => `<tr><td>${esc(key.replaceAll("_"," "))}</td><td>${esc(a.value ?? "Not confirmed")}</td><td>${esc(a.source || (a.candidates || []).map(c => c.source).filter(Boolean).join(", ") || "—")}</td><td>${esc(a.status)}</td></tr>`).join("")}</tbody></table></div></section></div><div class="evidence-actions"><button class="btn-primary-liquid" onclick="runAction('ingest')">Extract evidence</button><button class="btn-subtle-liquid" onclick="switchAssistantTab('stage2')">Resolve gaps & conflicts</button></div>`;
+  $("panelStage1").innerHTML = `<div class="inventory-evidence-grid"><section class="source-evidence-card"><h3 class="card-section-heading">${state.lang === "ar" ? "مصادر الأدلة" : "Source evidence"}</h3><figure class="record-thumbnail"><img data-item-thumbnail src="${esc(thumbnailFor(r))}" alt="${esc(state.currentPart.title)} thumbnail" width="640" height="480"/><figcaption>Listing thumbnail</figcaption></figure><h4>Inventory spreadsheet</h4><pre class="raw-snippet" style="white-space:pre-wrap">${esc(JSON.stringify(l.spreadsheet_row, null, 2))}</pre><h4>Yard notes · English</h4><p>${esc(l.notes.en || "No English note recorded")}</p><h4>ملاحظات الساحة</h4><p dir="rtl" lang="ar">${esc(l.notes.ar || "لا توجد ملاحظات")}</p><h4>Photo evidence</h4><div class="source-photos-grid">${sourceMarkup || "No photos recorded"}</div></section><section class="provenance-ledger-card"><h3 class="card-section-heading">Evidence ledger · ${esc(r.part_id)}</h3><div style="overflow:auto"><table class="provenance-table"><thead><tr><th>Attribute</th><th>Value</th><th>Source</th><th>Status</th></tr></thead><tbody>${Object.entries(l.ledger).map(([key,a]) => `<tr><td>${esc(key.replaceAll("_"," "))}</td><td>${esc(a.value ?? "Not confirmed")}</td><td>${esc(a.source || (a.candidates || []).map(c => c.source).filter(Boolean).join(", ") || "—")}</td><td>${esc(a.status)}</td></tr>`).join("")}</tbody></table></div></section></div><div class="evidence-actions"><button class="btn-primary-liquid" onclick="runAction('ingest')">Extract evidence</button><button class="btn-subtle-liquid" onclick="switchAssistantTab('stage2')">Resolve gaps & conflicts</button></div>`;
+  bindThumbnailFallbacks($("panelStage1"));
   $("panelStage2").innerHTML = `<div class="conflict-alert-card"><h3>${state.lang === "ar" ? "أكد المعلومات من المصدر" : "Confirm attributes from source evidence"}</h3><p>Only enter values you have checked. Blank fields stay unresolved. Saving updates the ledger, draft and readiness together.</p></div><form id="correctionForm"><div class="questions-grid">${Object.entries(l.ledger).map(([key,a]) => `<div class="question-card evidence-field"><label for="field-${esc(key)}">${esc(key.replaceAll("_"," "))} · ${esc(a.status)}</label>${key === "tested" ? `<select id="field-${key}" class="glass-text-input" name="${key}"><option value="">Choose recorded status</option>${["tested_ok","tested_fault","untested"].map(v => `<option value="${v}" ${a.value === v ? "selected" : ""}>${v.replaceAll("_"," ")}</option>`).join("")}</select>` : `<input id="field-${esc(key)}" class="glass-text-input" name="${esc(key)}" value="${esc(a.value ?? "")}" placeholder="Not confirmed" ${a.status === "VERIFIED" ? "data-confirmed" : ""}/>`}<label style="font-weight:400"><input type="checkbox" name="verify-${esc(key)}"/> Confirm this recorded value</label><small>${esc((a.candidates || []).map(c => `${c.value} (${c.source})`).join(" · ") || "No source candidates")}</small></div>`).join("")}</div><div class="evidence-actions"><button type="submit" class="btn-primary-liquid">Save corrections & carry over</button></div></form>`;
   $("correctionForm").onsubmit = e => {
     e.preventDefault(); const changes = {};
@@ -277,7 +308,7 @@ let actionBusy = false;
 async function runAction(action, extra = {}) {
   if (actionBusy) return;
   if (!user) { window.location.assign("/login?next=%2F"); return; }
-  if (preview) return toast(setupError || "Import the existing inventory before saving changes.");
+  if (current()?.preview) return toast(setupError || "Import the catalog before saving changes.");
   actionBusy = true;
   const buttons = [...$("salvageAssistantModal").querySelectorAll("button")];
   const disabled = buttons.map(b => b.disabled); buttons.forEach(b => b.disabled = true);
@@ -304,11 +335,15 @@ async function openChatDrawer() {
   $("m2mDrawer").classList.add("open"); $("floatingChatPill").classList.add("hidden");
   $("drawerSellerName").textContent = "Inventory conversations";
   document.querySelector(".drawer-header-info p").textContent = "Messages are saved to your account";
-  $("drawerSellerAvatar").style.display = "none"; $("anchorThumb").style.display = "none";
+  $("drawerSellerAvatar").style.display = "none";
+  $("anchorThumb").style.display = "";
+  $("anchorThumb").src = state.currentPart?.img || DEFAULT_THUMBNAIL;
+  $("anchorThumb").alt = `${state.currentPart?.title || "Inventory item"} thumbnail`;
+  $("anchorThumb").onerror = () => { $("anchorThumb").onerror = null; $("anchorThumb").src = DEFAULT_THUMBNAIL; };
   $("anchorTitle").textContent = state.currentPart?.title || "Select a part";
   $("anchorPrice").textContent = state.currentPart?.priceAed ? `AED ${state.currentPart.priceAed}` : "Price not recorded";
   const canvas = $("messagesCanvas"); canvas.innerHTML = ""; activeThread = null;
-  if (!user || preview) { appendMessage("Sign in and import inventory to create a conversation with another registered account.",false); return; }
+  if (!user || current()?.preview) { appendMessage("Sign in and import inventory to create a conversation with another registered account.",false); return; }
   try {
     const { threads } = await api("/api/platform?view=threads");
     const selected = threads.filter(t => t.record_id === current()?.id || t.subject?.startsWith(state.currentPart?.id));
@@ -368,10 +403,16 @@ async function loadInventory() {
     try { data = await api("/api/platform"); }
     catch (err) { if (![401, 503].includes(err.status)) throw err; }
     user = data?.user || null;
-    records = data?.records || [];
+    const catalog = (await api("/api/catalog")).records;
+    const saved = new Map((data?.records || []).map(r => [r.part_id, r]));
+    records = catalog.map(source => {
+      const record = saved.get(source.part_id);
+      return record ? { ...record, listing: source.listing, thumbnail: source.thumbnail, preview: false } : source;
+    });
+    // Retain seller-created inventory; old demo catalogs do not replace the supplied feed.
+    records.push(...(data?.records || []).filter(r => !/^(MIR|AIR|SALVAGE)-/i.test(r.part_id) && !r.ledger.demo));
     setupError = data?.error || "";
-    preview = !user || !records.length;
-    if (preview) records = (await api("/api/catalog")).records;
+    preview = records.some(r => r.preview);
     if (user) {
       $("marketUser").textContent = user.email;
       $("marketAuth").textContent = "Sign out";
@@ -385,7 +426,7 @@ async function loadInventory() {
     notice.innerHTML = !user
       ? '<span>Browse all inventory as a guest. Sign in to save changes, prepare drafts or send messages.</span><a class="location-btn" href="/login">Sign in or create an account</a>'
       : setupError ? `<span>${esc(setupError)}</span>`
-      : preview ? '<span>Previewing the existing inventory. Import once to save corrections and drafts to your account.</span><button id="importExisting">Import existing inventory</button>'
+      : preview ? '<span>Browse the supplied catalog. Import listings to save corrections and drafts to your account.</span><button id="importExisting">Import listings</button>'
       : `<span>${records.length} saved parts · evidence, drafts and readiness from your account</span>`;
     if ($("importExisting")) $("importExisting").onclick = async e => {
       e.target.disabled = true;
@@ -395,7 +436,7 @@ async function loadInventory() {
     syncListings();
     const requested = new URLSearchParams(location.search).get("part");
     if (requested) {
-      const selected = LISTINGS.find(r => r.id === requested);
+      const selected = LISTINGS.find(r => r.id === requested.toUpperCase() || r.listingId === requested);
       if (selected) { state.currentPart = selected; openSalvageAssistant(); }
       else toast("That part is not in your inventory.");
     }

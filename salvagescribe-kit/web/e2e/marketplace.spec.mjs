@@ -1,8 +1,9 @@
 import { test, expect } from "@playwright/test";
 import { readFileSync } from "node:fs";
 import { decodeLedger, readiness, correctLedger } from "../lib/platform-engine.js";
-const source = JSON.parse(readFileSync("data/existing_records.json", "utf8"));
-const records = source.map(l => {const ledger=decodeLedger(l);return {id:l.part_id,part_id:l.part_id,revision:1,ledger,draft:null,readiness:readiness(ledger)};});
+import { marketplaceRecords } from "../lib/marketplace-catalog.js";
+const supplied = JSON.parse(readFileSync("data/marketplace_listings.json", "utf8"));
+const records = marketplaceRecords().map(r => ({...r, id:r.part_id, revision:1, preview:false}));
 const html=readFileSync("public/marketglass/index.html","utf8");
 
 test("guests browse while account data and writes stay protected", async ({request, page}) => {
@@ -11,7 +12,7 @@ test("guests browse while account data and writes stay protected", async ({reque
   const catalog = await request.get("/api/catalog");
   expect(catalog.status()).toBe(200);
   const publicRecords = (await catalog.json()).records;
-  expect(publicRecords).toHaveLength(20);
+  expect(publicRecords).toHaveLength(10);
   expect(publicRecords.every(r => r.preview && !r.owner_id && !r.draft)).toBe(true);
   for (const url of ["/api/platform", "/api/parts"]) {
     const response = await request.get(url);
@@ -21,13 +22,13 @@ test("guests browse while account data and writes stay protected", async ({reque
   expect(mutation.status()).toBe(401);
   await page.route("https://images.unsplash.com/**", r=>r.abort());
   await page.goto("/", {waitUntil:"domcontentloaded"});
-  await expect(page.locator(".glass-card")).toHaveCount(20);
+  await expect(page.locator(".glass-card")).toHaveCount(10);
   await expect(page.locator("#inventoryNotice")).toContainText("as a guest");
-  await page.locator("#searchInput").fill("MIR-004");
+  await page.locator("#searchInput").fill("87910-02G90");
   await page.getByRole("button", {name:"Review evidence",exact:true}).click();
-  await expect(page.locator("#assistantSubHeading")).toContainText("MIR-004");
+  await expect(page.locator("#assistantSubHeading")).toContainText("SALVAGE-1");
   await page.locator('[data-tab="stage2"]').click();
-  await page.locator("#field-donor_year").fill("2018");
+  await page.locator("#field-donor_year").fill("2017");
   await page.getByRole("button", {name:"Save corrections & carry over"}).click();
   await expect(page).toHaveURL(/\/login/);
   await expect(page.getByRole("link",{name:"Continue as a guest"})).toBeVisible();
@@ -88,11 +89,11 @@ test("supplied marketplace displays existing records and persists corrections",a
     saved=route.request().postDataJSON();const r=structuredClone(records.find(r=>r.part_id===saved.part_id));r.revision++;r.ledger=correctLedger(r.ledger,saved.changes);r.readiness=readiness(r.ledger);return route.fulfill({json:{record:r}});
   });
   await page.route("https://images.unsplash.com/**", r => r.abort());
-  await page.goto("/", {waitUntil:"domcontentloaded"});await expect(page.locator(".glass-card")).toHaveCount(20);
-  await page.locator("#searchInput").fill("MIR-004");await expect(page.locator(".glass-card")).toHaveCount(1);await expect(page.locator(".glass-card")).toContainText("AED 170");
-  await page.getByRole("button",{name:"Review evidence",exact:true}).click();await expect(page.locator("#assistantSubHeading")).toContainText("MIR-004");
-  await page.locator('[data-tab="stage2"]').click();await page.locator("#field-donor_year").fill("2018");await page.getByRole("button",{name:"Save corrections & carry over"}).click();
-  await expect.poll(()=>saved?.changes?.donor_year).toBe("2018");expect(saved.revision).toBe(1);expect(saved.changes).toEqual({donor_year:"2018"});
+  await page.goto("/", {waitUntil:"domcontentloaded"});await expect(page.locator(".glass-card")).toHaveCount(10);
+  await page.locator("#searchInput").fill("87910-02G90");await expect(page.locator(".glass-card")).toHaveCount(1);await expect(page.locator(".glass-card")).toContainText("AED 310");
+  await page.getByRole("button",{name:"Review evidence",exact:true}).click();await expect(page.locator("#assistantSubHeading")).toContainText("SALVAGE-1");
+  await page.locator('[data-tab="stage2"]').click();await page.locator("#field-donor_year").fill("2017");await page.getByRole("button",{name:"Save corrections & carry over"}).click();
+  await expect.poll(()=>saved?.changes?.donor_year).toBe("2017");expect(saved.revision).toBe(1);expect(saved.changes).toEqual({donor_year:"2017"});
   await page.locator('[data-tab="stage4"]').click();await expect(page.locator("#panelStage4")).toContainText("Internal operational checklist");
   await page.keyboard.press("Escape");await page.locator("#btnAnalogueTrigger").click();await expect(page.locator("#btnAnalogueTrigger")).toHaveAttribute("aria-expanded","true");await page.keyboard.press("Escape");
   await page.locator("#themeToggleBtn").click();await expect(page.locator("html")).toHaveAttribute("data-theme","dark");
@@ -105,4 +106,60 @@ test("sign-in reports rejected credentials", async ({page}) => {
   await page.route("**/auth/v1/token**", route => route.fulfill({status:400,json:{code:"invalid_credentials",msg:"Invalid login credentials"}}));
   await page.goto("/login");await page.getByLabel("Email address").fill("seller@example.com");await page.getByLabel("Password",{exact:true}).fill("invalid-password");await page.getByRole("button",{name:"Sign in",exact:true}).click();
   await expect(page.locator(".auth-error")).toContainText("Invalid login credentials");await expect(page.getByRole("button",{name:"Sign in",exact:true})).toBeEnabled();
+});
+
+
+test("all inventory thumbnails load in grid and list views, with a broken-image fallback", async ({page}) => {
+  await page.route("https://images.unsplash.com/**", r => r.abort());
+  // Simulate an unavailable original thumbnail while using real local assets.
+  await page.route("**/marketglass/images/salvage-2.jpg", r => r.abort());
+  await page.goto("/", {waitUntil:"domcontentloaded"});
+  await expect(page.locator("#listingsContainer .card-img")).toHaveCount(10);
+  const loadedImages = () => page.locator("#listingsContainer .card-img").evaluateAll(images => {
+    images.forEach(img => img.loading = "eager");
+    return images.filter(img => img.complete && img.naturalWidth > 0).length;
+  });
+  await expect.poll(loadedImages).toBe(10);
+  await expect(page.locator('.card-img[alt*="SALVAGE-2"]')).toHaveAttribute("data-fallback-applied", "true");
+  await page.locator("#layoutBtnList").click();
+  await expect.poll(loadedImages).toBe(10);
+  await page.locator("#layoutBtnBox").click();
+  await page.locator("#searchInput").fill("87910-02G90");
+  await expect.poll(loadedImages).toBe(1);
+  await page.getByRole("button",{name:"Review evidence",exact:true}).click();
+  await expect.poll(() => page.locator(".record-thumbnail img").evaluate(img => img.complete && img.naturalWidth > 0)).toBe(true);
+  await page.keyboard.press("Escape");
+  await page.locator(".glass-card [data-chat]").click();
+  await expect.poll(() => page.locator("#anchorThumb").evaluate(img => img.complete && img.naturalWidth > 0)).toBe(true);
+});
+
+
+test("each supplied listing keeps its exact title, price, category and thumbnail", async ({page,request}) => {
+  const response=await request.get("/api/catalog");
+  const {records:catalog}=await response.json();
+  expect(catalog.map(r=>r.listing)).toEqual(supplied);
+  await page.route("https://images.unsplash.com/**",r=>r.abort());
+  await page.goto("/",{waitUntil:"domcontentloaded"});
+  await expect(page.locator(".glass-card")).toHaveCount(supplied.length);
+  for (const item of supplied) {
+    const card=page.locator(`[data-listing-id="${item.id}"]`);
+    await expect(card.locator(".card-title")).toHaveText(item.title);
+    await expect(card.locator(".card-price")).toHaveText(`AED ${item.price.toLocaleString()}`);
+    await expect(card.locator(".card-img")).toHaveAttribute("src",`/marketglass/images/${item.id}.jpg`);
+    await expect(card.locator(".card-img")).toHaveAttribute("data-thumbnail-source",item.imageUrl);
+  }
+  for(const category of ["mirrors","lights","body"]) {
+    await page.locator(`.chip[data-category="${category}"]`).click();
+    await expect(page.locator(".glass-card")).toHaveCount(supplied.filter(r=>r.category===category).length);
+  }
+});
+
+test("an existing account still sees the supplied catalog instead of the old demo",async({page})=>{
+  const legacy=JSON.parse(readFileSync("data/existing_records.json","utf8")).map(ledger=>({part_id:ledger.part_id,ledger}));
+  await page.route("**/api/platform",route=>route.fulfill({json:{user:{id:"test-account",email:"seller@example.com"},records:legacy,storage:"supabase"}}));
+  await page.route("https://images.unsplash.com/**",r=>r.abort());
+  await page.goto("/",{waitUntil:"domcontentloaded"});
+  await expect(page.locator(".glass-card")).toHaveCount(10);
+  await expect(page.locator('[data-listing-id="salvage-2"] .card-title')).toHaveText(supplied[1].title);
+  await expect(page.locator("#importExisting")).toBeVisible();
 });

@@ -1,4 +1,5 @@
-import { session, check, ApiError, demoLedgers, getAllLedgers, getLedger, persist, presentRecord } from "./store.js";
+import { marketplaceRecords } from "./marketplace-catalog.js";
+import { session, check, ApiError, getAllLedgers, getLedger, persist, presentRecord } from "./store.js";
 import { correctLedger, createPart, makeDraft, draftIssues, readiness, CHECKLIST_VERSION } from "./platform-engine.js";
 import { generateDraft } from "./engine/draft.js";
 import { ingestPart } from "./engine/ingest.js";
@@ -62,11 +63,11 @@ export async function command(body) {
   if (action === "seed") {
     const existing = new Set((await getAllLedgers(ctx)).map((r) => r.part_id));
     let created = 0;
-    for (const ledger of demoLedgers()) {
+    for (const { ledger } of marketplaceRecords()) {
       if (existing.has(ledger.part_id)) continue;
       ledger.demo = true;
       const r = { part_id: ledger.part_id, revision: 0, ledger, draft: null };
-      await persist(r, ctx, "existing_inventory_import", { source: "existing_records.json and inventory.csv" });
+      await persist(r, ctx, "existing_inventory_import", { source: "marketplace_listings.json" });
       created++;
     }
     return { created };

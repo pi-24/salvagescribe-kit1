@@ -8,7 +8,9 @@
   {
     "id": "MIR-001",
     "source": "https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=640&q=80",
-    "error": "HTTP Error 404: Not Found"
+    "error": "HTTP Error 404: Not Found",
+    "local": "/marketglass/images/MIR-002.jpg",
+    "note": "Original thumbnail URL returned 404; uses the existing MIR-002 catalog thumbnail as fallback."
   },
   {
     "id": "MIR-002",
