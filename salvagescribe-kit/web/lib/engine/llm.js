@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
-const MOCK_DIR = join(dirname(fileURLToPath(import.meta.url)), "../../data/mock_responses");
+const MOCK_DIR = join(process.cwd(), "data", "mock_responses");
 export const isMock = process.env.MOCK === "1" || !process.env.LLM_API_KEY;
 export const modelName = process.env.LLM_MODEL || "glm-5";
 

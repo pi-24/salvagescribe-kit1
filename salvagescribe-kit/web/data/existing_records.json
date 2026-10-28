@@ -1,0 +1,2668 @@
+[
+  {
+    "part_id": "AIR-020",
+    "classification": "SPECIALIST_REVIEW",
+    "exclusion_flag": true,
+    "notes": {
+      "en": "Driver airbag module from Corolla 2018",
+      "ar": "وسادة هوائية سائق كورولا ٢٠١٨"
+    },
+    "photos": [
+      {
+        "file": "AIR-020_1.jpg",
+        "shows": "airbag module front"
+      },
+      {
+        "file": "AIR-020_2.jpg",
+        "shows": "module label, part number partially readable"
+      }
+    ],
+    "spreadsheet_row": {
+      "id": "AIR-020",
+      "description": "Toyota Corolla airbag 2018",
+      "condition": "used - good",
+      "price_aed": "300",
+      "location": "E-01",
+      "photos": "AIR-020_1.jpg;AIR-020_2.jpg"
+    },
+    "ledger": {
+      "part_type": {
+        "value": "airbag",
+        "candidates": [
+          {
+            "value": "airbag",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 20"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-AIR-020-part_type"
+      },
+      "donor_make": {
+        "value": "Toyota",
+        "candidates": [
+          {
+            "value": "Toyota",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 20"
+          },
+          {
+            "value": "Toyota",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 20"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-AIR-020-donor_make"
+      },
+      "donor_model": {
+        "value": "Corolla",
+        "candidates": [
+          {
+            "value": "Corolla",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 20"
+          },
+          {
+            "value": "Corolla",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 20"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-AIR-020-donor_model"
+      },
+      "donor_year": {
+        "value": 2018,
+        "candidates": [
+          {
+            "value": 2018,
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 20"
+          },
+          {
+            "value": 2018,
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 20"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-AIR-020-donor_year"
+      },
+      "storage_location": {
+        "value": "E-01",
+        "candidates": [
+          {
+            "value": "E-01",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 20"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-AIR-020-storage_location"
+      },
+      "asking_price": {
+        "value": "300",
+        "candidates": [
+          {
+            "value": "300",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 20"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-AIR-020-asking_price"
+      }
+    }
+  },
+  {
+    "part_id": "MIR-001",
+    "classification": null,
+    "exclusion_flag": false,
+    "notes": {
+      "en": "RH mirror, power and heated, bench tested OK 12V",
+      "ar": "المرآة اليمنى، كهربائية ومدفأة، تم فحصها وتعمل"
+    },
+    "photos": [
+      {
+        "file": "MIR-001_1.jpg",
+        "shows": "front of mirror, RH side, cover visible; light scuff on cover"
+      },
+      {
+        "file": "MIR-001_2.jpg",
+        "shows": "back/mounting side"
+      },
+      {
+        "file": "MIR-001_3.jpg",
+        "shows": "glass surface"
+      },
+      {
+        "file": "MIR-001_4.jpg",
+        "shows": "part-number label, fully readable"
+      }
+    ],
+    "spreadsheet_row": {
+      "id": "MIR-001",
+      "description": "Toyota Corolla mirror RH 2018",
+      "condition": "used",
+      "price_aed": "180",
+      "location": "A-03",
+      "photos": "MIR-001_1.jpg;MIR-001_2.jpg;MIR-001_3.jpg;MIR-001_4.jpg"
+    },
+    "ledger": {
+      "part_type": {
+        "value": "side-view mirror",
+        "candidates": [
+          {
+            "value": "side-view mirror",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 1"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-001-part_type"
+      },
+      "side": {
+        "value": "RH",
+        "candidates": [
+          {
+            "value": "RH",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 1"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-001-side"
+      },
+      "donor_make": {
+        "value": "Toyota",
+        "candidates": [
+          {
+            "value": "Toyota",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 1"
+          },
+          {
+            "value": "Toyota",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 1"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-001-donor_make"
+      },
+      "donor_model": {
+        "value": "Corolla",
+        "candidates": [
+          {
+            "value": "Corolla",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 1"
+          },
+          {
+            "value": "Corolla",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 1"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-001-donor_model"
+      },
+      "donor_year": {
+        "value": 2018,
+        "candidates": [
+          {
+            "value": 2018,
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 1"
+          },
+          {
+            "value": 2018,
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 1"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-001-donor_year"
+      },
+      "storage_location": {
+        "value": "A-03",
+        "candidates": [
+          {
+            "value": "A-03",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 1"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-001-storage_location"
+      },
+      "asking_price": {
+        "value": "180",
+        "candidates": [
+          {
+            "value": "180",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 1"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-001-asking_price"
+      }
+    }
+  },
+  {
+    "part_id": "MIR-002",
+    "classification": null,
+    "exclusion_flag": false,
+    "notes": {
+      "en": "LH Patrol mirror, folding works, indicator works",
+      "ar": "المرآة اليسرى باترول، الطي يعمل، الإشارة تعمل"
+    },
+    "photos": [
+      {
+        "file": "MIR-002_1.jpg",
+        "shows": "front of mirror, LH side, cover visible"
+      },
+      {
+        "file": "MIR-002_2.jpg",
+        "shows": "back/mounting side"
+      },
+      {
+        "file": "MIR-002_3.jpg",
+        "shows": "glass surface"
+      },
+      {
+        "file": "MIR-002_4.jpg",
+        "shows": "part-number label, fully readable"
+      }
+    ],
+    "spreadsheet_row": {
+      "id": "MIR-002",
+      "description": "Nissan Patrol mirror LH 2016 folding",
+      "condition": "used - good",
+      "price_aed": "420",
+      "location": "A-04",
+      "photos": "MIR-002_1.jpg;MIR-002_2.jpg;MIR-002_3.jpg;MIR-002_4.jpg"
+    },
+    "ledger": {
+      "part_type": {
+        "value": "side-view mirror",
+        "candidates": [
+          {
+            "value": "side-view mirror",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 2"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-002-part_type"
+      },
+      "side": {
+        "value": "LH",
+        "candidates": [
+          {
+            "value": "LH",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 2"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-002-side"
+      },
+      "donor_make": {
+        "value": "Nissan",
+        "candidates": [
+          {
+            "value": "Nissan",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 2"
+          },
+          {
+            "value": "Nissan",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 2"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-002-donor_make"
+      },
+      "donor_model": {
+        "value": "Patrol",
+        "candidates": [
+          {
+            "value": "Patrol",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 2"
+          },
+          {
+            "value": "Patrol",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 2"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-002-donor_model"
+      },
+      "donor_year": {
+        "value": 2016,
+        "candidates": [
+          {
+            "value": 2016,
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 2"
+          },
+          {
+            "value": 2016,
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 2"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-002-donor_year"
+      },
+      "storage_location": {
+        "value": "A-04",
+        "candidates": [
+          {
+            "value": "A-04",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 2"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-002-storage_location"
+      },
+      "asking_price": {
+        "value": "420",
+        "candidates": [
+          {
+            "value": "420",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 2"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-002-asking_price"
+      }
+    }
+  },
+  {
+    "part_id": "MIR-003",
+    "classification": null,
+    "exclusion_flag": false,
+    "notes": {
+      "en": "Elantra RH mirror, label scratched",
+      "ar": "مرآة إلنترا يمين، الملصق مخدوش"
+    },
+    "photos": [
+      {
+        "file": "MIR-003_1.jpg",
+        "shows": "front of mirror, RH side, cover visible"
+      },
+      {
+        "file": "MIR-003_2.jpg",
+        "shows": "back/mounting side"
+      },
+      {
+        "file": "MIR-003_3.jpg",
+        "shows": "glass surface"
+      },
+      {
+        "file": "MIR-003_4.jpg",
+        "shows": "part-number label, partially readable — last digits obscured"
+      }
+    ],
+    "spreadsheet_row": {
+      "id": "MIR-003",
+      "description": "Hyundai Elantra mirror RH",
+      "condition": "used - good",
+      "price_aed": "150",
+      "location": "B-01",
+      "photos": "MIR-003_1.jpg;MIR-003_2.jpg;MIR-003_3.jpg;MIR-003_4.jpg"
+    },
+    "ledger": {
+      "part_type": {
+        "value": "side-view mirror",
+        "candidates": [
+          {
+            "value": "side-view mirror",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 3"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-003-part_type"
+      },
+      "side": {
+        "value": "RH",
+        "candidates": [
+          {
+            "value": "RH",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 3"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-003-side"
+      },
+      "donor_make": {
+        "value": "Hyundai",
+        "candidates": [
+          {
+            "value": "Hyundai",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 3"
+          },
+          {
+            "value": "Hyundai",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 3"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-003-donor_make"
+      },
+      "donor_model": {
+        "value": "Elantra",
+        "candidates": [
+          {
+            "value": "Elantra",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 3"
+          },
+          {
+            "value": "Elantra",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 3"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-003-donor_model"
+      },
+      "donor_year": {
+        "value": 2019,
+        "candidates": [
+          {
+            "value": 2019,
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 3"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-003-donor_year"
+      },
+      "storage_location": {
+        "value": "B-01",
+        "candidates": [
+          {
+            "value": "B-01",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 3"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-003-storage_location"
+      },
+      "asking_price": {
+        "value": "150",
+        "candidates": [
+          {
+            "value": "150",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 3"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-003-asking_price"
+      }
+    }
+  },
+  {
+    "part_id": "MIR-004",
+    "classification": null,
+    "exclusion_flag": false,
+    "notes": {
+      "en": "Corolla mirror from 2018 donor, pulled 14 Sep",
+      "ar": "مرآة كورولا، سيارة المصدر ٢٠١٨"
+    },
+    "photos": [
+      {
+        "file": "MIR-004_1.jpg",
+        "shows": "front of mirror, RH side, cover visible"
+      },
+      {
+        "file": "MIR-004_2.jpg",
+        "shows": "back/mounting side"
+      },
+      {
+        "file": "MIR-004_3.jpg",
+        "shows": "glass surface; possible crack in lower mounting tab (visible photo 3)"
+      },
+      {
+        "file": "MIR-004_4.jpg",
+        "shows": "part-number label, partially readable — last digits obscured"
+      }
+    ],
+    "spreadsheet_row": {
+      "id": "MIR-004",
+      "description": "Toyota Corolla mirror, 2017",
+      "condition": "good",
+      "price_aed": "170",
+      "location": "A-05",
+      "photos": "MIR-004_1.jpg;MIR-004_2.jpg;MIR-004_3.jpg;MIR-004_4.jpg"
+    },
+    "ledger": {
+      "part_type": {
+        "value": "side-view mirror",
+        "candidates": [
+          {
+            "value": "side-view mirror",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 4"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-004-part_type"
+      },
+      "donor_make": {
+        "value": "Toyota",
+        "candidates": [
+          {
+            "value": "Toyota",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 4"
+          },
+          {
+            "value": "Toyota",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 4"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-004-donor_make"
+      },
+      "donor_model": {
+        "value": "Corolla",
+        "candidates": [
+          {
+            "value": "Corolla",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 4"
+          },
+          {
+            "value": "Corolla",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 4"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-004-donor_model"
+      },
+      "donor_year": {
+        "value": null,
+        "candidates": [
+          {
+            "value": 2017,
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 4"
+          },
+          {
+            "value": 2018,
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 4"
+          }
+        ],
+        "status": "CONFLICTING",
+        "question_id": "Q-MIR-004-donor_year"
+      },
+      "storage_location": {
+        "value": "A-05",
+        "candidates": [
+          {
+            "value": "A-05",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 4"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-004-storage_location"
+      },
+      "asking_price": {
+        "value": "170",
+        "candidates": [
+          {
+            "value": "170",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 4"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-004-asking_price"
+      }
+    }
+  },
+  {
+    "part_id": "MIR-005",
+    "classification": null,
+    "exclusion_flag": false,
+    "notes": {
+      "en": "LH Civic mirror, signal lens OK, cover scratched",
+      "ar": null
+    },
+    "photos": [
+      {
+        "file": "MIR-005_1.jpg",
+        "shows": "front of mirror, LH side, cover visible; deep scratch on cover"
+      },
+      {
+        "file": "MIR-005_2.jpg",
+        "shows": "back/mounting side"
+      },
+      {
+        "file": "MIR-005_3.jpg",
+        "shows": "glass surface"
+      },
+      {
+        "file": "MIR-005_4.jpg",
+        "shows": "part-number label, partially readable — last digits obscured"
+      }
+    ],
+    "spreadsheet_row": {
+      "id": "MIR-005",
+      "description": "Honda Civic mirror LH 2017",
+      "condition": "used",
+      "price_aed": "160",
+      "location": "B-02",
+      "photos": "MIR-005_1.jpg;MIR-005_2.jpg;MIR-005_3.jpg;MIR-005_4.jpg"
+    },
+    "ledger": {
+      "part_type": {
+        "value": "side-view mirror",
+        "candidates": [
+          {
+            "value": "side-view mirror",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 5"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-005-part_type"
+      },
+      "side": {
+        "value": "LH",
+        "candidates": [
+          {
+            "value": "LH",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 5"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-005-side"
+      },
+      "donor_make": {
+        "value": "Honda",
+        "candidates": [
+          {
+            "value": "Honda",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 5"
+          },
+          {
+            "value": "Honda",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 5"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-005-donor_make"
+      },
+      "donor_model": {
+        "value": "Civic",
+        "candidates": [
+          {
+            "value": "Civic",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 5"
+          },
+          {
+            "value": "Civic",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 5"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-005-donor_model"
+      },
+      "donor_year": {
+        "value": 2017,
+        "candidates": [
+          {
+            "value": 2017,
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 5"
+          },
+          {
+            "value": 2017,
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 5"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-005-donor_year"
+      },
+      "storage_location": {
+        "value": "B-02",
+        "candidates": [
+          {
+            "value": "B-02",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 5"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-005-storage_location"
+      },
+      "asking_price": {
+        "value": "160",
+        "candidates": [
+          {
+            "value": "160",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 5"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-005-asking_price"
+      }
+    }
+  },
+  {
+    "part_id": "MIR-006",
+    "classification": null,
+    "exclusion_flag": false,
+    "notes": {
+      "en": "RH Altima mirror, motor adjusts up/down only, left/right dead",
+      "ar": "مرآة التيما يمين، المحرك يعمل أعلى/أسفل فقط"
+    },
+    "photos": [
+      {
+        "file": "MIR-006_1.jpg",
+        "shows": "front of mirror, RH side, cover visible"
+      },
+      {
+        "file": "MIR-006_2.jpg",
+        "shows": "back/mounting side"
+      },
+      {
+        "file": "MIR-006_3.jpg",
+        "shows": "glass surface"
+      },
+      {
+        "file": "MIR-006_4.jpg",
+        "shows": "part-number label, fully readable"
+      }
+    ],
+    "spreadsheet_row": {
+      "id": "MIR-006",
+      "description": "Nissan Altima mirror RH 2015",
+      "condition": "works",
+      "price_aed": "90",
+      "location": "B-03",
+      "photos": "MIR-006_1.jpg;MIR-006_2.jpg;MIR-006_3.jpg;MIR-006_4.jpg"
+    },
+    "ledger": {
+      "part_type": {
+        "value": "side-view mirror",
+        "candidates": [
+          {
+            "value": "side-view mirror",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 6"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-006-part_type"
+      },
+      "side": {
+        "value": "RH",
+        "candidates": [
+          {
+            "value": "RH",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 6"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-006-side"
+      },
+      "donor_make": {
+        "value": "Nissan",
+        "candidates": [
+          {
+            "value": "Nissan",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 6"
+          },
+          {
+            "value": "Nissan",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 6"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-006-donor_make"
+      },
+      "donor_model": {
+        "value": "Altima",
+        "candidates": [
+          {
+            "value": "Altima",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 6"
+          },
+          {
+            "value": "Altima",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 6"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-006-donor_model"
+      },
+      "donor_year": {
+        "value": 2015,
+        "candidates": [
+          {
+            "value": 2015,
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 6"
+          },
+          {
+            "value": 2015,
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 6"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-006-donor_year"
+      },
+      "storage_location": {
+        "value": "B-03",
+        "candidates": [
+          {
+            "value": "B-03",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 6"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-006-storage_location"
+      },
+      "asking_price": {
+        "value": "90",
+        "candidates": [
+          {
+            "value": "90",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 6"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-006-asking_price"
+      }
+    }
+  },
+  {
+    "part_id": "MIR-007",
+    "classification": null,
+    "exclusion_flag": false,
+    "notes": {
+      "en": null,
+      "ar": "مرآة كامري يسار، لم يتم الفحص الكهربائي"
+    },
+    "photos": [
+      {
+        "file": "MIR-007_1.jpg",
+        "shows": "front of mirror, LH side, cover visible"
+      },
+      {
+        "file": "MIR-007_2.jpg",
+        "shows": "back/mounting side; housing hairline crack near base (visible photo 2)"
+      },
+      {
+        "file": "MIR-007_3.jpg",
+        "shows": "glass surface"
+      },
+      {
+        "file": "MIR-007_4.jpg",
+        "shows": "part-number label, partially readable — last digits obscured"
+      }
+    ],
+    "spreadsheet_row": {
+      "id": "MIR-007",
+      "description": "Toyota Camry mirror LH 2016",
+      "condition": "good",
+      "price_aed": "140",
+      "location": "A-06",
+      "photos": "MIR-007_1.jpg;MIR-007_2.jpg;MIR-007_3.jpg;MIR-007_4.jpg"
+    },
+    "ledger": {
+      "part_type": {
+        "value": "side-view mirror",
+        "candidates": [
+          {
+            "value": "side-view mirror",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 7"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-007-part_type"
+      },
+      "side": {
+        "value": "LH",
+        "candidates": [
+          {
+            "value": "LH",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 7"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-007-side"
+      },
+      "donor_make": {
+        "value": "Toyota",
+        "candidates": [
+          {
+            "value": "Toyota",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 7"
+          },
+          {
+            "value": "Toyota",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 7"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-007-donor_make"
+      },
+      "donor_model": {
+        "value": "Camry",
+        "candidates": [
+          {
+            "value": "Camry",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 7"
+          },
+          {
+            "value": "Camry",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 7"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-007-donor_model"
+      },
+      "donor_year": {
+        "value": 2016,
+        "candidates": [
+          {
+            "value": 2016,
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 7"
+          },
+          {
+            "value": 2016,
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 7"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-007-donor_year"
+      },
+      "storage_location": {
+        "value": "A-06",
+        "candidates": [
+          {
+            "value": "A-06",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 7"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-007-storage_location"
+      },
+      "asking_price": {
+        "value": "140",
+        "candidates": [
+          {
+            "value": "140",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 7"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-007-asking_price"
+      }
+    }
+  },
+  {
+    "part_id": "MIR-008",
+    "classification": null,
+    "exclusion_flag": false,
+    "notes": {
+      "en": "Pajero RH, folding tested",
+      "ar": "باجيرو يمين، الطي مفحوص"
+    },
+    "photos": [
+      {
+        "file": "MIR-008_1.jpg",
+        "shows": "front of mirror, RH side, cover visible; faded black plastic"
+      },
+      {
+        "file": "MIR-008_2.jpg",
+        "shows": "back/mounting side"
+      },
+      {
+        "file": "MIR-008_3.jpg",
+        "shows": "glass surface"
+      },
+      {
+        "file": "MIR-008_4.jpg",
+        "shows": "part-number label, fully readable"
+      }
+    ],
+    "spreadsheet_row": {
+      "id": "MIR-008",
+      "description": "Mitsubishi Pajero mirror RH 2014",
+      "condition": "used",
+      "price_aed": "260",
+      "location": "C-01",
+      "photos": "MIR-008_1.jpg;MIR-008_2.jpg;MIR-008_3.jpg;MIR-008_4.jpg"
+    },
+    "ledger": {
+      "part_type": {
+        "value": "side-view mirror",
+        "candidates": [
+          {
+            "value": "side-view mirror",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 8"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-008-part_type"
+      },
+      "side": {
+        "value": "RH",
+        "candidates": [
+          {
+            "value": "RH",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 8"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-008-side"
+      },
+      "donor_make": {
+        "value": "Mitsubishi",
+        "candidates": [
+          {
+            "value": "Mitsubishi",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 8"
+          },
+          {
+            "value": "Mitsubishi",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 8"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-008-donor_make"
+      },
+      "donor_model": {
+        "value": "Pajero",
+        "candidates": [
+          {
+            "value": "Pajero",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 8"
+          },
+          {
+            "value": "Pajero",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 8"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-008-donor_model"
+      },
+      "donor_year": {
+        "value": 2014,
+        "candidates": [
+          {
+            "value": 2014,
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 8"
+          },
+          {
+            "value": 2014,
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 8"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-008-donor_year"
+      },
+      "storage_location": {
+        "value": "C-01",
+        "candidates": [
+          {
+            "value": "C-01",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 8"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-008-storage_location"
+      },
+      "asking_price": {
+        "value": "260",
+        "candidates": [
+          {
+            "value": "260",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 8"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-008-asking_price"
+      }
+    }
+  },
+  {
+    "part_id": "MIR-009",
+    "classification": null,
+    "exclusion_flag": false,
+    "notes": {
+      "en": "Land Cruiser mirror with camera, side not written on tag",
+      "ar": "مرآة لاندكروزر مع كاميرا"
+    },
+    "photos": [
+      {
+        "file": "MIR-009_1.jpg",
+        "shows": "front of mirror, LH side, cover visible"
+      },
+      {
+        "file": "MIR-009_2.jpg",
+        "shows": "back/mounting side"
+      },
+      {
+        "file": "MIR-009_3.jpg",
+        "shows": "glass surface"
+      },
+      {
+        "file": "MIR-009_4.jpg",
+        "shows": "part-number label, partially readable — last digits obscured"
+      }
+    ],
+    "spreadsheet_row": {
+      "id": "MIR-009",
+      "description": "Toyota Land Cruiser mirror w/ camera 2019",
+      "condition": "used - good",
+      "price_aed": "650",
+      "location": "C-02",
+      "photos": "MIR-009_1.jpg;MIR-009_2.jpg;MIR-009_3.jpg;MIR-009_4.jpg"
+    },
+    "ledger": {
+      "part_type": {
+        "value": "side-view mirror",
+        "candidates": [
+          {
+            "value": "side-view mirror",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 9"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-009-part_type"
+      },
+      "donor_make": {
+        "value": null,
+        "candidates": [
+          {
+            "value": "Land Cruiser",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 9"
+          },
+          {
+            "value": "Toyota",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 9"
+          }
+        ],
+        "status": "CONFLICTING",
+        "question_id": "Q-MIR-009-donor_make"
+      },
+      "donor_model": {
+        "value": "Land Cruiser",
+        "candidates": [
+          {
+            "value": "Land Cruiser",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 9"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-009-donor_model"
+      },
+      "donor_year": {
+        "value": 2019,
+        "candidates": [
+          {
+            "value": 2019,
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 9"
+          },
+          {
+            "value": 2019,
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 9"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-009-donor_year"
+      },
+      "storage_location": {
+        "value": "C-02",
+        "candidates": [
+          {
+            "value": "C-02",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 9"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-009-storage_location"
+      },
+      "asking_price": {
+        "value": "650",
+        "candidates": [
+          {
+            "value": "650",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 9"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-009-asking_price"
+      }
+    }
+  },
+  {
+    "part_id": "MIR-010",
+    "classification": null,
+    "exclusion_flag": false,
+    "notes": {
+      "en": "Sportage RH, tested",
+      "ar": null
+    },
+    "photos": [
+      {
+        "file": "MIR-010_1.jpg",
+        "shows": "front of mirror, RH side, cover visible"
+      },
+      {
+        "file": "MIR-010_2.jpg",
+        "shows": "back/mounting side"
+      },
+      {
+        "file": "MIR-010_3.jpg",
+        "shows": "glass surface"
+      },
+      {
+        "file": "MIR-010_4.jpg",
+        "shows": "part-number label, partially readable — last digits obscured"
+      }
+    ],
+    "spreadsheet_row": {
+      "id": "MIR-010",
+      "description": "Kia Sportage mirror RH 2018",
+      "condition": "used - good",
+      "price_aed": "190",
+      "location": "B-04",
+      "photos": "MIR-010_1.jpg;MIR-010_2.jpg;MIR-010_3.jpg;MIR-010_4.jpg"
+    },
+    "ledger": {
+      "part_type": {
+        "value": "side-view mirror",
+        "candidates": [
+          {
+            "value": "side-view mirror",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 10"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-010-part_type"
+      },
+      "side": {
+        "value": "RH",
+        "candidates": [
+          {
+            "value": "RH",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 10"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-010-side"
+      },
+      "donor_make": {
+        "value": "Kia",
+        "candidates": [
+          {
+            "value": "Kia",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 10"
+          },
+          {
+            "value": "Kia",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 10"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-010-donor_make"
+      },
+      "donor_model": {
+        "value": "Sportage",
+        "candidates": [
+          {
+            "value": "Sportage",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 10"
+          },
+          {
+            "value": "Sportage",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 10"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-010-donor_model"
+      },
+      "donor_year": {
+        "value": 2018,
+        "candidates": [
+          {
+            "value": 2018,
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 10"
+          },
+          {
+            "value": 2018,
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 10"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-010-donor_year"
+      },
+      "storage_location": {
+        "value": "B-04",
+        "candidates": [
+          {
+            "value": "B-04",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 10"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-010-storage_location"
+      },
+      "asking_price": {
+        "value": "190",
+        "candidates": [
+          {
+            "value": "190",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 10"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-010-asking_price"
+      }
+    }
+  },
+  {
+    "part_id": "MIR-011",
+    "classification": null,
+    "exclusion_flag": false,
+    "notes": {
+      "en": "Sunny LH manual mirror, donor 2017",
+      "ar": "صني يسار، يدوية"
+    },
+    "photos": [
+      {
+        "file": "MIR-011_1.jpg",
+        "shows": "front of mirror, LH side, cover visible; scuffed cover"
+      },
+      {
+        "file": "MIR-011_2.jpg",
+        "shows": "back/mounting side"
+      },
+      {
+        "file": "MIR-011_3.jpg",
+        "shows": "glass surface"
+      },
+      {
+        "file": "MIR-011_4.jpg",
+        "shows": "part-number label, fully readable"
+      }
+    ],
+    "spreadsheet_row": {
+      "id": "MIR-011",
+      "description": "Nissan Sunny mirror LH 2016",
+      "condition": "used",
+      "price_aed": "60",
+      "location": "D-01",
+      "photos": "MIR-011_1.jpg;MIR-011_2.jpg;MIR-011_3.jpg;MIR-011_4.jpg"
+    },
+    "ledger": {
+      "part_type": {
+        "value": "side-view mirror",
+        "candidates": [
+          {
+            "value": "side-view mirror",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 11"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-011-part_type"
+      },
+      "side": {
+        "value": "LH",
+        "candidates": [
+          {
+            "value": "LH",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 11"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-011-side"
+      },
+      "donor_make": {
+        "value": "Nissan",
+        "candidates": [
+          {
+            "value": "Nissan",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 11"
+          },
+          {
+            "value": "Nissan",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 11"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-011-donor_make"
+      },
+      "donor_model": {
+        "value": "Sunny",
+        "candidates": [
+          {
+            "value": "Sunny",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 11"
+          },
+          {
+            "value": "Sunny",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 11"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-011-donor_model"
+      },
+      "donor_year": {
+        "value": null,
+        "candidates": [
+          {
+            "value": 2016,
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 11"
+          },
+          {
+            "value": 2017,
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 11"
+          }
+        ],
+        "status": "CONFLICTING",
+        "question_id": "Q-MIR-011-donor_year"
+      },
+      "storage_location": {
+        "value": "D-01",
+        "candidates": [
+          {
+            "value": "D-01",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 11"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-011-storage_location"
+      },
+      "asking_price": {
+        "value": "60",
+        "candidates": [
+          {
+            "value": "60",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 11"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-011-asking_price"
+      }
+    }
+  },
+  {
+    "part_id": "MIR-012",
+    "classification": null,
+    "exclusion_flag": false,
+    "notes": {
+      "en": "Yaris RH folding, all functions tested",
+      "ar": null
+    },
+    "photos": [
+      {
+        "file": "MIR-012_1.jpg",
+        "shows": "front of mirror, RH side, cover visible"
+      },
+      {
+        "file": "MIR-012_2.jpg",
+        "shows": "back/mounting side"
+      },
+      {
+        "file": "MIR-012_3.jpg",
+        "shows": "glass surface"
+      },
+      {
+        "file": "MIR-012_4.jpg",
+        "shows": "part-number label, partially readable — last digits obscured"
+      }
+    ],
+    "spreadsheet_row": {
+      "id": "MIR-012",
+      "description": "Toyota Yaris mirror RH 2020",
+      "condition": "used - good",
+      "price_aed": "200",
+      "location": "A-07",
+      "photos": "MIR-012_1.jpg;MIR-012_2.jpg;MIR-012_3.jpg;MIR-012_4.jpg"
+    },
+    "ledger": {
+      "part_type": {
+        "value": "side-view mirror",
+        "candidates": [
+          {
+            "value": "side-view mirror",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 12"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-012-part_type"
+      },
+      "side": {
+        "value": "RH",
+        "candidates": [
+          {
+            "value": "RH",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 12"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-012-side"
+      },
+      "donor_make": {
+        "value": "Toyota",
+        "candidates": [
+          {
+            "value": "Toyota",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 12"
+          },
+          {
+            "value": "Toyota",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 12"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-012-donor_make"
+      },
+      "donor_model": {
+        "value": "Yaris",
+        "candidates": [
+          {
+            "value": "Yaris",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 12"
+          },
+          {
+            "value": "Yaris",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 12"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-012-donor_model"
+      },
+      "donor_year": {
+        "value": 2020,
+        "candidates": [
+          {
+            "value": 2020,
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 12"
+          },
+          {
+            "value": 2020,
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 12"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-012-donor_year"
+      },
+      "storage_location": {
+        "value": "A-07",
+        "candidates": [
+          {
+            "value": "A-07",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 12"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-012-storage_location"
+      },
+      "asking_price": {
+        "value": "200",
+        "candidates": [
+          {
+            "value": "200",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 12"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-012-asking_price"
+      }
+    }
+  },
+  {
+    "part_id": "MIR-013",
+    "classification": null,
+    "exclusion_flag": false,
+    "notes": {
+      "en": "Accord LH with blind spot indicator",
+      "ar": null
+    },
+    "photos": [
+      {
+        "file": "MIR-013_1.jpg",
+        "shows": "front of mirror, LH side, cover visible"
+      },
+      {
+        "file": "MIR-013_2.jpg",
+        "shows": "back/mounting side"
+      },
+      {
+        "file": "MIR-013_3.jpg",
+        "shows": "glass surface"
+      },
+      {
+        "file": "MIR-013_4.jpg",
+        "shows": "part-number label, partially readable — last digits obscured; mounting bracket bent (visible photo 4)"
+      }
+    ],
+    "spreadsheet_row": {
+      "id": "MIR-013",
+      "description": "Honda Accord mirror LH 2018",
+      "condition": "good",
+      "price_aed": "220",
+      "location": "B-05",
+      "photos": "MIR-013_1.jpg;MIR-013_2.jpg;MIR-013_3.jpg;MIR-013_4.jpg"
+    },
+    "ledger": {
+      "part_type": {
+        "value": "side-view mirror",
+        "candidates": [
+          {
+            "value": "side-view mirror",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 13"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-013-part_type"
+      },
+      "side": {
+        "value": "LH",
+        "candidates": [
+          {
+            "value": "LH",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 13"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-013-side"
+      },
+      "donor_make": {
+        "value": "Honda",
+        "candidates": [
+          {
+            "value": "Honda",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 13"
+          },
+          {
+            "value": "Honda",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 13"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-013-donor_make"
+      },
+      "donor_model": {
+        "value": "Accord",
+        "candidates": [
+          {
+            "value": "Accord",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 13"
+          },
+          {
+            "value": "Accord",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 13"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-013-donor_model"
+      },
+      "donor_year": {
+        "value": 2018,
+        "candidates": [
+          {
+            "value": 2018,
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 13"
+          },
+          {
+            "value": 2018,
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 13"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-013-donor_year"
+      },
+      "storage_location": {
+        "value": "B-05",
+        "candidates": [
+          {
+            "value": "B-05",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 13"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-013-storage_location"
+      },
+      "asking_price": {
+        "value": "220",
+        "candidates": [
+          {
+            "value": "220",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 13"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-013-asking_price"
+      }
+    }
+  },
+  {
+    "part_id": "MIR-014",
+    "classification": null,
+    "exclusion_flag": false,
+    "notes": {
+      "en": "Tucson RH, chip on glass edge, electrics OK",
+      "ar": "توسان يمين، كسر صغير في حافة الزجاج، الكهرباء تعمل"
+    },
+    "photos": [
+      {
+        "file": "MIR-014_1.jpg",
+        "shows": "front of mirror, RH side, cover visible"
+      },
+      {
+        "file": "MIR-014_2.jpg",
+        "shows": "back/mounting side"
+      },
+      {
+        "file": "MIR-014_3.jpg",
+        "shows": "glass surface; small chip at edge of glass"
+      },
+      {
+        "file": "MIR-014_4.jpg",
+        "shows": "part-number label, partially readable — last digits obscured"
+      }
+    ],
+    "spreadsheet_row": {
+      "id": "MIR-014",
+      "description": "Hyundai Tucson mirror RH 2017",
+      "condition": "used - good",
+      "price_aed": "170",
+      "location": "B-06",
+      "photos": "MIR-014_1.jpg;MIR-014_2.jpg;MIR-014_3.jpg;MIR-014_4.jpg"
+    },
+    "ledger": {
+      "part_type": {
+        "value": "side-view mirror",
+        "candidates": [
+          {
+            "value": "side-view mirror",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 14"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-014-part_type"
+      },
+      "side": {
+        "value": "RH",
+        "candidates": [
+          {
+            "value": "RH",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 14"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-014-side"
+      },
+      "donor_make": {
+        "value": "Hyundai",
+        "candidates": [
+          {
+            "value": "Hyundai",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 14"
+          },
+          {
+            "value": "Hyundai",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 14"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-014-donor_make"
+      },
+      "donor_model": {
+        "value": "Tucson",
+        "candidates": [
+          {
+            "value": "Tucson",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 14"
+          },
+          {
+            "value": "Tucson",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 14"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-014-donor_model"
+      },
+      "donor_year": {
+        "value": 2017,
+        "candidates": [
+          {
+            "value": 2017,
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 14"
+          },
+          {
+            "value": 2017,
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 14"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-014-donor_year"
+      },
+      "storage_location": {
+        "value": "B-06",
+        "candidates": [
+          {
+            "value": "B-06",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 14"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-014-storage_location"
+      },
+      "asking_price": {
+        "value": "170",
+        "candidates": [
+          {
+            "value": "170",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 14"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-014-asking_price"
+      }
+    }
+  },
+  {
+    "part_id": "MIR-015",
+    "classification": null,
+    "exclusion_flag": false,
+    "notes": {
+      "en": null,
+      "ar": "لكزس آر إكس يسار، مع كاميرا، تم فحص الطي والتدفئة والإشارة وتعمل"
+    },
+    "photos": [
+      {
+        "file": "MIR-015_1.jpg",
+        "shows": "front of mirror, LH side, cover visible"
+      },
+      {
+        "file": "MIR-015_2.jpg",
+        "shows": "back/mounting side"
+      },
+      {
+        "file": "MIR-015_3.jpg",
+        "shows": "glass surface"
+      },
+      {
+        "file": "MIR-015_4.jpg",
+        "shows": "part-number label, partially readable — last digits obscured"
+      }
+    ],
+    "spreadsheet_row": {
+      "id": "MIR-015",
+      "description": "Lexus RX mirror LH 2016",
+      "condition": "used - good",
+      "price_aed": "580",
+      "location": "C-03",
+      "photos": "MIR-015_1.jpg;MIR-015_2.jpg;MIR-015_3.jpg;MIR-015_4.jpg"
+    },
+    "ledger": {
+      "part_type": {
+        "value": "side-view mirror",
+        "candidates": [
+          {
+            "value": "side-view mirror",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 15"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-015-part_type"
+      },
+      "side": {
+        "value": "LH",
+        "candidates": [
+          {
+            "value": "LH",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 15"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-015-side"
+      },
+      "donor_make": {
+        "value": "Lexus",
+        "candidates": [
+          {
+            "value": "Lexus",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 15"
+          },
+          {
+            "value": "Lexus",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 15"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-015-donor_make"
+      },
+      "donor_model": {
+        "value": "RX",
+        "candidates": [
+          {
+            "value": "RX",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 15"
+          },
+          {
+            "value": "RX",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 15"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-015-donor_model"
+      },
+      "donor_year": {
+        "value": 2016,
+        "candidates": [
+          {
+            "value": 2016,
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 15"
+          },
+          {
+            "value": 2016,
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 15"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-015-donor_year"
+      },
+      "storage_location": {
+        "value": "C-03",
+        "candidates": [
+          {
+            "value": "C-03",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 15"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-015-storage_location"
+      },
+      "asking_price": {
+        "value": "580",
+        "candidates": [
+          {
+            "value": "580",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 15"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-015-asking_price"
+      }
+    }
+  },
+  {
+    "part_id": "MIR-016",
+    "classification": null,
+    "exclusion_flag": false,
+    "notes": {
+      "en": null,
+      "ar": "لانسر يمين، غير مفحوصة، الغطاء سليم"
+    },
+    "photos": [
+      {
+        "file": "MIR-016_1.jpg",
+        "shows": "front of mirror, RH side, cover visible"
+      },
+      {
+        "file": "MIR-016_2.jpg",
+        "shows": "back/mounting side"
+      },
+      {
+        "file": "MIR-016_3.jpg",
+        "shows": "glass surface"
+      },
+      {
+        "file": "MIR-016_4.jpg",
+        "shows": "part-number label, partially readable — last digits obscured"
+      }
+    ],
+    "spreadsheet_row": {
+      "id": "MIR-016",
+      "description": "Mitsubishi Lancer mirror RH 2015",
+      "condition": "used - good",
+      "price_aed": "80",
+      "location": "D-02",
+      "photos": "MIR-016_1.jpg;MIR-016_2.jpg;MIR-016_3.jpg;MIR-016_4.jpg"
+    },
+    "ledger": {
+      "part_type": {
+        "value": "side-view mirror",
+        "candidates": [
+          {
+            "value": "side-view mirror",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 16"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-016-part_type"
+      },
+      "side": {
+        "value": "RH",
+        "candidates": [
+          {
+            "value": "RH",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 16"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-016-side"
+      },
+      "donor_make": {
+        "value": "Mitsubishi",
+        "candidates": [
+          {
+            "value": "Mitsubishi",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 16"
+          },
+          {
+            "value": "Mitsubishi",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 16"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-016-donor_make"
+      },
+      "donor_model": {
+        "value": "Lancer",
+        "candidates": [
+          {
+            "value": "Lancer",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 16"
+          },
+          {
+            "value": "Lancer",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 16"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-016-donor_model"
+      },
+      "donor_year": {
+        "value": 2015,
+        "candidates": [
+          {
+            "value": 2015,
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 16"
+          },
+          {
+            "value": 2015,
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 16"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-016-donor_year"
+      },
+      "storage_location": {
+        "value": "D-02",
+        "candidates": [
+          {
+            "value": "D-02",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 16"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-016-storage_location"
+      },
+      "asking_price": {
+        "value": "80",
+        "candidates": [
+          {
+            "value": "80",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 16"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-016-asking_price"
+      }
+    }
+  },
+  {
+    "part_id": "MIR-017",
+    "classification": null,
+    "exclusion_flag": false,
+    "notes": {
+      "en": "Patrol RH camera mirror from 2019 donor",
+      "ar": "باترول يمين، سيارة المصدر ٢٠١٩"
+    },
+    "photos": [
+      {
+        "file": "MIR-017_1.jpg",
+        "shows": "front of mirror, RH side, cover visible"
+      },
+      {
+        "file": "MIR-017_2.jpg",
+        "shows": "back/mounting side"
+      },
+      {
+        "file": "MIR-017_3.jpg",
+        "shows": "glass surface"
+      },
+      {
+        "file": "MIR-017_4.jpg",
+        "shows": "part-number label, fully readable"
+      }
+    ],
+    "spreadsheet_row": {
+      "id": "MIR-017",
+      "description": "Nissan Patrol mirror RH 2018 camera",
+      "condition": "used - good",
+      "price_aed": "700",
+      "location": "C-04",
+      "photos": "MIR-017_1.jpg;MIR-017_2.jpg;MIR-017_3.jpg;MIR-017_4.jpg"
+    },
+    "ledger": {
+      "part_type": {
+        "value": "side-view mirror",
+        "candidates": [
+          {
+            "value": "side-view mirror",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 17"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-017-part_type"
+      },
+      "side": {
+        "value": "RH",
+        "candidates": [
+          {
+            "value": "RH",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 17"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-017-side"
+      },
+      "donor_make": {
+        "value": "Nissan",
+        "candidates": [
+          {
+            "value": "Nissan",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 17"
+          },
+          {
+            "value": "Nissan",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 17"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-017-donor_make"
+      },
+      "donor_model": {
+        "value": "Patrol",
+        "candidates": [
+          {
+            "value": "Patrol",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 17"
+          },
+          {
+            "value": "Patrol",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 17"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-017-donor_model"
+      },
+      "donor_year": {
+        "value": null,
+        "candidates": [
+          {
+            "value": 2018,
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 17"
+          },
+          {
+            "value": 2019,
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 17"
+          }
+        ],
+        "status": "CONFLICTING",
+        "question_id": "Q-MIR-017-donor_year"
+      },
+      "storage_location": {
+        "value": "C-04",
+        "candidates": [
+          {
+            "value": "C-04",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 17"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-017-storage_location"
+      },
+      "asking_price": {
+        "value": "700",
+        "candidates": [
+          {
+            "value": "700",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 17"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-017-asking_price"
+      }
+    }
+  },
+  {
+    "part_id": "MIR-018",
+    "classification": null,
+    "exclusion_flag": false,
+    "notes": {
+      "en": "Hilux LH manual, no label found",
+      "ar": "هايلكس يسار، لا يوجد ملصق"
+    },
+    "photos": [
+      {
+        "file": "MIR-018_1.jpg",
+        "shows": "front of mirror, LH side, cover visible; faded"
+      },
+      {
+        "file": "MIR-018_2.jpg",
+        "shows": "back/mounting side"
+      },
+      {
+        "file": "MIR-018_3.jpg",
+        "shows": "glass surface"
+      },
+      {
+        "file": "MIR-018_4.jpg",
+        "shows": "part-number label, no label present"
+      }
+    ],
+    "spreadsheet_row": {
+      "id": "MIR-018",
+      "description": "Toyota Hilux mirror LH 2017",
+      "condition": "used",
+      "price_aed": "70",
+      "location": "D-03",
+      "photos": "MIR-018_1.jpg;MIR-018_2.jpg;MIR-018_3.jpg;MIR-018_4.jpg"
+    },
+    "ledger": {
+      "part_type": {
+        "value": "side-view mirror",
+        "candidates": [
+          {
+            "value": "side-view mirror",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 18"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-018-part_type"
+      },
+      "side": {
+        "value": "LH",
+        "candidates": [
+          {
+            "value": "LH",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 18"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-018-side"
+      },
+      "donor_make": {
+        "value": "Toyota",
+        "candidates": [
+          {
+            "value": "Toyota",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 18"
+          },
+          {
+            "value": "Toyota",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 18"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-018-donor_make"
+      },
+      "donor_model": {
+        "value": "Hilux",
+        "candidates": [
+          {
+            "value": "Hilux",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 18"
+          },
+          {
+            "value": "Hilux",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 18"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-018-donor_model"
+      },
+      "donor_year": {
+        "value": 2017,
+        "candidates": [
+          {
+            "value": 2017,
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 18"
+          },
+          {
+            "value": 2017,
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 18"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-018-donor_year"
+      },
+      "storage_location": {
+        "value": "D-03",
+        "candidates": [
+          {
+            "value": "D-03",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 18"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-018-storage_location"
+      },
+      "asking_price": {
+        "value": "70",
+        "candidates": [
+          {
+            "value": "70",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 18"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-018-asking_price"
+      }
+    }
+  },
+  {
+    "part_id": "MIR-019",
+    "classification": null,
+    "exclusion_flag": false,
+    "notes": {
+      "en": "Cerato LH heated, tested OK",
+      "ar": null
+    },
+    "photos": [
+      {
+        "file": "MIR-019_1.jpg",
+        "shows": "front of mirror, LH side, cover visible"
+      },
+      {
+        "file": "MIR-019_2.jpg",
+        "shows": "back/mounting side"
+      },
+      {
+        "file": "MIR-019_3.jpg",
+        "shows": "glass surface"
+      },
+      {
+        "file": "MIR-019_4.jpg",
+        "shows": "part-number label, partially readable — last digits obscured"
+      }
+    ],
+    "spreadsheet_row": {
+      "id": "MIR-019",
+      "description": "Kia Cerato mirror LH 2018",
+      "condition": "used - good",
+      "price_aed": "150",
+      "location": "B-07",
+      "photos": "MIR-019_1.jpg;MIR-019_2.jpg;MIR-019_3.jpg;MIR-019_4.jpg"
+    },
+    "ledger": {
+      "part_type": {
+        "value": "side-view mirror",
+        "candidates": [
+          {
+            "value": "side-view mirror",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 19"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-019-part_type"
+      },
+      "side": {
+        "value": "LH",
+        "candidates": [
+          {
+            "value": "LH",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 19"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-019-side"
+      },
+      "donor_make": {
+        "value": "Kia",
+        "candidates": [
+          {
+            "value": "Kia",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 19"
+          },
+          {
+            "value": "Kia",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 19"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-019-donor_make"
+      },
+      "donor_model": {
+        "value": "Cerato",
+        "candidates": [
+          {
+            "value": "Cerato",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 19"
+          },
+          {
+            "value": "Cerato",
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 19"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-019-donor_model"
+      },
+      "donor_year": {
+        "value": 2018,
+        "candidates": [
+          {
+            "value": 2018,
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 19"
+          },
+          {
+            "value": 2018,
+            "source": "dismantling_note",
+            "source_ref": "donor_vehicles.csv row 19"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-019-donor_year"
+      },
+      "storage_location": {
+        "value": "B-07",
+        "candidates": [
+          {
+            "value": "B-07",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 19"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-019-storage_location"
+      },
+      "asking_price": {
+        "value": "150",
+        "candidates": [
+          {
+            "value": "150",
+            "source": "spreadsheet",
+            "source_ref": "inventory.csv row 19"
+          }
+        ],
+        "status": "PARTIAL",
+        "question_id": "Q-MIR-019-asking_price"
+      }
+    }
+  }
+]

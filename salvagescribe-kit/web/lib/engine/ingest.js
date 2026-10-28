@@ -17,7 +17,7 @@ import { dirname, join } from "node:path";
 import { callModel } from "./llm.js";
 import { setCandidate, resolveAll, ledgerToJSON } from "./ledger.js";
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
+const __dirname = join(process.cwd(), "lib", "engine");
 const ROOT = join(__dirname, "..", "..");
 const PHOTOS_DIR = join(ROOT, "data", "photos");
 const PROMPT_PATH = join(__dirname, "prompts", "ingest.txt");

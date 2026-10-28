@@ -6,7 +6,7 @@ import { generateQuestions } from "./engine/questions.js";
 import { askAssistant } from "./engine/assistant.js";
 import { isMock, modelName } from "./engine/llm.js";
 import { readFileSync, existsSync } from "node:fs";
-import { fileURLToPath } from "node:url";
+import { join } from "node:path";
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 export async function apiResponse(fn) {
@@ -35,7 +35,7 @@ async function ingest(record, ctx) {
   if (record.ledger.ingested) return;
   if (isMock) {
     if (!record.ledger.demo) throw new ApiError("Live AI is not configured. Your intake is saved; confirm attributes manually or configure LLM_API_KEY.", 503);
-    const file = fileURLToPath(new URL(`../data/mock_responses/ingest_${record.part_id}.json`, import.meta.url));
+    const file = join(process.cwd(), "data", "mock_responses", `ingest_${record.part_id}.json`);
     if (!existsSync(file)) throw new ApiError("No demo evidence exists for this part", 400);
   }
   const signed = await presentRecord(record, ctx);
@@ -66,23 +66,7 @@ export async function command(body) {
       if (existing.has(ledger.part_id)) continue;
       ledger.demo = true;
       const r = { part_id: ledger.part_id, revision: 0, ledger, draft: null };
-      const file = fileURLToPath(new URL(`../data/mock_responses/ingest_${ledger.part_id}.json`, import.meta.url));
-      if (existsSync(file)) {
-        const fixture = JSON.parse(readFileSync(file, "utf8"));
-        const { setCandidate, resolveAll, confirm } = await import("./engine/ledger.js");
-        for (const a of fixture.attributes || []) if (a.value != null && r.ledger._attr_order.includes(a.attribute)) setCandidate(r.ledger, a.attribute, a.value, a.source, a.source_ref);
-        resolveAll(r.ledger);
-        r.ledger.possible_damage = fixture.possible_damage || [];
-        r.ledger.notes.ar_to_en = fixture.translated_notes?.ar_to_en;
-        r.ledger.ingested = true;
-        if (ledger.part_id === "MIR-001") {
-          for (const [a, row] of Object.entries(ledger.ledger)) if (row.value != null && row.status !== "CONFLICTING" && !String(row.value).includes("?")) confirm(ledger, a, row.value);
-          for (const [a, v] of Object.entries({ packaged_dimensions_cm: "35 x 25 x 20", packaged_weight_kg: "1.8" })) confirm(ledger, a, v);
-          ledger.demo_note = "Synthetic normal-journey confirmations and packing measurements. Not real seller evidence.";
-          r.draft = makeDraft(ledger);
-        }
-      }
-      await persist(r, ctx, "demo_import", { synthetic: true });
+      await persist(r, ctx, "existing_inventory_import", { source: "existing_records.json and inventory.csv" });
       created++;
     }
     return { created };

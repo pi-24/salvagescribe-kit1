@@ -21,7 +21,7 @@ import { dirname, join } from "node:path";
 
 import { ledgerToJSON, STATUS } from "./ledger.js";
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
+const __dirname = join(process.cwd(), "lib", "engine");
 const DATA_DIR = join(__dirname, "..", "..", "data");
 
 let _checklist = null;

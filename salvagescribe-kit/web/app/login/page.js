@@ -1,140 +1,64 @@
 "use client";
-
-// app/login/page.js — glassy Supabase auth: sign in / sign up (email+password)
-
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Sparkles, Mail, LockKeyhole, LoaderCircle, ShieldCheck } from "lucide-react";
-import { createSupabaseBrowserClient } from "../../lib/supabase-browser.js";
+import { createSupabaseBrowserClient, isSupabaseBrowserConfigured } from "../../lib/supabase-browser.js";
+import { safeNext } from "../../lib/auth-redirect.js";
 
 export default function LoginPage() {
-  const router = useRouter();
-  const [mode, setMode] = useState("signin"); // signin | signup
+  const [mode, setMode] = useState("signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmation, setConfirmation] = useState("");
   const [busy, setBusy] = useState(false);
-  const [error, setError] = useState(null);
-  const [info, setInfo] = useState(null);
-
-  async function submit(e) {
-    e.preventDefault();
+  const [error, setError] = useState("");
+  const [info, setInfo] = useState("");
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("error")) setError("Unable to complete sign-in. Sign in with your email and password, or browse as a guest.");
+  }, []);
+  const destination = () => safeNext(new URLSearchParams(window.location.search).get("next"));
+  async function submit(event) {
+    event.preventDefault();
+    if (busy) return;
+    setError(""); setInfo("");
+    if (mode === "signup" && password !== confirmation) { setError("Passwords do not match."); return; }
     setBusy(true);
-    setError(null);
-    setInfo(null);
     try {
-      const supabase = createSupabaseBrowserClient();
-      const { error: authError } =
-        mode === "signin"
-          ? await supabase.auth.signInWithPassword({ email, password })
-          : await supabase.auth.signUp({ email, password });
-
-      if (authError) {
-        setError(authError.message);
-      } else if (mode === "signup") {
-        // Sessions start immediately unless email confirmation is required
-        const { data } = await supabase.auth.getSession();
-        if (data?.session) {
-          router.push("/");
-          router.refresh();
-        } else {
-          setInfo("Check your inbox — confirm your email to activate the account.");
+      if (mode === "signup") {
+        const response = await fetch("/api/auth/config", { cache: "no-store" });
+        const config = await response.json();
+        if (!response.ok || !config.signupEnabled || config.emailConfirmationRequired) {
+          throw new Error("Account creation is temporarily unavailable. You can browse as a guest or sign in to an existing account.");
         }
-      } else {
-        router.push("/");
-        router.refresh();
       }
-    } catch {
-      setError("Authentication service unavailable.");
-    } finally {
-      setBusy(false);
-    }
+      const client = createSupabaseBrowserClient();
+      const { data, error } = mode === "signin"
+        ? await client.auth.signInWithPassword({ email: email.trim(), password })
+        : await client.auth.signUp({ email: email.trim(), password });
+      if (error) {
+        if (["over_email_send_rate_limit", "over_request_rate_limit"].includes(error.code) || error.status === 429) {
+          throw new Error("Account requests are temporarily limited. Continue as a guest or try signing in to an existing account later.");
+        }
+        throw error;
+      }
+      if (data.session) { window.location.assign(destination()); return; }
+      if (mode === "signup") setInfo("No session was created. If you already have an account, sign in with your existing password. You can also continue as a guest.");
+      else setError("A session could not be created. Please try signing in again.");
+    } catch (err) { setError(err.message || "Unable to reach authentication. Please try again."); }
+    finally { setBusy(false); }
   }
-
-  return (
-    <div className="fade-up flex min-h-[70vh] items-center justify-center">
-      <div className="glass w-full max-w-md rounded-[2rem] p-8">
-        <div className="mb-7 text-center">
-          <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-cyan-400 shadow-lg shadow-indigo-500/30">
-            <Sparkles className="h-5 w-5 text-white" strokeWidth={2.2} />
-          </span>
-          <h1 className="mt-4 text-2xl font-semibold tracking-tight">
-            {mode === "signin" ? "Welcome back" : "Create your account"}
-          </h1>
-          <p className="mt-1.5 text-[13px] leading-relaxed text-white/50">
-            Sign in to SalvageScribe — guardrailed listings await your approval.
-          </p>
-        </div>
-
-        <form onSubmit={submit} className="space-y-3.5">
-          <label className="glass-deep flex items-center gap-3 rounded-2xl px-4 py-3">
-            <Mail className="h-4 w-4 shrink-0 text-white/40" />
-            <input
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="noor@salvage.ae"
-              className="w-full bg-transparent text-sm text-white placeholder:text-white/30 focus:outline-none"
-            />
-          </label>
-          <label className="glass-deep flex items-center gap-3 rounded-2xl px-4 py-3">
-            <LockKeyhole className="h-4 w-4 shrink-0 text-white/40" />
-            <input
-              type="password"
-              required
-              minLength={6}
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Password (min 6 characters)"
-              className="w-full bg-transparent text-sm text-white placeholder:text-white/30 focus:outline-none"
-            />
-          </label>
-
-          {error && (
-            <p className="rounded-xl border border-rose-400/30 bg-rose-400/10 px-4 py-2.5 text-xs text-rose-200">
-              {error}
-            </p>
-          )}
-          {info && (
-            <p className="rounded-xl border border-cyan-400/30 bg-cyan-400/10 px-4 py-2.5 text-xs text-cyan-100">
-              {info}
-            </p>
-          )}
-
-          <button
-            type="submit"
-            disabled={busy}
-            className="flex w-full items-center justify-center gap-2 rounded-2xl bg-white py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-white/10 transition-all duration-300 hover:scale-[1.02] disabled:opacity-60"
-          >
-            {busy && <LoaderCircle className="h-4 w-4 animate-spin" />}
-            {mode === "signin" ? "Sign in" : "Sign up"}
-          </button>
-        </form>
-
-        <button
-          onClick={() => {
-            setMode(mode === "signin" ? "signup" : "signin");
-            setError(null);
-            setInfo(null);
-          }}
-          className="mt-4 w-full text-center text-[13px] text-white/45 transition-colors hover:text-white/80"
-        >
-          {mode === "signin"
-            ? "No account yet? Create one"
-            : "Already registered? Sign in"}
-        </button>
-
-        <p className="mt-6 flex items-start justify-center gap-1.5 text-center text-[11px] leading-relaxed text-white/30">
-          <ShieldCheck className="mt-0.5 h-3 w-3 shrink-0" />
-          Supabase Auth · sessions are httpOnly-cookie based
-        </p>
-        <p className="mt-3 text-center text-[11px] text-white/30">
-          <Link href="/" className="underline-offset-2 hover:underline">
-            ← back to board
-          </Link>
-        </p>
-      </div>
-    </div>
-  );
+  return <div className="auth-page"><section className="glass auth-card">
+    <span className="brand-icon">S</span><h1>{mode === "signin" ? "Welcome back" : "Create your account"}</h1>
+    <p>Manage your salvage inventory, reconcile evidence and prepare listing drafts.</p>
+    {!isSupabaseBrowserConfigured && <p className="auth-notice">Authentication needs the Supabase URL and public key in web/.env.local.</p>}
+    <form onSubmit={submit}>
+      <label htmlFor="email">Email address</label><input id="email" name="email" type="email" autoComplete="email" required value={email} onChange={e => setEmail(e.target.value)} placeholder="you@example.com" disabled={busy} />
+      <label htmlFor="password">Password</label><input id="password" name="password" type="password" autoComplete={mode === "signup" ? "new-password" : "current-password"} required minLength={mode === "signup" ? 8 : undefined} value={password} onChange={e => setPassword(e.target.value)} placeholder={mode === "signup" ? "At least 8 characters" : "Your password"} disabled={busy} />
+      {mode === "signup" && <><label htmlFor="confirmation">Confirm password</label><input id="confirmation" type="password" autoComplete="new-password" required value={confirmation} onChange={e => setConfirmation(e.target.value)} disabled={busy} /></>}
+      {error && <p role="alert" className="auth-notice auth-error">{error}</p>}{info && <p role="status" className="auth-notice">{info}</p>}
+      <button type="submit" disabled={busy || !isSupabaseBrowserConfigured}>{busy ? "Please wait…" : mode === "signin" ? "Sign in" : "Create account"}</button>
+    </form>
+    <button disabled={busy} onClick={() => { setMode(mode === "signin" ? "signup" : "signin"); setError(""); setInfo(""); setPassword(""); setConfirmation(""); }}>{mode === "signin" ? "New here? Create an account" : "Already registered? Sign in"}</button>
+    <p style={{ marginTop: 20 }}><Link href="/">Continue as a guest →</Link></p>
+  </section></div>;
 }

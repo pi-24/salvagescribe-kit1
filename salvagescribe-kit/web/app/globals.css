@@ -134,3 +134,34 @@ body {
   background: rgba(255, 255, 255, 0.18);
   border-radius: 9999px;
 }
+
+/* Carry the supplied liquid glass system into account and record pages. */
+:root { --background: var(--bg-canvas); --foreground: var(--text-primary); }
+body { background-color: var(--bg-canvas); color: var(--text-primary); }
+.glass { background: var(--glass-surface-card); border: var(--glass-border-bevel); box-shadow: var(--glass-shadow-card); backdrop-filter: var(--glass-blur-backdrop); }
+.glass-deep { background: var(--glass-surface-inset); border: 1px solid var(--glass-border-refraction); box-shadow: var(--glass-shadow-flat); }
+.glass-hover:hover { background: var(--glass-surface-elevated); border-color: var(--accent-primary); }
+.workspace-content { max-width: 1280px; margin: auto; padding: 36px 24px 80px; }
+.workspace-content [class*="text-white"] { color: var(--text-secondary); }
+.workspace-content input, .workspace-content textarea { color: var(--text-primary); }
+.auth-page { display: grid; place-items: center; min-height: 75vh; }
+.auth-card { width: 100%; max-width: 460px; padding: 36px; border-radius: 28px; }
+.auth-card h1 { font-size: 28px; font-weight: 750; margin: 20px 0 8px; }
+.auth-card p { color: var(--text-muted); margin-bottom: 20px; }
+.auth-card label { display: block; margin: 16px 0 6px; font-size: 13px; font-weight: 600; }
+.auth-card input { width: 100%; padding: 13px 16px; border-radius: 12px; background: var(--glass-surface-inset); border: 1px solid var(--glass-border-refraction); }
+.auth-card button { margin-top: 18px; width: 100%; padding: 12px; border-radius: 12px; cursor: pointer; }
+.auth-card button[type="submit"] { background: var(--accent-primary); color: white; font-weight: 700; }
+.auth-card button:disabled { opacity: .55; cursor: wait; }
+.auth-notice, .inventory-notice { margin: 18px 0; padding: 16px; border-radius: 12px; background: var(--glass-surface-elevated); border: 1px solid var(--glass-border-refraction); }
+.auth-error { color: #b42318 !important; }
+.inventory-notice { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+.inventory-notice button { padding: 9px 16px; background: var(--accent-primary); color: white; border-radius: 10px; cursor: pointer; }
+.evidence-field { display: grid; gap: 8px; }
+.evidence-field label { font-size: 13px; font-weight: 650; }
+.evidence-field small { color: var(--text-muted); }
+.evidence-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0; }
+.marketglass-toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(12px); padding: 14px 22px; border-radius: 14px; background: var(--glass-surface-overlay); border: 1px solid var(--glass-border-refraction); box-shadow: var(--glass-shadow-card); z-index: 9999; opacity: 0; pointer-events: none; max-width: 90vw; }
+.marketglass-toast.show { opacity: 1; transform: translateX(-50%); }
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid var(--accent-primary); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }

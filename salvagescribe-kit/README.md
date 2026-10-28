@@ -57,7 +57,21 @@ cp .env.example .env
 For the hackathon demo, set `MOCK=1` in `.env` (or prefix commands with
 `MOCK=1`) to use canned model responses from `data/mock_responses/`.
 
-## Build and run
+## Liquid Glass web app
+
+The primary interface is now the Next.js app in `web/`, using the supplied HTML and CSS with authenticated inventory, drafts, and saved conversations. See [web setup and verification](web/README.md).
+
+```sh
+npm --prefix web install
+npm run dev
+# Production:
+npm run build
+npm start
+```
+
+The original Express prototype remains available with `npm run start:legacy`.
+
+## Legacy prototype build and run
 
 ```bash
 npm run seed      # load the 10-part demo inventory into SQLite

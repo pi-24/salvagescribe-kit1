@@ -1,0 +1,61 @@
+[
+  {
+    "id": "MIR-004",
+    "source": "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=640&q=80",
+    "local": "/marketglass/images/MIR-004.jpg",
+    "bytes": 33765
+  },
+  {
+    "id": "MIR-001",
+    "source": "https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=640&q=80",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "id": "MIR-002",
+    "source": "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=640&q=80",
+    "local": "/marketglass/images/MIR-002.jpg",
+    "bytes": 48792
+  },
+  {
+    "id": "MIR-003",
+    "source": "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=640&q=80",
+    "local": "/marketglass/images/MIR-003.jpg",
+    "bytes": 55291
+  },
+  {
+    "id": "LGT-001",
+    "source": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=640&q=80",
+    "local": "/marketglass/images/LGT-001.jpg",
+    "bytes": 41345
+  },
+  {
+    "id": "LGT-002",
+    "source": "https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=640&q=80",
+    "local": "/marketglass/images/LGT-002.jpg",
+    "bytes": 52200
+  },
+  {
+    "id": "LGT-003",
+    "source": "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=640&q=80",
+    "local": "/marketglass/images/LGT-003.jpg",
+    "bytes": 61014
+  },
+  {
+    "id": "BDY-001",
+    "source": "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=640&q=80",
+    "local": "/marketglass/images/BDY-001.jpg",
+    "bytes": 92758
+  },
+  {
+    "id": "BDY-002",
+    "source": "https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=640&q=80",
+    "local": "/marketglass/images/BDY-002.jpg",
+    "bytes": 79290
+  },
+  {
+    "id": "BDY-003",
+    "source": "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=640&q=80",
+    "local": "/marketglass/images/BDY-003.jpg",
+    "bytes": 59421
+  }
+]

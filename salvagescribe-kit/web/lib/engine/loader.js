@@ -21,8 +21,8 @@ import {
   ledgerToJSON,
 } from "./ledger.js";
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const DATA_DIR = join(__dirname, "..", "data");
+const __dirname = join(process.cwd(), "lib", "engine");
+const DATA_DIR = join(process.cwd(), "data");
 
 // Exclusion list (spec §6 guardrail 4 / checklist rule X-01)
 export const EXCLUSION_TERMS = [

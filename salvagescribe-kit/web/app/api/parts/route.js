@@ -1,8 +1,3 @@
-// GET /api/parts — board view with readiness class per part
-import { getBoard } from "../../../lib/store.js";
-
+import { legacy } from "@/lib/legacy-api.js";
 export const dynamic = "force-dynamic";
-
-export async function GET() {
-  return Response.json(getBoard());
-}
+export const GET = legacy("board");

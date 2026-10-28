@@ -1,8 +1,3 @@
-// GET /api/demo/normal — part id for the conflict-free demo journey
-import { findNormalJourneyPartId } from "../../../../lib/store.js";
-
+import { legacy } from "@/lib/legacy-api.js";
 export const dynamic = "force-dynamic";
-
-export async function GET() {
-  return Response.json({ part_id: findNormalJourneyPartId() });
-}
+export const GET = legacy("normal");

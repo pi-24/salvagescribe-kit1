@@ -1,5 +1,6 @@
+import { readFileSync } from "node:fs";
 import { loadAll } from "./engine/loader.js";
-import { fileURLToPath } from "node:url";
+import path from "node:path";
 import { createSupabaseServerClient, isSupabaseConfigured } from "./supabase.js";
 import { decodeLedger, readiness } from "./platform-engine.js";
 
@@ -28,7 +29,11 @@ export async function session() {
 }
 
 export function demoLedgers() {
-  return loadAll(fileURLToPath(new URL("../data", import.meta.url))).map(decodeLedger);
+  const originals = loadAll(path.join(process.cwd(), "data")).map(decodeLedger);
+  const saved = JSON.parse(readFileSync(path.join(process.cwd(), "data/existing_records.json"), "utf8"));
+  const records = new Map(originals.map(l => [l.part_id, l]));
+  for (const l of saved) records.set(l.part_id, decodeLedger(l));
+  return [...records.values()];
 }
 
 export async function getAllLedgers(ctx) {

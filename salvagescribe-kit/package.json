@@ -8,10 +8,13 @@
     "node": ">=20"
   },
   "scripts": {
-    "start": "node src/server.js",
+    "start": "npm --prefix web start",
     "test": "node --test",
     "seed": "node scripts/seed_demo.js",
-    "eval": "node scripts/evaluate.js --direct"
+    "eval": "node scripts/evaluate.js --direct",
+    "start:legacy": "node src/server.js",
+    "dev": "npm --prefix web run dev",
+    "build": "npm --prefix web run build"
   },
   "dependencies": {
     "better-sqlite3": "^13.0.3",

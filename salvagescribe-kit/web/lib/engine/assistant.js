@@ -19,7 +19,7 @@ import { dirname, join } from "node:path";
 import { callModel } from "./llm.js";
 import { ledgerToJSON } from "./ledger.js";
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
+const __dirname = join(process.cwd(), "lib", "engine");
 const PROMPT_PATH = join(__dirname, "prompts", "assistant.txt");
 
 let _systemPrompt = null;

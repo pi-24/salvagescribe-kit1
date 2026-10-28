@@ -2,6 +2,7 @@
 // Unauthenticated visitors land on /login; logged-in users skip /login.
 
 import { createServerClient } from "@supabase/ssr";
+import { safeNext } from "./lib/auth-redirect.js";
 import { NextResponse } from "next/server";
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
@@ -10,9 +11,9 @@ const SUPABASE_KEY =
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
   "";
 
-const PUBLIC_PATHS = ["/login", "/auth", "/marketglass"];
+const PUBLIC_PATHS = ["/login", "/auth"];
 
-export async function middleware(request) {
+export async function proxy(request) {
   let response = NextResponse.next({ request });
 
   // Supabase not configured → run open (demo mode still works standalone)
@@ -33,22 +34,26 @@ export async function middleware(request) {
     },
   });
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  let user = null;
+  try { ({ data: { user } } = await supabase.auth.getUser()); } catch { /* APIs check their own session too. */ }
 
   const path = request.nextUrl.pathname;
-  const isPublic = PUBLIC_PATHS.some((p) => path === p || path.startsWith(`${p}/`));
+  const isPublic = path === "/" || path.startsWith("/parts/") || path === "/marketglass" || path === "/marketglass/index.html" || (path.startsWith("/marketglass/") && /\.(css|js)$/.test(path)) || path.startsWith("/api/") || PUBLIC_PATHS.some((p) => path === p || path.startsWith(`${p}/`));
 
   if (!user && !isPublic) {
     const url = request.nextUrl.clone();
     url.pathname = "/login";
-    return NextResponse.redirect(url);
+    url.search = "";
+    url.searchParams.set("next", path + request.nextUrl.search);
+    const redirect = NextResponse.redirect(url);
+    response.cookies.getAll().forEach(c => redirect.cookies.set(c));
+    return redirect;
   }
   if (user && path === "/login") {
     const url = request.nextUrl.clone();
-    url.pathname = "/";
-    return NextResponse.redirect(url);
+    const redirect = NextResponse.redirect(new URL(safeNext(request.nextUrl.searchParams.get("next")), request.url));
+    response.cookies.getAll().forEach(c => redirect.cookies.set(c));
+    return redirect;
   }
   return response;
 }
