@@ -1,0 +1,93 @@
+{
+  "attributes": [
+    {
+      "attribute": "part_type",
+      "value": "side-view mirror",
+      "source": "spreadsheet",
+      "source_ref": "spreadsheet",
+      "confidence": 0.98,
+      "note": "Part type from spreadsheet description."
+    },
+    {
+      "attribute": "side",
+      "value": "LH",
+      "source": "photo",
+      "source_ref": "MIR-018_1.jpg",
+      "confidence": 0.85,
+      "note": "Side (LH) visible in front photo."
+    },
+    {
+      "attribute": "manufacturer",
+      "value": "OEM",
+      "source": "photo_label",
+      "source_ref": "MIR-018_4.jpg",
+      "confidence": 0.8,
+      "note": "OEM part number format on label."
+    },
+    {
+      "attribute": "part_number",
+      "value": null,
+      "source": "photo_label",
+      "source_ref": "MIR-018_4.jpg",
+      "confidence": 0.9,
+      "note": "No part-number label present."
+    },
+    {
+      "attribute": "features",
+      "value": "manual",
+      "source": "dismantling_note",
+      "source_ref": "notes.json MIR-018",
+      "confidence": 0.7,
+      "note": "Features observed from dismantling note."
+    },
+    {
+      "attribute": "tested",
+      "value": "untested",
+      "source": "dismantling_note",
+      "source_ref": "notes.json MIR-018",
+      "confidence": 0.5,
+      "note": "No electrical test recorded in notes."
+    },
+    {
+      "attribute": "cosmetic_condition",
+      "value": "faded",
+      "source": "photo",
+      "source_ref": "MIR-018_1.jpg",
+      "confidence": 0.6,
+      "note": "Cosmetic wear visible in photos — reported as possible, needs confirmation."
+    },
+    {
+      "attribute": "structural_damage",
+      "value": "none",
+      "source": "photo",
+      "source_ref": "photos",
+      "confidence": 0.8,
+      "note": "No visible structural damage in photos."
+    },
+    {
+      "attribute": "glass_condition",
+      "value": "clear",
+      "source": "photo",
+      "source_ref": "MIR-018_3.jpg",
+      "confidence": 0.85,
+      "note": "Glass surface appears clear in photos."
+    },
+    {
+      "attribute": "included_components",
+      "value": "cover, glass",
+      "source": "dismantling_note",
+      "source_ref": "notes.json MIR-018",
+      "confidence": 0.7,
+      "note": "Included components per dismantling note."
+    }
+  ],
+  "possible_damage": [
+    {
+      "description": "front of mirror, LH side, cover visible; faded",
+      "photo": "MIR-018_1.jpg"
+    }
+  ],
+  "translated_notes": {
+    "ar_to_en": "Hilux LH manual, no label found"
+  }
+}

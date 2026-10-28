@@ -1,0 +1,93 @@
+{
+  "attributes": [
+    {
+      "attribute": "part_type",
+      "value": "side-view mirror",
+      "source": "spreadsheet",
+      "source_ref": "spreadsheet",
+      "confidence": 0.98,
+      "note": "Part type from spreadsheet description."
+    },
+    {
+      "attribute": "side",
+      "value": "RH",
+      "source": "photo",
+      "source_ref": "MIR-014_1.jpg",
+      "confidence": 0.85,
+      "note": "Side (RH) visible in front photo."
+    },
+    {
+      "attribute": "manufacturer",
+      "value": "OEM",
+      "source": "photo_label",
+      "source_ref": "MIR-014_4.jpg",
+      "confidence": 0.8,
+      "note": "OEM part number format on label."
+    },
+    {
+      "attribute": "part_number",
+      "value": "87620-D3??0",
+      "source": "photo_label",
+      "source_ref": "MIR-014_4.jpg",
+      "confidence": 0.5,
+      "note": "Part-number label partially readable — last digits obscured."
+    },
+    {
+      "attribute": "features",
+      "value": "power, folding, signal",
+      "source": "dismantling_note",
+      "source_ref": "notes.json MIR-014",
+      "confidence": 0.7,
+      "note": "Features observed from dismantling note."
+    },
+    {
+      "attribute": "tested",
+      "value": "tested_ok",
+      "source": "dismantling_note",
+      "source_ref": "notes.json MIR-014",
+      "confidence": 0.85,
+      "note": "Bench tested OK per dismantling note."
+    },
+    {
+      "attribute": "cosmetic_condition",
+      "value": "none",
+      "source": "photo",
+      "source_ref": "MIR-014_1.jpg",
+      "confidence": 0.8,
+      "note": "No visible cosmetic damage in photos."
+    },
+    {
+      "attribute": "structural_damage",
+      "value": "none",
+      "source": "photo",
+      "source_ref": "photos",
+      "confidence": 0.8,
+      "note": "No visible structural damage in photos."
+    },
+    {
+      "attribute": "glass_condition",
+      "value": "small chip at edge of glass",
+      "source": "photo",
+      "source_ref": "MIR-014_3.jpg",
+      "confidence": 0.6,
+      "note": "Glass condition: small chip at edge of glass. Needs confirmation."
+    },
+    {
+      "attribute": "included_components",
+      "value": "cover, glass, harness, signal lens",
+      "source": "dismantling_note",
+      "source_ref": "notes.json MIR-014",
+      "confidence": 0.7,
+      "note": "Included components per dismantling note."
+    }
+  ],
+  "possible_damage": [
+    {
+      "description": "glass surface; small chip at edge of glass",
+      "photo": "MIR-014_3.jpg"
+    }
+  ],
+  "translated_notes": {
+    "ar_to_en": "Tucson RH, chip on glass edge, electrics OK"
+  }
+}

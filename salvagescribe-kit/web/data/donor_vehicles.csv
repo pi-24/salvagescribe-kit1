@@ -1,0 +1,21 @@
+part_id,donor_make,donor_model,donor_year,donor_vin_last6,dismantled_on,dismantler
+MIR-001,Toyota,Corolla,2018,439563,2026-09-01,Khalid
+MIR-002,Nissan,Patrol,2016,514002,2026-09-02,Ahmed
+MIR-003,Hyundai,Elantra,2019,150631,2026-09-03,Khalid
+MIR-004,Toyota,Corolla,2018,961168,2026-09-04,Ahmed
+MIR-005,Honda,Civic,2017,198702,2026-09-05,Ramesh
+MIR-006,Nissan,Altima,2015,711097,2026-09-06,Khalid
+MIR-007,Toyota,Camry,2016,632084,2026-09-07,Khalid
+MIR-008,Mitsubishi,Pajero,2014,139317,2026-09-08,Khalid
+MIR-009,Toyota,Land Cruiser,2019,554710,2026-09-09,Ramesh
+MIR-010,Kia,Sportage,2018,173248,2026-09-10,Khalid
+MIR-011,Nissan,Sunny,2017,195119,2026-09-11,Ahmed
+MIR-012,Toyota,Yaris,2020,545140,2026-09-12,Khalid
+MIR-013,Honda,Accord,2018,967017,2026-09-13,Ahmed
+MIR-014,Hyundai,Tucson,2017,229815,2026-09-14,Khalid
+MIR-015,Lexus,RX,2016,761259,2026-09-15,Ahmed
+MIR-016,Mitsubishi,Lancer,2015,711316,2026-09-16,Khalid
+MIR-017,Nissan,Patrol,2019,705136,2026-09-17,Ahmed
+MIR-018,Toyota,Hilux,2017,515949,2026-09-18,Khalid
+MIR-019,Kia,Cerato,2018,331821,2026-09-19,Khalid
+AIR-020,Toyota,Corolla,2018,683705,2026-09-20,Khalid

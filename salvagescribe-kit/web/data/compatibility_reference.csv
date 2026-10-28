@@ -1,0 +1,10 @@
+part_number,make,model,years,side,features,source_type
+87910-02F10,Toyota,Corolla,2014-2019,RH,"power, heated",OEM
+87940-02F10,Toyota,Corolla,2014-2019,LH,"power, heated",OEM
+96302-5X9A1,Nissan,Patrol,2010-2019,LH,"power, folding, signal",OEM
+96301-6JL0A,Nissan,Patrol,2017-2021,RH,"power, folding, signal, camera",OEM
+96301-3TH0A,Nissan,Altima,2013-2018,RH,power,OEM
+7632A830,Mitsubishi,Pajero,2008-2021,RH,"power, folding",OEM
+96302-3AW0A,Nissan,Sunny,2012-2019,LH,manual,OEM
+87620-F2000,Hyundai,Elantra,2017-2020,RH,power,OEM
+87620-F2010,Hyundai,Elantra,2017-2020,RH,"power, heated",OEM

@@ -1,0 +1,93 @@
+{
+  "attributes": [
+    {
+      "attribute": "part_type",
+      "value": "side-view mirror",
+      "source": "spreadsheet",
+      "source_ref": "spreadsheet",
+      "confidence": 0.98,
+      "note": "Part type from spreadsheet description."
+    },
+    {
+      "attribute": "side",
+      "value": "RH",
+      "source": "photo",
+      "source_ref": "MIR-001_1.jpg",
+      "confidence": 0.85,
+      "note": "Side (RH) visible in front photo."
+    },
+    {
+      "attribute": "manufacturer",
+      "value": "OEM",
+      "source": "photo_label",
+      "source_ref": "MIR-001_4.jpg",
+      "confidence": 0.8,
+      "note": "OEM part number format on label."
+    },
+    {
+      "attribute": "part_number",
+      "value": "87910-02F10",
+      "source": "photo_label",
+      "source_ref": "MIR-001_4.jpg",
+      "confidence": 0.95,
+      "note": "Part-number label fully readable."
+    },
+    {
+      "attribute": "features",
+      "value": "power, heated",
+      "source": "dismantling_note",
+      "source_ref": "notes.json MIR-001",
+      "confidence": 0.7,
+      "note": "Features observed from dismantling note."
+    },
+    {
+      "attribute": "tested",
+      "value": "tested_ok",
+      "source": "dismantling_note",
+      "source_ref": "notes.json MIR-001",
+      "confidence": 0.85,
+      "note": "Bench tested OK per dismantling note."
+    },
+    {
+      "attribute": "cosmetic_condition",
+      "value": "light scuff on cover",
+      "source": "photo",
+      "source_ref": "MIR-001_1.jpg",
+      "confidence": 0.6,
+      "note": "Cosmetic wear visible in photos — reported as possible, needs confirmation."
+    },
+    {
+      "attribute": "structural_damage",
+      "value": "none",
+      "source": "photo",
+      "source_ref": "photos",
+      "confidence": 0.8,
+      "note": "No visible structural damage in photos."
+    },
+    {
+      "attribute": "glass_condition",
+      "value": "clear",
+      "source": "photo",
+      "source_ref": "MIR-001_3.jpg",
+      "confidence": 0.85,
+      "note": "Glass surface appears clear in photos."
+    },
+    {
+      "attribute": "included_components",
+      "value": "cover, glass, harness",
+      "source": "dismantling_note",
+      "source_ref": "notes.json MIR-001",
+      "confidence": 0.7,
+      "note": "Included components per dismantling note."
+    }
+  ],
+  "possible_damage": [
+    {
+      "description": "front of mirror, RH side, cover visible; light scuff on cover",
+      "photo": "MIR-001_1.jpg"
+    }
+  ],
+  "translated_notes": {
+    "ar_to_en": "RH mirror, power and heated, bench tested OK 12V"
+  }
+}

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MarketGlass — Solidified Liquid Glass Marketplace</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ========================================================================
+       STICKY 2-TIER MARKETPLACE HEADER
+       ======================================================================== -->
+  <header class="marketplace-header">
+    <!-- Primary Tier: Navigation, Search, Analogue Menu -->
+    <div class="header-tier-primary">
+
+      <!-- Left Cluster: Analogue Rotary Phone Menu Trigger + Brand Logo -->
+      <div class="header-left-cluster">
+        <!-- Analogue Phone Liquid Bubble Menu Trigger Button -->
+        <button
+          id="btnAnalogueTrigger"
+          class="btn-analogue-menu"
+          title="Open Analogue Dial Menu"
+          aria-label="Open Analogue Rotary Bubble Menu"
+        >
+          <div class="dial-dot-ring">
+            <div class="dial-center-dot"></div>
+          </div>
+        </button>
+
+        <!-- Brand Lockup (Click to Reset to Landing Page) -->
+        <div class="brand-lockup" id="brandLogoBox" onclick="resetToLandingPage()" role="button" tabindex="0" title="Return to Landing Page">
+          <div class="brand-icon">S</div>
+          <div>
+            <span class="brand-title">SalvageScribe</span>
+            <span class="brand-badge">eBay P&A</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Omnisearch with Live Filter -->
+      <div class="search-wrapper">
+        <span class="search-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </span>
+        <input
+          type="search"
+          id="searchInput"
+          class="search-input"
+          placeholder="Search Noor's Dubai salvage inventory (mirrors, lights, handles, OEM #)..."
+          aria-label="Search listings"
+        />
+      </div>
+
+      <!-- Trade Corridor Selector (UAE to UK) -->
+      <button class="location-btn corridor-badge-btn" id="btnCorridorFilter" aria-label="Trade Corridor: UAE to UK" onclick="handleCorridorButtonClick()">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span>UAE (Dubai) → UK Corridor</span>
+      </button>
+
+      <!-- Action Cluster -->
+      <div class="header-actions">
+        <!-- SalvageScribe AI Assistant Trigger CTA -->
+        <button id="btnOpenSalvageAssistant" class="btn-assistant-cta" onclick="openSalvageAssistant()" title="Open SalvageScribe AI Assistant (eBay Case Study)">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          <span>SalvageScribe AI</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button id="themeToggleBtn" class="icon-btn" aria-label="Toggle Dark/Light Mode">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        </button>
+
+        <!-- Noor's Yard M2M Inquiries Hub -->
+        <button class="icon-btn" onclick="openChatDrawer()" aria-label="Open Direct Messages">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+          <span class="badge-counter">2</span>
+        </button>
+
+        <!-- Post Salvage Part CTA -->
+        <button class="btn-sell" onclick="openSalvageAssistant()">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+          <span>Intake Part</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Secondary Tier: Categories & View Switcher -->
+    <div class="header-tier-secondary">
+      <div class="secondary-container">
+        <!-- Category Filter Chips (Automotive Salvage Focus - Pure SVGs) -->
+        <div class="category-chips">
+          <button class="chip active" data-category="all">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+            All Salvage Inventory (10)
+          </button>
+          <button class="chip" data-category="mirrors">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="7"/><path d="M12 9v3l2 2M9 2h6M9 22h6"/></svg>
+            Side Mirrors (Core Demo)
+          </button>
+          <button class="chip" data-category="lights">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a6 6 0 00-6 6c0 2.22 1.21 4.16 3 5.2V17a1 1 0 001 1h4a1 1 0 001-1v-3.8c1.79-1.04 3-2.98 3-5.2a6 6 0 00-6-6zM9 21h6"/></svg>
+            Headlights & Taillights
+          </button>
+          <button class="chip" data-category="body">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14M5 17a2 2 0 01-2-2V9a2 2 0 012-2h14a2 2 0 012 2v6a2 2 0 01-2 2M5 17a2 2 0 100-4 2 2 0 000 4zm14 0a2 2 0 100-4 2 2 0 000 4z"/></svg>
+            Door Handles & Trim
+          </button>
+          <button class="chip" data-category="ready">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            UK Export Ready
+          </button>
+        </div>
+
+        <!-- View Switcher (Box View vs Dubizzle Dense List) -->
+        <div class="view-switchers">
+          <div class="layout-toggle" role="group" aria-label="Feed layout switcher">
+            <button id="layoutBtnBox" class="layout-btn active" title="Box Grid View">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M4 4h7v7H4V4zm0 9h7v7H4v-7zm9-9h7v7h-7V4zm0 9h7v7h-7v-7z"/></svg>
+            </button>
+            <button id="layoutBtnList" class="layout-btn" title="Dubizzle Dense List View">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Analogue radial menu backdrop / panel (condensed from spec: full markup kept in index.source.html) -->
+  <div id="analogueMenuBackdrop" class="analogue-menu-backdrop" aria-hidden="true">
+    <div id="analogueMenuPanel" class="analogue-menu-panel" role="dialog" aria-label="Analogue Radial Dial Menu" data-radial-phase="first">
+      <div class="analogue-header">
+        <div class="analogue-title">
+          <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          <span>Analogue Radial Console</span>
+        </div>
+        <button id="btnCloseAnalogueMenu" class="btn-close-analogue" aria-label="Close menu">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="elliptical-radial-stage" id="radialScrollStage">
+        <svg class="radial-ellipse-svg" viewBox="0 0 380 380">
+          <defs>
+            <linearGradient id="liquidCyanRadialGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00A896" />
+              <stop offset="50%" stop-color="#00E5C9" />
+              <stop offset="100%" stop-color="#007A78" />
+            </linearGradient>
+          </defs>
+          <ellipse class="radial-track-bg" cx="190" cy="190" rx="130" ry="140" />
+          <path id="radialArcFirst" class="radial-arc-first" d="M 190 50 A 130 140 0 0 1 190 330" />
+          <path id="radialArcSecond" class="radial-arc-second" d="M 190 330 A 130 140 0 0 1 190 50" />
+        </svg>
+
+        <div class="radial-center-hub">
+          <div class="radial-hub-dot"></div>
+          <span id="radialHubPhaseText" class="radial-hub-title">1st Half</span>
+          <span id="radialHubSubText" class="radial-hub-sub">All Salvage Parts</span>
+          <span class="radial-hub-tip">Scroll to aim • Click to select</span>
+        </div>
+
+        <div id="radialScrollBead" class="radial-scroll-bead" style="left: 190px; top: 50px;"></div>
+
+        <div id="radialLiquidCursor" class="radial-liquid-cursor" aria-hidden="true">
+          <div class="cursor-glass-ring"></div>
+          <div class="cursor-dot"></div>
+          <div class="cursor-sparkle"></div>
+        </div>
+
+        <div class="radial-bubbles-orbit" id="radialBubblesOrbit">
+          <div class="radial-bubble-item emerged is-cursor-active" data-phase="first" data-target="all" data-index="0" style="left: 270px; top: 65px;">
+            <div class="radial-bubble-orb">1</div>
+            <div class="radial-bubble-label">All Salvage Parts</div>
+          </div>
+          <div class="radial-bubble-item emerged" data-phase="first" data-target="mirrors" data-index="1" style="left: 295px; top: 145px;">
+            <div class="radial-bubble-orb">2</div>
+            <div class="radial-bubble-label">Side Mirrors</div>
+          </div>
+          <div class="radial-bubble-item emerged" data-phase="first" data-target="lights" data-index="2" style="left: 285px; top: 225px;">
+            <div class="radial-bubble-orb">3</div>
+            <div class="radial-bubble-label">Headlights & Tails</div>
+          </div>
+          <div class="radial-bubble-item emerged" data-phase="first" data-target="body" data-index="3" style="left: 250px; top: 300px;">
+            <div class="radial-bubble-orb">4</div>
+            <div class="radial-bubble-label">Door Handles & Trim</div>
+          </div>
+          <div class="radial-bubble-item retracted" data-phase="second" data-target="assistant" data-index="4" style="left: 45px; top: 300px;">
+            <div class="radial-bubble-label">SalvageScribe AI</div>
+            <div class="radial-bubble-orb">5</div>
+          </div>
+          <div class="radial-bubble-item retracted" data-phase="second" data-target="corridor" data-index="5" style="left: 15px; top: 225px;">
+            <div class="radial-bubble-label">UAE → UK Corridor</div>
+            <div class="radial-bubble-orb">6</div>
+          </div>
+          <div class="radial-bubble-item retracted" data-phase="second" data-target="chat" data-index="6" style="left: 10px; top: 145px;">
+            <div class="radial-bubble-label">Noor's WhatsApp</div>
+            <div class="radial-bubble-orb">7</div>
+          </div>
+          <div class="radial-bubble-item retracted" data-phase="second" data-target="operator" data-index="7" style="left: 45px; top: 65px;">
+            <div class="radial-bubble-label">Escrow Safety Desk</div>
+            <div class="radial-bubble-orb">0</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="analogue-active-card" id="analogueActiveCard">
+        <div class="card-status-row">
+          <span class="active-item-badge" id="activeCategoryBadge">Active: All Salvage Parts</span>
+          <span class="active-item-phase" id="activePhaseBadge">Phase 1/2</span>
+        </div>
+        <p class="active-item-desc" id="activeCategoryDesc">Displaying Noor's initial 10 recovered automotive salvage parts in Al Quoz, Dubai.</p>
+      </div>
+
+      <div class="analogue-footer-note">
+        <div class="scroll-hint-pill">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14m-5-5l5 5 5-5"/></svg>
+          <span>Scroll to aim • Click anywhere to confirm</span>
+        </div>
+        <span class="kill-note-text">Click outside to dismiss</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="landingBlurVeil" class="landing-blur-veil" aria-hidden="true"></div>
+
+  <!-- SalvageScribe AI Assistant modal is injected from assistant.html by app.js -->
+  <div id="salvageAssistantMount"></div>
+
+  <main class="main-container">
+    <div class="feed-header-bar">
+      <div>
+        <h1 class="feed-title" id="mainFeedHeading">Noor's Salvage Inventory • eBay Export Feed</h1>
+        <p class="feed-subtitle" id="mainFeedSubHeading">Recovered Automotive Parts & Accessories (P&A) • Al Quoz Salvage Yard, Dubai → UK Cross-Border Trade</p>
+      </div>
+      <div class="feed-filters-inline">
+        <label for="sortSelect" style="font-size: 12px; font-weight: 600; color: var(--text-muted);">Sort By:</label>
+        <select id="sortSelect" class="select-filter">
+          <option value="recent">Most Recent Intake</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="readiness">Readiness Status</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="corridorRiskBanner" class="corridor-risk-banner" style="display: none;">
+      <div class="corridor-banner-main">
+        <div class="corridor-banner-icon-wrap">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <div class="corridor-banner-text">
+          <div class="corridor-banner-title-row">
+            <h4>UAE (Dubai) → UK Trade Corridor Active</h4>
+            <span class="compliance-pill-badge">HMRC Tariff 8708.29.90 • 0% Duty</span>
+            <span class="compliance-pill-badge pill-verified">Grade A Low Risk</span>
+          </div>
+          <p>Feed filtered to UK Export-Ready salvage parts. RHD optical mirror curvature verified, non-hazardous DG air cargo cleared, and Dubai Police salvage title certified.</p>
+        </div>
+      </div>
+      <div class="corridor-banner-actions">
+        <button class="btn-corridor-compliance-open" onclick="openAssistantComplianceTab()">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+          <span>Open Risk & Compliance Dossier</span>
+        </button>
+        <button class="btn-corridor-reset" onclick="resetToLandingPage()">
+          <span>Show All Inventory</span>
+        </button>
+      </div>
+    </div>
+
+    <section id="listingsContainer" class="marketplace-box-grid" aria-label="Product Listings"></section>
+  </main>
+
+  <aside id="m2mDrawer" class="m2m-drawer" aria-label="Direct Buyer Seller Chat">
+    <div class="drawer-header">
+      <div class="drawer-seller-header">
+        <div class="avatar-wrapper">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" alt="Seller Avatar" />
+        </div>
+        <div class="drawer-header-info">
+          <h4>Noor Salvage Dubai</h4>
+          <p><span class="online-dot"></span> Online • Yard Manager (Verified)</p>
+        </div>
+      </div>
+      <button id="drawerCloseBtn" class="drawer-close-btn" aria-label="Close Chat">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <div class="drawer-listing-anchor">
+      <img id="anchorThumb" src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=150&q=80" alt="Item Thumbnail" class="anchor-thumb" />
+      <div class="anchor-info">
+        <div id="anchorTitle" class="anchor-title">OEM 2017-2018 Toyota Corolla Right Side View Mirror Heated 7-Pin</div>
+        <div id="anchorPrice" class="anchor-price">AED 310 (GBP 65)</div>
+      </div>
+      <button id="anchorBtnOffer" class="anchor-btn-offer">Make Offer</button>
+    </div>
+
+    <div id="messagesCanvas" class="drawer-messages-canvas">
+      <div style="text-align: center; font-size: 11px; color: var(--text-muted); margin-bottom: 4px;">
+        Direct M2M channel secured for this listing
+      </div>
+      <div class="msg-row received">
+        <div class="msg-bubble">
+          Hello! Thank you for your inquiry. This OEM Corolla mirror was recovered from a 2018 donor in our Al Quoz yard. The 7-pin motorized fold and heating elements have been bench-tested and are export-ready for UK buyers.
+        </div>
+        <span class="msg-time">6:40 PM</span>
+      </div>
+      <div class="msg-row received">
+        <div class="voice-message-bubble">
+          <div class="voice-bubble-main">
+            <button class="voice-play-btn" onclick="toggleVoicePlayback(this)" aria-label="Play Voice Note">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <div class="waveform-canvas"></div>
+          </div>
+          <div class="voice-meta-row">
+            <span class="voice-time-elapsed">0:14 / 0:38</span>
+            <span class="playback-speed-tag" onclick="cyclePlaybackSpeed(this)">1.5x</span>
+          </div>
+          <div class="whisper-transcript-box">
+            <button class="whisper-toggle-btn" onclick="toggleWhisperTranscript(this)">
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+              <span>AI Transcript (Whisper Engine)</span>
+            </button>
+            <div class="whisper-content-drawer">
+              <span class="whisper-confidence-pill">98.4% Confidence • Whisper Engine</span>
+              <p>"As-salamu alaykum. Yes, the right door mirror is available in Al Quoz yard #4. We tested the power folding motor and signal lens yesterday. We can pack it with heavy-duty foam corner protection for UK DHL express shipping today."</p>
+            </div>
+          </div>
+        </div>
+        <span class="msg-time">6:42 PM</span>
+      </div>
+    </div>
+
+    <div class="drawer-footer">
+      <div class="quick-prompts-tray">
+        <button class="quick-prompt-chip">Is this available?</button>
+        <button class="quick-prompt-chip">What is lowest price?</button>
+        <button class="quick-prompt-chip">Send Location</button>
+        <button class="quick-prompt-chip">Can I collect today?</button>
+      </div>
+      <div class="drawer-input-row">
+        <button id="btnMicRecord" class="btn-mic-record" title="Record Voice Note">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
+        </button>
+        <input type="text" id="chatInput" class="drawer-input" placeholder="Type your message..." aria-label="Type message" />
+        <button id="btnSendMsg" class="btn-send-msg" aria-label="Send Message">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <button id="floatingChatPill" class="floating-chat-pill" aria-label="Open Chat Thread">
+    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+    <span>Direct Chat (3)</span>
+  </button>
+
+  <dialog id="makeOfferModal" class="glass-modal" closedby="any" aria-labelledby="offerModalTitle">
+    <div class="modal-header">
+      <h3 id="offerModalTitle" class="modal-title">Make an Offer</h3>
+      <button class="drawer-close-btn" onclick="document.getElementById('makeOfferModal').close()" aria-label="Close Modal">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">Select a discount preset or enter your custom proposal below:</p>
+    <div class="offer-presets-grid">
+      <div class="preset-chip" data-discount="0.05"><div class="preset-chip-percent">5% Off</div><div class="preset-chip-val">-5%</div></div>
+      <div class="preset-chip active" data-discount="0.10"><div class="preset-chip-percent">10% Off</div><div class="preset-chip-val">-10%</div></div>
+      <div class="preset-chip" data-discount="0.15"><div class="preset-chip-percent">15% Off</div><div class="preset-chip-val">-15%</div></div>
+    </div>
+    <label for="offerPriceInput" style="display:block; font-size:12px; font-weight:600; margin-bottom:6px; color: var(--text-secondary);">Your Offer (AED):</label>
+    <input type="number" id="offerPriceInput" class="modal-input-field" step="50" />
+    <div class="modal-actions">
+      <button id="btnCancelOffer" class="btn-modal-cancel">Cancel</button>
+      <button id="btnSubmitOffer" class="btn-modal-submit">Submit Formal Offer</button>
+    </div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>

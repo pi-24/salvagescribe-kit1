@@ -1,0 +1,93 @@
+{
+  "attributes": [
+    {
+      "attribute": "part_type",
+      "value": "side-view mirror",
+      "source": "spreadsheet",
+      "source_ref": "spreadsheet",
+      "confidence": 0.98,
+      "note": "Part type from spreadsheet description."
+    },
+    {
+      "attribute": "side",
+      "value": "LH",
+      "source": "photo",
+      "source_ref": "MIR-013_1.jpg",
+      "confidence": 0.85,
+      "note": "Side (LH) visible in front photo."
+    },
+    {
+      "attribute": "manufacturer",
+      "value": "OEM",
+      "source": "photo_label",
+      "source_ref": "MIR-013_4.jpg",
+      "confidence": 0.8,
+      "note": "OEM part number format on label."
+    },
+    {
+      "attribute": "part_number",
+      "value": "76250-TVA-??1",
+      "source": "photo_label",
+      "source_ref": "MIR-013_4.jpg",
+      "confidence": 0.5,
+      "note": "Part-number label partially readable — last digits obscured."
+    },
+    {
+      "attribute": "features",
+      "value": "power, heated, signal, blind-spot",
+      "source": "dismantling_note",
+      "source_ref": "notes.json MIR-013",
+      "confidence": 0.7,
+      "note": "Features observed from dismantling note."
+    },
+    {
+      "attribute": "tested",
+      "value": "untested",
+      "source": "dismantling_note",
+      "source_ref": "notes.json MIR-013",
+      "confidence": 0.5,
+      "note": "No electrical test recorded in notes."
+    },
+    {
+      "attribute": "cosmetic_condition",
+      "value": "none",
+      "source": "photo",
+      "source_ref": "MIR-013_1.jpg",
+      "confidence": 0.8,
+      "note": "No visible cosmetic damage in photos."
+    },
+    {
+      "attribute": "structural_damage",
+      "value": "mounting bracket bent (visible photo 4)",
+      "source": "photo",
+      "source_ref": "MIR-013_4.jpg",
+      "confidence": 0.5,
+      "note": "Possible structural damage: mounting bracket bent (visible photo 4). Reported from photo MIR-013_4.jpg. Needs confirmation."
+    },
+    {
+      "attribute": "glass_condition",
+      "value": "clear",
+      "source": "photo",
+      "source_ref": "MIR-013_3.jpg",
+      "confidence": 0.85,
+      "note": "Glass surface appears clear in photos."
+    },
+    {
+      "attribute": "included_components",
+      "value": "cover, glass, harness",
+      "source": "dismantling_note",
+      "source_ref": "notes.json MIR-013",
+      "confidence": 0.7,
+      "note": "Included components per dismantling note."
+    }
+  ],
+  "possible_damage": [
+    {
+      "description": "part-number label, partially readable — last digits obscured; mounting bracket bent (visible photo 4)",
+      "photo": "MIR-013_4.jpg"
+    }
+  ],
+  "translated_notes": {
+    "ar_to_en": null
+  }
+}
